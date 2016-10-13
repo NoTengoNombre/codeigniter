@@ -8,8 +8,6 @@ and open the template in the editor.
     Author     : TED
 */
 
-/*  estilo */
-
 table.nuevo2 {
   width: 35%;
   border: 1px solid #000;
@@ -32,3 +30,13 @@ caption {
 th.n1 {
   background: #eee;
 }
+
+/*  estilo 
+table {
+  border-collapse: collapse;
+}
+
+table , td , th{
+  border : 1px solid black;
+}
+*/

@@ -14,11 +14,11 @@
     <?php
     if (isset($_REQUEST['envio']) && $_REQUEST['numero'] != '') {
       if ($_REQUEST['numero'] > 0) {
-        echo "<br />♦ Numero Positivo : " . $_REQUEST['numero'] . "<br />";
+        echo "<br /> ♦ Numero Positivo : " . $_REQUEST['numero'] . "<br />";
       } else if ($_REQUEST['numero'] < 0) {
-        echo "<br />♣ Numero Negativo : " . $_REQUEST['numero'] . "<br />";
+        echo "<br /> ♣ Numero Negativo : " . $_REQUEST['numero'] . "<br />";
       } else if ($_REQUEST['numero'] == 0) {
-        echo "<br />♠ Numero : " . $_REQUEST['numero'];
+        echo "<br /> ♠ Numero : " . $_REQUEST['numero'];
       }
     }
 
