@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="" />
+    </head>
+    <body>
+        <script>
+            startTime = new Date();
+
+            function countTo(number) {
+                for (var i = 0; i < number; i++) {
+                    console.log(i);
+                }
+            }
+
+            startTime = new Date();
+            countTo(10000);
+            endTime = new Date();
+            alert(Number("El nombre se ha ejecutado en " + endTime.getTime() - startTime.getTime()) + 'milisegundos');
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="" />
+    </head>
+    <body>
+        <button onclick="verificarValorMaximo()">Intenta</button>
+        <p id="demo"></p>
+        <script>
+
+            var num = parseINT(document.prompt("valor"));
+            function verificarValorMaximo(num) {
+                if (num <= Number.MAX_VALUE) {
+//                    console.log("El numero no es infinito");
+//                    document.writer("El numero no es infinito");
+                    alert("El numero no es infinito");
+                } else {
+//                    console.log("El numero es infinito");
+//                    document.writer("El numero es infinito");
+                    alert("El numero es infinito");
+                }
+            }
+        </script>
+    </body>
+</html>

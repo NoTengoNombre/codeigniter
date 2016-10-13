@@ -1,0 +1,31 @@
+
+<!--
+  Fecha : 23-sep-2016, 17:55:42
+  Author     : RVS
+  Pag : http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_addeventlistener_crossbrowser
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+      function myFunction() {
+          var myWindow = window.open("", "MsgWindow", "width=280,height=500");
+          myWindow.document.write("<p>This window´s name is: " + myWindow.name + " </p>");
+      }
+    </script>
+  </head>
+  <body>
+
+    <button onclick="myFunction()">Try it</button>
+
+  </body>
+</html>

@@ -1,0 +1,38 @@
+
+<!--
+  Fecha : 21-sep-2016, 21:47:53
+  Author     : RVS
+  Pag : http://www.etnassoft.com/2012/01/12/el-valor-de-this-en-javascript-como-manejarlo-correctamente/
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+
+      var myApp = function () {
+          var name = "World";
+          var sayHello = function () {
+              console.log('Hello', +this.name);
+          };
+          sayHello();
+      };
+
+      alert(myApp());
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="button" value="Boton" onclick="myApp()" />
+    </div>
+  </body>
+</html>

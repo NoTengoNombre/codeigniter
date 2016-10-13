@@ -1,0 +1,30 @@
+<!--
+    @Created on : 11-oct-2016, 20:39:17
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+    @Comment    : Cada ventana o pestaña del navegador es un objeto window
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objeto Window</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      
+      function myFunction() {
+        if (window.top !== window.self) {
+          document.getElementById("demo").innerHTML = "This window is not the topmost 'el mas alto' window! soy un iframe ";
+        } else {
+          document.getElementById("demo").innerHTML = "This window is the topmost 'el mas alto' window!";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="myFunction()">Check window</button>
+    <p id="demo"></p>
+  </body>
+</html>

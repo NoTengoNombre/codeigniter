@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="" />
+        <script type="text/javascript">
+            function edad(diaf) {
+                var actual = new Date();
+                var nac = new Date(diaf.value);
+                var dif = actual.getTime() - nac.getTime();
+                var dias = parseInt(dif / (1000 * 60 * 60 * 24));
+                var años = parseInt(dias / 365.25);
+                var restodias = parseInt(dias - años * 365.25);
+                var meses = parseInt(restodias / (365.25 / 12));
+                var otroresto = parseInt(restodias - (meses * (365.25 / 12)));
+                alert("Tienes " + años + " años \n" + meses + " meses \n" + " y " + otroresto + " dias");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Calculador de edad</h1>
+        <p>Introduce tu fecha de nacimiento (AAAA/MM/DD)<p>
+        <form>
+            <input type="date" name="dia" id="dia"/>
+            <button type="button" name="calcular" onclick="edad(document.getElementById('dia'))">Calcular</button>
+        </form>
+    </body>
+</html>

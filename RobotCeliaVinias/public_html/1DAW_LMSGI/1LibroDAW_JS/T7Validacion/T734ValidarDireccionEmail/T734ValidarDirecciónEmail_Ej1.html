@@ -1,0 +1,58 @@
+
+<!--
+  Fecha : 18-sep-2016, 10:27:12
+  Author : RVS
+  Pag : 88
+  Version : 1   
+  Enlaces : http://validator.w3.org/ - http://ismaelgsan.com/validar-un-email-con-javascript-de-forma-rapida-y-sencilla/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href=""/>
+    <script>
+
+      function validarEmail(email) {
+          expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          if (!expr.test(email)) {
+              alert("Error : La direccion de correo " + email + " es Incorrecta ");
+          } else {
+              alert("Direccion correcta");
+          }
+      }
+//            var email = 'me@example.com';
+//            validarEmail(email);
+
+      function validarEmail2() {
+          valor = document.getElementById().value;
+          valor = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          if (!valor) {
+              alert("error");
+              return false;
+          } else {
+              alert("valida");
+              return true;
+          }
+      }
+
+      function validarCorreo(formulario) {
+          var ercorreo = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+          if (!(ercorreo.test(formulario.email.value))) {
+
+          }
+      }
+
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

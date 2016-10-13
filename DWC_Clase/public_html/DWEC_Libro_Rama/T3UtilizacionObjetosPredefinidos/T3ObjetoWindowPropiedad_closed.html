@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="text/javascript" href="" />
+        <link rel="shortcut icon" href="img/keep-calm-and-enjoy-programming-1.png" />
+        <script type="text/javascript">
+
+            // variable para almacenar el resultado
+            var myWindow;
+            /**
+             * Abrir ventana 
+             * 
+             * @returns {undefined}
+             */
+            function openWin() {
+                //        Cuando se abre la ventana : se convierte en false
+                myWindow = window.open("", "myWindow", "width=1300,height=200");
+            }
+            function closeWin() {
+                if (myWindow) {
+                    myWindow.close();
+                }
+            }
+            function checkWin() {
+                if (!myWindow) { //false "nunca se activo" -> true : Entra  
+                    document.getElementById("msg").innerHTML = "'MiVentana' has never been opened! ♦";
+                } else {
+                    if (myWindow.closed) { // true "ventana cerrada"
+                        document.getElementById("msg").innerHTML = "'myWindow' has been closed! • ";
+                    } else {
+                        document.getElementById("msg").innerHTML = "'myWindow' has not been closed! ◘ ";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="openWin()">Open 'myWindow'</button>
+        <button onclick="closeWin()">Close MyWindow</button>
+        <br /><br />
+        <button onclick="checkWin()">Has 'myWindow' been closed ? </button>
+        <br /><br />
+        <div id="msg"></div>
+    </body>
+</html>

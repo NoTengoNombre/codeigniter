@@ -1,0 +1,38 @@
+
+<!--
+  Fecha : 20-sep-2016, 22:20:51
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+// setInterval : Evalua la expresion especifica despues de que hayan pasado el numero de milisegundos especificos en tiempo
+// Devuelve un valor que puede ser usado como identificativo por clearInternal() 
+      var int = self.setInterval(function () {
+          clock();
+      }, 1000);
+
+      function clock() {
+          var d = new Date();
+          var t = d.toLocaleTimeString();
+          document.getElementById("clock").value = t;
+      }
+    </script>
+  </head>
+  <body>
+    <!-- FUNCION : clearInterval() para el tiempo -->
+    <input type="text" id="clock" />
+    <button onclick="int = window.clearInterval(int)">Stop</button>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+
+<!--
+  Fecha : 22-sep-2016, 19:24:25
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+
+//      window.open("extension.html", "html", "height=1250,width=250");
+
+// Al no estar definido la variable que almacena la dimensiones , se usa el objeto padre
+//  EL objeto Window esta en la jerarquia principal de OBJETOS
+      var subVentana = open("extension.html", "html", "height=250,width=250");
+      subVentana.close();
+
+      if (subVentana.close) {
+          document.write("cerrada");
+          open("extension.html", "html", "height=10,width=900");
+      } else {
+          document.write("abierta");
+          open("extension.html", "html", "height=900,width=10");
+      }
+
+    </script>
+
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+
+<!--
+  Fecha : 27-sep-2016, 0:08:54
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+
+      //Introducir un numero y calcular: media, valor mayor y valor menor
+
+      do {
+          var años = prompt("introduce numero de años (0 o mayor).");
+          años = parseInt(años);
+          if (años < 0) {
+              document.write("MAL. Introduce un numero mayor de 0.");
+          }
+      } while (años < 0);
+
+      do {
+          var meses = prompt("introduce numero de años (0 o mayor).");
+          meses = parseInt(meses);
+          if (meses < 0) {
+              document.write("MAL. Introduce un numero mayor de 0.");
+          }
+      } while (meses < 0);
+
+      do {
+          var dias = prompt("introduce numero de años (0 o mayor).");
+          dias = parseInt(dias);
+          if (dias < 0) {
+              document.write("MAL. Introduce un numero mayor de 0.");
+          }
+      } while (dias < 0);
+
+      var meses1 = 0;
+      meses1 = parseInt(meses1);
+      var dias1 = 0;
+      dias1 = parseInt(dias1);
+      var dias2 = 0;
+      dias2 = parseInt(dias2);
+      var diastotal = 0;
+      diastotal = parseInt(diastotal);
+
+      if (años > 0) {
+          meses1 = años * 12;
+          dias1 = meses1 * 30;
+      }
+
+      if (meses > 0) {
+          dias2 = meses * 30;
+      }
+
+      diastotal = dias + dias1 + dias2;
+      document.write("el total de dias es: " + diastotal);
+
+
+
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

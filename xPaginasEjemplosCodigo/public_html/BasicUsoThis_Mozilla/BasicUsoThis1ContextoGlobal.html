@@ -1,0 +1,29 @@
+<!--
+    @Created on : 11-oct-2016, 17:54:44
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      console.log(this.document === document); // true
+
+// En los navegadores web - objeto window tb es un objeto global
+      console.log(this === window); // true
+
+      this.a = 37;
+      console.log(window.a); // devuelve 37
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!--
+    @Created on : 11-oct-2016, 20:39:17
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+    @Comment    : Cada ventana o pestaña del navegador es un objeto window
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objeto Window</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      var v;
+
+      function abrir() {
+        v = open("", "_blank", "height=20px , width=20px");
+      }
+
+      function cerrar() {
+        v.close();
+      }
+
+      var v1 = new Window;
+
+      function abrir1() {
+        v1 = open("", "_blank", "height=20px , width=20px");
+      }
+
+      function cerrar1() {
+        v1.close();
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <h1>Objeto 'Window' contiene otros objetos </h1>
+    <h1>El objeto 'document' sera quien tenga toda la jerarquia de objetos tengamos dentro de la pagina HTML</h1>
+    <button onclick="abrir()">b</button>
+    <button onclick="cerrar()">c</button>
+    <button onclick="abrir1()">b1</button>
+    <button onclick="cerrar1()">c1</button>
+  </body>
+</html>

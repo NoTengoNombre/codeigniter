@@ -1,0 +1,49 @@
+
+<!--
+  Fecha : 21-sep-2016, 18:08:44
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+
+      var a = 10; // inicializa 'a' al valor 10
+      var z = 0;  // inicializa 'z' al valor 0
+      z = a; // 'a' es igual a '10' por lo tanto 'z' es igual a 10
+      z = ++a; // el valor de 'a' se incrementa justo antes de ser asignado a 'z' por lo que 'a' es 11 y 'z' valdra 11
+      z = a++; // 'a' vale 12 antes de la asignacion , por lo que 'z' es igual a 12 , una vez hecha la asignacion 'a' valdra 13
+      document.write("valor de a : " + a + "<br />");
+      document.write("valor de z : " + z + "<br />");
+      document.write("valor de a con ++a : " + a + "<br />");
+
+      document.write("-------- Ejemplos -------");
+      var x = 2;
+      var y = 8;
+      var z = -x; // "z" es igual k -2 pero 'x' sigue siendo igual k '2'
+      document.write("<br /> valor de 'x' : " + x);
+      document.write("<br /> valor de 'y' : " + y);
+      document.write("<br /> valor de 'z' : " + z);
+
+      z = -(x + y);
+      document.write("<br /> z = -(x + y) : " + z);
+      document.write("<br /> valor de x : " + x);
+      z = -x + y;
+      document.write("<br /> z = -x + y : " + z);
+      document.write("<br /> valor de x : " + x);
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

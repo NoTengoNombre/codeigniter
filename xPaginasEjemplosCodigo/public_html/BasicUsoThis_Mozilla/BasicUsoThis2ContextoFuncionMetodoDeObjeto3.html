@@ -1,0 +1,30 @@
+<!--
+    @Created on : 11-oct-2016, 17:54:44
+    @Author     : RVS - N.F.N.D
+    @Pag        : https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Operadores/this
+    @version    : 1
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      var o = {prop: 37};
+
+      function independent() {
+        return this.prop;
+      }
+
+      o.f = independent;
+
+      console.log(o.f());
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

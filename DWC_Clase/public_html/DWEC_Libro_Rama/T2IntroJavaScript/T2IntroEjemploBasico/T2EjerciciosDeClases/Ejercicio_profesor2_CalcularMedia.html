@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+1º Introducir un nº de numeros y calcular el medio , valor menor y mayor
+
+2º Factorial de un nº 
+
+3º Introducir un numero y saber si es primo
+
+4º dado de un numero de años , meses , dias decir cuantos dias son
+
+5º Dada 2 fechas calcular el numero de dias transcurridos
+
+6º MCM y MCD
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script type="text/javascript">
+
+            var nnum, num, menor, media, mayor;
+
+            nnum = parseInt(prompt("Numero : "));
+            num = parseInt(prompt("Numero : "));
+            media = menor + mayor;
+            
+            mayor = num;
+            menor = num;
+
+
+            for (var i = 1; i < nnum; i++) {
+                num = parseInt(prompt("Numero"));
+                media = media + num;
+                if (num > mayor) {
+                    mayor = num;
+                } else {
+                    if (num < menor) {
+                        menor = num;
+                    }
+                }
+                document.writer("Media " + media / nnum + " Mayor: " + mayor + " Menor: " + menor);
+            }
+
+        </script>
+
+    </body>
+</html>

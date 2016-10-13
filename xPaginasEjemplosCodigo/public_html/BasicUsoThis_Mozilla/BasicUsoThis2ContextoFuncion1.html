@@ -1,0 +1,37 @@
+<!--
+    @Created on : 11-oct-2016, 17:54:44
+    @Author     : RVS - N.F.N.D
+    @Pag        :
+    @version    :
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+
+      /**
+       * En modo estricto, el valor de 'this' se mantiene en lo que 
+       * está establecida al entrar en el contexto de ejecución. 
+       * Si no está definido, permanece 'undefinded'. 
+       * También se puede ajustar a cualquier valor, tales como null o 42 o "Yo no soy this".
+       * @returns {f1}
+       */
+      function f2() {
+        "use strict"; //consultar modo estricto
+        return this;
+      }
+
+      f2() === undefinded; //objeto global
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <button onclick="f2()">Valor</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+
+<!--
+  Fecha : 22-sep-2016, 19:24:25
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <script type="text/javascript">
+
+      var nuevaVentana;
+
+      function crearNueva() {
+          nuevaVentana = window.open("http://www.google.es", "", "height=200,width=200");
+      }
+
+      function cerrarNueva() {
+          if (nuevaVentana) {
+              nuevaVentana.close();
+              nuevaVentana = null;
+          }
+      }
+
+      function inicializar() {
+          document.getElementById("crear-ventana").onclick = crearNueva;
+          document.getElementById("cerrar-ventana").onclick = cerrarNueva;
+      }
+
+
+    </script>
+  </head>
+  <body onload="inicializar()">
+    <h1>Abrimos y cerramos ventanas</h1>
+    <form>
+      <p>
+        <input type="button" id="crear-ventana" value="Crear Nueva Ventana">
+        <input type="button" id="cerrar-ventana" value="Cerrar Nueva Venana">
+      </p>
+    </form>
+  </body>
+</html>

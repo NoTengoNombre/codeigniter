@@ -1,0 +1,191 @@
+
+<!--
+  Fecha : 18-sep-2016, 11:48:38
+  Author     : RVS
+  Pag : http://www.aprenderaprogramar.es/
+  index.php?
+  option=com_content&view=article&id=874:
+  validar-formularios-con-javascript-ejemplo-email-campo-no-vacio-radio-button-checkbox-select-cu01185e&catid=78:
+  tutorial-basico-programador-web-javascript-desde-&Itemid=206
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+ 
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <style type="text/css">
+      body{
+          margin-left:30px;
+          font-family: sans-serif;
+          h4{
+              margin: 0;
+          }
+          div{
+              float: left;
+          }
+      }
+
+      .estiloForm, #validacionDatos{
+          background-color: #f3f3f3;
+          border: solid 3px black;
+          margin-left: 10px;
+          width: 300px;
+      }
+
+      .estiloForm {
+          width: 330px;
+          padding: 10px;
+      }
+
+      #validacionDatos{
+          height: 226px;
+          padding: 10px;
+          background-color: yellow;
+      }
+      .estiloForm label{
+          display: block;
+          width: 120px;
+          float: left;
+          text-align: right;
+          margin-bottom: 35px;
+          padding-right: 20px;
+      }
+
+      br{
+          clear: left;
+      }
+
+      input[type="submit"], input[type="reset"] {
+          margin: 25px 5px 10px 5px;
+      }
+    </style>
+
+    <script type="text/javascript">
+
+      window.onload = function () {
+          formularioContacto.addEventListener("submit", validarFormulario);
+          document.getElementById('validacionDatos').style.visibility = 'hidden';
+          formularioContacto.addEventListener("change", ocultarAviso);
+      };
+
+      function ocultarAviso() {
+          document.getElementById('validacionDatos').style.visibility = 'hidden';
+      }
+      ;
+
+      function validarFormulario(elEvento) {
+          elEvento.preventDefault(); // Impedir envio del formulario hasta que se realice la validacion
+          var msgValidacion = "";
+          var casillaDatos = document.getElementById('validacionDatos'); //Nodo donde vamos a mostrar la validacion de datos
+          casillaDatos.innerHTML = '<h4> Aviso datos a revisar o corregir </h4>';
+
+          var radioButTrat = document.getElementByName("tratamiento"); //Nodos radio buttons
+          var checkboxElements = new Array();
+          var elementosSelect = document.getElementByName('select');
+          var elementosDelForm = document.getElementByName('input'); // elementos input
+      }
+      ;
+
+// Validacion de que se haya elegido un radio button 
+      var radioButElegido = false;
+      for (var i = 0; i < radioButTrat.length; i++) {
+          if (radioButTrat[i].checked === true) {
+              radioButElegido = true;
+          }
+      }
+
+      if (radioButElegido === false) {
+          msgValidacion = msgValidacion + '<p>(*) No hay elegido tratamiento sr. o sra. </p> ';
+      }
+// Validacion de que los campos input text no esten vacios
+      var textosConformes = true;
+      for (var i = 0; i < elementosDelForm.length; i++) {
+          if (elementosDelForm[i].type === 'text' && elementosDelForm[i].value === "") {
+              msgValidacion = msgValidacion + '<p>(*) Campo' + elementosDelForm[i].name + 'esta vacio </p>';
+              textosConformes = false;
+          }
+      }
+
+// Validacion de que se haya elegido un elemento del Select
+      var ciudadElegida = true;
+      indiceElegido = document.getElementById('ciudad').selectedIndex;
+      if (indiceElegido === null || indiceElegido === 0) {
+          msgValidacion = msgValidacion + '<p>(*) No hay ciudad elegida </p>';
+          ciudadElegida = false;
+      }
+
+//      Validacion de que se haya elegido un checkbox
+      for (var i = 0; i < elementosDelForm.length; i++) {
+          if (elementosDelForm[i].type === 'checkbox') {
+              checkboxElements.push(elemetosDelForm[i]);
+          }
+          var checkboxMarcado = false;
+          for (var i = 0; i < checkboxElements.length; i++) {
+              if (checkboxElements[i].checked === true) {
+                  checkboxMarcado = true;
+              }
+              if (checkboxMarcado === false) {
+                  msgValidacion = msgValidacion + '<p>(*) No hay elegida ninguna preferencia </p>';
+              }
+          }
+
+//          Decision final : mostrar avisos si hay fallos o enviar el formulario si esta correcto
+          if (radioButElegido === false || checkboxMarcado === false || textosConformes === false || ciudadElegida === false) {
+              document.getElementById('validacionDatos').style.visibility = 'visible';
+              casillaDatos.innerHTML = casillaDatos.innerHTML + msgValidacion;
+          } else {
+              alert('Se ha realizado la validacion de datos y es conforme , se procede al envio del formulario');
+              document.forms['formularioContacto'].submit();
+          }
+      }
+
+    </script>
+  <body>
+    <h2>Cursos aprenderaProgramar.com</h2>
+    <h3>Ejemplo Javascript</h3>
+    <div class="estiloForm">
+      <form name="formularioContacto" method="get" action="#" >
+        <label>Tratamiento </label>
+        <input type="radio" name="tratamiento" id="tratarSr" value="Sr." />Sr<br />
+        <input type="radio" name="tratamiento" id="tratarSra" value="Sra" />Sra<br />
+        <label>Nombre</label>
+        <input id="nombre" name="nombre" type="text"/><br />
+        <label>Apellidos</label>
+        <input id="apellidos" name="apellidos" type="text" /><br />
+        <label>Direccion</label>
+        <input id="direccion1" name="direccion1" type="text" /><br />
+        <label>Ciudad</label>
+        <select id="ciudad" name="ciudad">
+          <option value="">Elige una Opcion</option>
+          <option value="Mexico">Mexico D.F (MX)</option>
+          <option value="Madrid">Madrid (ES)</option>
+          <option value="Santiago">Santiago</option>
+        </select><br />
+        <label>Preferencias</label>
+        <input name="Libros" type="checkbox" /> Libros
+        <input name="Peliculas" type="checkbox" />Peliculas
+        <input type="submit" value="enviar" />
+        <input type="reset" value="Cancelar" />
+      </form>
+    </div>
+    <div style="float:left;">
+      <div id="validacionDatos" style="float:left;">
+        <h4>Aviso datos a revisar o corregir</h4>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+

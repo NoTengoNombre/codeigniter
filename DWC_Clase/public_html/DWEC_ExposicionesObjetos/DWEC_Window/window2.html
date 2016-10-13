@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Objeto Window</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="" >
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Objeto Window</h1>
+          <h3>Presentación de JavaScript</h3>
+          <p>
+            <small>Creado por <a href="https://es.linkedin.com/in/antonio-jesús-ibáñez-garcía-47107871">Antonio Ibáñez</a> / <a href="http://twitter.com/antoiba86">@antoiba86</a> y <a href="">Raúl</a> / <a href="http://twitter.com/antoiba86">@antoiba86</a></small>
+          </p>
+        </section>
+        <section>
+          <h2>ÍNDICE</h2>
+          <p>1. INTRODUCCIÓN</p>
+          <p>2. PROPIEDADES</p>
+          <p>3. MÉTODOS</p>
+          <p>3. OBSOLETOS (DEPRECATED)</p>
+          <p>4. CONCLUSIONES</p>
+          <p>5. BIBLIOGRAFÍA</p>
+        </section>
+        <section>
+
+          <h2>Objeto Window</h2>
+          <p>
+            Un Objeto para gobernarlos a todos. Un Objeto para encontrarlos, un Objeto para atraerlos a todos y atarlos en el código.
+          </p>
+          <img data-src="img/jerarquia.png" alt="jerarquia" />
+        </section>
+
+        <section>
+          <section>
+            <h2>Introducción</h2>
+            <p>
+              Cada variable, objeto y función creada en Javascript es parte de un Objeto Global, en el caso de los navegadores es el objeto Window.
+            </p>
+            <p>
+              El objeto window representa la ventana o pestaña que contiene el DOM, que es la estructura de nodos que tiene la página web.
+            </p>
+          </section>
+          <section id="fragment">
+            <p>
+              Las versiones 3.0 de los navegadores Internet Explorer y Netscape Navigator introdujeron el concepto de Browser Object Model o BOM, que permite acceder y modificar las propiedades de las ventanas del propio navegador.
+            </p>
+            <p class="fragment yellow">
+              Pero algunas de estas opciones están desactivadas en los navegadores por motivos de seguridad...
+            </p>
+          </section>
+
+          <section id="fragment">
+            <p>
+              El mayor inconveniente de BOM es que, al contrario de lo que sucede con DOM, ninguna entidad se encarga de estandarizarlo o definir unos mínimos de interoperabilidad entre navegadores.
+            </p>
+            <p class="fragment">
+              Algunos de los elementos que forman el BOM son los siguientes:
+            <ul>
+              <li class="fragment">Crear, mover, redimensionar y cerrar ventanas de navegador. </li>
+              <li class="fragment">Obtener información sobre el propio navegador. </li>
+              <li class="fragment">Propiedades de la página actual y de la pantalla del usuario. </li>
+              <li class="fragment">Gestión de cookies. </li>
+              <li class="fragment">Objetos ActiveX en Internet Explorer. </li>
+            </ul>
+          </section>
+
+          <section>
+            <p>
+              Además en un navegador con pestañas, como Firefox, cada pestaña contiene su propio Objeto Window.
+            </p>
+            <img data-src="img/tabs.png" alt="tabs" />
+          </section>
+        </section>
+
+        <section id="fragment">
+          <h2>
+            OBJETO WINDOW
+          </h2>
+          <p>
+            El objeto Window se considera el objeto más importante del lenguaje JavaScript porque a partir de él, se pueden gestionar las ventanas del navegador utilizando una serie de propiedades y métodos.
+          </p>
+          <h3 class="fragment">Características</h3>
+          <ul>
+            <li class="fragment">Se considera como un objeto implícito.</li>
+            <li class="fragment">Soportado por todos los navegadores</li>
+            <!--<li class="fragment">Todas las propiedades y métodos se encuentran del objeto Window</li>
+            <li class="fragment">Las variables globales son las “propiedades” del Objeto window</li>
+            <li class="fragment">Los métodos globales son las “funciones” del Objeto window</li>-->
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h2>PROPIEDADES</h2>
+            <p>blalblalbalblalablalblagbla</p>
+            <p>Existen propiedades que ya no se utilizan o que su uso está bloqueado como hemos visto.</p>
+          </section>
+
+          <section> <!-- Comienzo -->
+            <h3>closed</h3>
+            <p>Devuelve valor <strong>&quot;booleano&quot;</strong> indicando cuando ventana ha sido cerrada o no</p>
+            <h3>defaultStatus</h3>
+            <p>Ajusta o regresa el texto por defecto dentro barra de estado de una ventana <strong>( Deprecated )</strong></p>
+            <h3>document</h3>
+            <p>Regresa el objeto &quot;document&quot; para la ventana</p>
+            <h3>frameElement</h3>
+            <p>Regresa el elemento &lt;iframe&gt; la cual es la ventana actual que está ingresada</p>
+            <h3>frames</h3>
+            <p>Conjunto de marcos de la ventana</p>
+          </section> <!-- Fin --> 
+
+          <section> <!-- Comienzo -->
+            <h3>history</h3>
+            <p>Conjunto de elementos que representan las <strong>URL</strong> visitadas</p>
+            <h3>innerHeight</h3>
+            <p>Altura utilizable de la ventana.</p>
+            <h3>innerWidth</h3>
+            <p>Ancho utilizable de la ventana</p>
+            <h3>length</h3>
+            <p>Regresa numero elementos &lt;iframe&gt; en la ventana actual</p>
+            <h3>localStorage</h3>
+            <p>Regresa una referencia al objeto<strong> localStorage</strong> usado en <br />
+              el almacenamiento de datos , este objeto similar a <strong>sessionStorage</strong>
+              , la diferencia es que mientras los datos almacenados en <strong>localStorage</strong>
+              no tiene fecha de expiraci&oacute;n , datos almacenados en <strong>sessionStorage</strong> 
+              son eliminados cuando la sesi&oacute;n de navegacion finaliza &quot;cuando 
+              el usuario <strong>cierra</strong> la <strong>ventana</strong> del <strong>navegador</strong>&quot;
+            </p>
+          </section> <!-- Fin --> 
+
+          <section> <!-- Comienzo -->
+            <h3>location</h3>
+            <p>Regresa el objeto <strong>Location</strong> para la ventana del navegador</p>
+            <h3>name</h3>
+            <p>Fija o regresa el nombre de la ventana.</p>
+            <h3>navigator</h3>
+            <p>Regresa una referencia al objeto &quot;<strong>navigator</strong> el cual
+              puede ser utilizado para obtener informaci&oacute;n sobre la aplicacion
+              que est&aacute; ejecutando el <strong>script</strong></p>
+            <h3>opener</h3>
+            <p>Regresa una referencia de la ventana que creo la ventana actual</p>
+            <h3>outerHeight</h3>
+            <p>Regresa el alto de todos los navegadores , incluyendo la barra de notificaciones
+              &#40;Si se encuentra&#41; y los bordes </p>
+          </section> <!-- Fin --> 
+
+          <section> <!-- Comienzo -->
+            <h3>outerWidth</h3>
+            <p>Obtiene alto en pixeles de la ventana del navegador por completo <br />
+              y representa el alto de todo el navegador , incluyendo la barra de <strong>notificaciones</strong>
+              si se encuentra y los <strong>bordes</strong></p>
+            <h3>sessionStorage</h3>
+            <p>Devuelve una referencia al objeto de almacenamiento local <strong>&#40;local storage object&#41; </strong> 
+              usando para almacenar informaci&oacute;n. <br /> 
+              Solo guarda informaci&oacute;n para una sesi&oacute;n y se
+              pierde cuando la ventana o pesta&ntilde;a es cerrada.</p>
+          </section> <!-- Fin --> 
+
+          <section> <!-- Comienzo -->
+            <h3>PageXOffset y scrollX</h3> 
+            <p>Devuelve los píxeles del documento que han sido desplazados con el ratón de manera horizontal desde la esquina superior izquierda de la ventana.</p>
+            <h3>PageYOffset y scrollY</h3>
+            <p>Devuelve los píxeles del documento que han sido desplazados con el ratón de manera vertical desde la esquina superior izquierda de la ventana.</p>
+            <pre>
+            <code class="hljs" data-trim contenteditable>
+                  function myFunction() {
+                  window.scrollBy(100, 100);
+                  alert("pageXOffset: " + window.pageXOffset + ", pageYOffset: " + window.pageYOffset);
+                  }
+					</code>
+            </pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_pagexoffset">Ejemplo</a>
+          </section> <!-- Fin --> 
+
+
+          <section>
+            <h3>Parent</h3>
+            <p>Devuelve la ventana padre de la ventana actual.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    parent.document.body.style.backgroundColor = "red";
+}
+					</code></pre>
+            <h3>Self</h3>
+            <p>Devuelve la ventana actual.</p>
+            <h3>top</h3>
+            <p>Devuelve el valor de la ventana de más alto nivel. Es de solo lectura</p>
+            <pre><code class="hljs" data-trim contenteditable>
+if (window.top != window.self)
+        document.getElementById("demo").innerHTML = "¿Estoy en un iframe?";
+					</code></pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_self_top">Ejemplo</a>
+          </section>
+          <section id="fragment">
+            <h3>Screen</h3>
+            <p>Devuelve el objeto Screen para la pantalla que contiene información sobre la ventana del usuario.</p>
+            <ul>
+              <li class="fragment"><span class="yellow">availHeight:</span>  	Devuelve la altura de la pantalla sin incluir la barra del navegador</li>
+              <li class="fragment"><span class="yellow">availWidth:</span>  	Devuelve la anchura de la pantalla sin incluir la barra del navegador</li>
+              <li class="fragment"><span class="yellow">colorDepth:</span> 	Devuelve la profundidad de color de la pantalla para enseñar imágenes</li>
+              <li class="fragment"><span class="yellow">height:</span>  	    Devuelva la altura total de la pantalla</li>
+              <li class="fragment"><span class="yellow">pixelDepth:</span>  	Devuelve la resolución de la pantalla en pixel por bits</li>
+              <li class="fragment"><span class="yellow">width:</span>  	Devuelva la anchura total de la pantalla</li>
+            </ul>
+            <a href="http://iesceliaciclos.org/antonioibanez/processwire/">Ejemplo</a>
+          </section>
+          <section>
+            <h3>ScreenLeft y ScreenX</h3>
+            <p>Devuelve la ventana padre de la ventana actual.</p>
+            <h3>ScreenTop y ScreenY</h3>
+            <p>Devuelve la coordenada horizontal de la ventana de manera relativa a la pantalla.</p>
+            <pre><code class="hljs" data-trim contenteditable>
+function myFunction() {
+    var myWindow = window.open("", "myWin");
+    myWindow.document.write("This is 'myWin'");
+    myWindow.document.write("<br />ScreenLeft: " + myWindow.screenLeft);
+    myWindow.document.write("<br />ScreenTop: " + myWindow.screenTop);
+}
+					</code></pre>
+            <a href="http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_screenleft">Ejemplo</a>
+          </section>
+        </section>
+
+        <section> <!-- nueva diapositiva -->
+          <section> 
+            <h2>MÉTODOS</h2>
+          </section>
+
+          <section> <!-- nueva diapositiva -->
+            <h3>moveBy()</h3>
+            <p>
+              Mueve la ventana una cantidad p&iacute;xeles relativa a su posici&oacute;n actual
+              <br /> x --&gt;  Numero <em>positivo</em>&#47<em>negativo</em> especifica cantidad de p&iacute;xeles que se mover&acute; horizontalmente
+              <br /> y --&gt;  Numero <em>positivo</em>&#47<em>negativo</em> especifica cantidad de p&iacute;xeles que se movera&acute; verticalmente
+            </p>
+
+            <h3>moveTo()</h3>
+            <p>
+              Mueve una ventana a las coordenadas espec&iacute;ficas
+              <br /> x --&gt;  Numero <em>positivo</em>&#47<em>negativo</em> especifica cantidad de coordenadas horizontales &#40;Requerido&#41;
+              <br /> y --&gt;  Numero <em>positivo</em>&#47<em>negativo</em> especifica cantidad de coordenadas verticales &#40;Requerido&#41;
+            </p>
+          </section>
+
+          <section>
+            <h3>open()</h3>
+            <p> 
+              Abre una nueva ventana en el navegador <br />
+              Sintaxis : window.open&#40;<strong>URL,nombre,especificaci&oacute;n,replace</strong>&#41;
+              Valores de los par&aacute;metros &#58; <br /></p>
+            <p>
+              <strong>URL</strong> &#58; Especifica la URL de la p&aacute;gina , no se especifica si en la nueva ventana aparece en blanco &#40;Opcional&#41;<br />
+            </p>
+            <p>
+              <strong>nombre</strong> &#58; 
+              De la ventana se podr&aacute; utilizar posteriormente en los &lt;target&gt; de los enlaces (Opcional)<br /> 
+            </p>
+            <ul>
+              <li><strong>_blank</strong>: URL se carga en una nueva ventana &#40;Por defecto&#41; </li>
+              <li><strong>_parent</strong>: URL se carga en una ventana padre.</li>
+              <li><strong>_self</strong>: URL remplaza pagina actual.</li>
+              <li><strong>_top</strong>: URL remplaza cualquier frame hubiese cargado.</li>
+              <li><strong>name</strong>: Nombre ventana (atributo)</li>
+            </ul>
+            <br /> 
+            <p>
+              <strong>especificaci&oacute;n</strong> &#58; 
+			  Especifica la URL de la p&aacute;gina , no se especifica si en la nueva ventana aparece en blanco &#40;Opcional&#41;<br />
+              <br />			  
+            </p>
+			
+			<section>
+			<p>
+				Lista atributos separados por comas<br /> 	
+				     valores <strong>(Opcionales)</strong><br /> 
+				channelmodel = yes|no|1|0<br /> 
+				Mostrar pantalla completa , No por defecto , solo IE.<br /> 
+				fullscreen = yes|no|1|0<br /> 
+				Mostrar navegador modo pantalla completa. No por defecto solo IE.<br /> 
+				height = píxeles.<br /> 
+				Altura de la ventana. Valor mínimo 100;<br /> 
+				left = píxeles.<br /> 
+				Coordenadas horizontales de la posición de la ventana. No admiten valores negativos.<br /> 
+				location = yes|no|1|0<br /> 
+				Muestra barra direcciones : Solo Opera<br /> 
+				menubar = yes|no|1|0<br /> 
+				Mostrar la barra menú.<br /> 
+				resizable = yes|no|1|0<br /> 
+				La ventana es redimensionable : Solo IE<br /> 
+				scrollbars = yes|no|1|0 <br /> 
+			</p>
+			
+			</section>
+			
+			
+
+            
+            
+            
+          </section>
+
+          <section><!-- nueva diapositiva -->
+            <h3>Alert</h3>
+            <p>Enseña un alert box con un mensaje dentro y un botón de OK.</p>
+            <pre>
+            <code class="hljs" data-trim contenteditable>
+function myAlert() {
+	alert("Soy un alert, encantado de conocerte");
+}
+			
+    		</code>
+            </pre>
+            <button onclick="myAlert()">Clicka en mí</button>
+            <h3>Confirm</h3>
+            <p>Enseña un dialog box con un mensaje y botones de OK y Cancelar.</p>
+            <pre>
+            <code class="hljs" data-trim contenteditable>
+function myConfirm() {
+	result = window.confirm("¿Quieres probar este dialogo?");
+	if (result) {
+		alert("Has aceptado");
+	}
+	else alert("Nooooooooooooooooooooooooooooo");
+}
+			</code>
+            </pre>
+            <button onclick="myConfirm()">Cicka en mi</button>
+            <h3>Prompt</h3>
+            <p>Muestra cuadro diálogo acompañados campo de texto para introducir datos.</p>
+            <pre>
+  <code class="hljs" data-trim contenteditable>
+function myPrompt() {
+	var mensaje = prompt("Introduce un número");
+	alert(mensaje);
+}
+			</code>
+            </pre>
+            <button onclick="myPrompt()">Introduce un mensaje</button>
+          </section>
+        </section>
+
+        <section>
+          <h2>Touch Optimized</h2>
+          <p>
+            Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
+          </p>
+        </section>
+
+        <section data-markdown>
+          <script type="text/template">
+            ## Markdown support
+
+            Write content using inline or external Markdown.
+            Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+
+            ```
+            <section data-markdown>
+            ## Markdown support
+
+            Write content using inline or external Markdown.
+            Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+            </section>
+            ```
+          </script>
+        </section>
+
+        <section>
+          <section id="fragments">
+            <h2>Fragments</h2>
+            <p>Hit the next arrow...</p>
+            <p class="fragment">... to step through ...</p>
+            <p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+
+            <aside class="notes">
+              This slide has fragments which are also stepped through in the notes window.
+            </aside>
+          </section>
+          <section>
+            <h2>Fragment Styles</h2>
+            <p>There's different types of fragments, like:</p>
+            <p class="fragment grow">grow</p>
+            <p class="fragment shrink">shrink</p>
+            <p class="fragment fade-out">fade-out</p>
+            <p class="fragment fade-up">fade-up (also down, left and right!)</p>
+            <p class="fragment current-visible">current-visible</p>
+            <p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
+          </section>
+        </section>
+
+        <section id="transitions">
+          <h2>Transition Styles</h2>
+          <p>
+            You can select from different transitions, like: <br>
+            <a href="?transition=none#/transitions">None</a> -
+            <a href="?transition=fade#/transitions">Fade</a> -
+            <a href="?transition=slide#/transitions">Slide</a> -
+            <a href="?transition=convex#/transitions">Convex</a> -
+            <a href="?transition=concave#/transitions">Concave</a> -
+            <a href="?transition=zoom#/transitions">Zoom</a>
+          </p>
+        </section>
+
+        <section id="themes">
+          <h2>Themes</h2>
+          <p>
+            reveal.js comes with a few themes built in: <br>
+            <!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/black.css'); return false;">Black (default)</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/white.css'); return false;">White</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/league.css'); return false;">League</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/sky.css'); return false;">Sky</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/beige.css'); return false;">Beige</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/simple.css'); return false;">Simple</a> <br>
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/serif.css'); return false;">Serif</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/blood.css'); return false;">Blood</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/night.css'); return false;">Night</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/moon.css'); return false;">Moon</a> -
+            <a href="#" onclick="document.getElementById('theme').setAttribute('href', 'css/theme/solarized.css'); return false;">Solarized</a>
+          </p>
+        </section>
+
+        <section>
+          <section data-background="#dddddd">
+            <h2>Slide Backgrounds</h2>
+            <p>
+              Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
+            </p>
+            <a href="#" class="navigate-down">
+              <img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
+            </a>
+          </section>
+          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+            <h2>Image Backgrounds</h2>
+            <pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+          </section>
+          <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
+            <h2>Tiled Backgrounds</h2>
+            <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+          </section>
+          <section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
+            <div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
+              <h2>Video Backgrounds</h2>
+              <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+            </div>
+          </section>
+          <section data-background="http://i.giphy.com/90F8aUepslB84.gif">
+            <h2>... and GIFs!</h2>
+          </section>
+        </section>
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+          <h2>Background Transitions</h2>
+          <p>
+            Different background transitions are available via the backgroundTransition option. This one's called "zoom".
+          </p>
+          <pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
+          <h2>Background Transitions</h2>
+          <p>
+            You can override background transitions per-slide.
+          </p>
+          <pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+        </section>
+
+        <section>
+          <h2>Pretty Code</h2>
+          <pre><code class="hljs" data-trim contenteditable>
+function linkify( selector ) {
+  if( supports3DTransforms ) {
+
+    var nodes = document.querySelectorAll( selector );
+
+    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
+      var node = nodes[i];
+
+      if( !node.className ) {
+        node.className += ' roll';
+      }
+    }
+  }
+}
+					</code></pre>
+          <p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+        </section>
+
+        <section>
+          <h2>Marvelous List</h2>
+          <ul>
+            <li>No order here</li>
+            <li>Or here</li>
+            <li>Or here</li>
+            <li>Or here</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Fantastic Ordered List</h2>
+          <ol>
+            <li>One is smaller than...</li>
+            <li>Two is smaller than...</li>
+            <li>Three!</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Tabular Tables</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Value</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Apples</td>
+                <td>$1</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>Lemonade</td>
+                <td>$2</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>Bread</td>
+                <td>$3</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section>
+          <h2>Clever Quotes</h2>
+          <p>
+            These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+              &ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
+          </p>
+          <blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
+            &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+            reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
+          </blockquote>
+        </section>
+
+        <section>
+          <h2>Intergalactic Interconnections</h2>
+          <p>
+            You can link between slides internally,
+            <a href="#/2/3">like this</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Speaker View</h2>
+          <p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
+          <p>Press the <em>S</em> key to try it out.</p>
+
+          <aside class="notes">
+            Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+          </aside>
+        </section>
+
+        <section>
+          <h2>Export to PDF</h2>
+          <p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
+          <iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+        </section>
+
+        <section>
+          <h2>Global State</h2>
+          <p>
+            Set <code>data-state="something"</code> on a slide and <code>"something"</code>
+            will be added as a class to the document element when the slide is open. This lets you
+            apply broader style changes, like switching the page background.
+          </p>
+        </section>
+
+        <section data-state="customevent">
+          <h2>State Events</h2>
+          <p>
+            Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
+          </p>
+          <pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
+Reveal.addEventListener( 'customevent', function() {
+	console.log( '"customevent" has fired' );
+} );
+					</code></pre>
+        </section>
+
+        <section>
+          <h2>Take a Moment</h2>
+          <p>
+            Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
+          </p>
+        </section>
+
+        <section>
+          <h2>Much more</h2>
+          <ul>
+            <li>Right-to-left support</li>
+            <li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
+            <li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
+            <li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
+            <li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
+          </ul>
+        </section>
+
+        <section style="text-align: left;">
+          <h1>THE END</h1>
+          <p>
+            - <a href="http://slides.com">Try the online editor</a> <br>
+            - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+          </p>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script src="js/metodos.js"></script>
+    <script>
+
+              // More info https://github.com/hakimel/reveal.js#configuration
+              Reveal.initialize({
+                  controls: true,
+                  progress: true,
+                  history: true,
+                  center: true,
+                  transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                  // More info https://github.com/hakimel/reveal.js#dependencies
+                  dependencies: [
+                      {src: 'lib/js/classList.js', condition: function () {
+                              return !document.body.classList;
+                          }},
+                      {src: 'plugin/markdown/marked.js', condition: function () {
+                              return !!document.querySelector('[data-markdown]');
+                          }},
+                      {src: 'plugin/markdown/markdown.js', condition: function () {
+                              return !!document.querySelector('[data-markdown]');
+                          }},
+                      {src: 'plugin/highlight/highlight.js', async: true, callback: function () {
+                              hljs.initHighlightingOnLoad();
+                          }},
+                      {src: 'plugin/zoom-js/zoom.js', async: true},
+                      {src: 'plugin/notes/notes.js', async: true}
+                  ]
+              });
+
+    </script>
+
+  </body>
+</html>

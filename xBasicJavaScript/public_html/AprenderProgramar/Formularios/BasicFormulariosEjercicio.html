@@ -1,0 +1,74 @@
+<!--
+  Fecha : 18-sep-2016, 11:18:40
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+  http://www.aprenderaprogramar.es/
+  index.php?
+  option=com_content&view=article&id=874:
+  validar-formularios-con-javascript-ejemplo-email-campo-no-vacio-radio-button-checkbox-select-cu01185e&catid=78:
+  tutorial-basico-programador-web-javascript-desde-&Itemid=206
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <style type="text/css">
+      input {
+          margin:10px;
+      }
+    </style>
+
+    <script type="text/javascript" >
+      function Valida(formulario) {
+//                Validacion de campos NO VACIOS
+          if ((formulario.campo1.value.length === 0
+                  || (formulario.campo2.value.length === 0)
+                  || (formulario.cpostal.value.length === 0)
+                  || (formulario.dni.value.length === 0)
+                  || (formulario.value.length === 0)))
+          {
+              alert("Falta de Informacion");
+              return false;
+          }
+          if (isNaN(parseInt(formulario.campo2.value))) {
+              alert("El campo2 debe ser un numero");
+              return false;
+          }
+//          Validacion del Codigo Postal
+          var ercp = /(^([0-9]{5,5})|^)$/;
+          if (!(ercp.test(formulario.cpostal.value))) {
+              alert('Contenido del codigo postal no es un codigo postal valido');
+              return false;
+          }
+//          Validacion del email
+          var ercorreo = /^[^@\s]+@[^@\.\s]+(\.[^@\.\s]+)+$/;
+          if (!(ercorreo.test(formulario.email.value))) {
+              alert('Contenido del email no es un correo electronico valido');
+              return false;
+          }
+          return true;
+      }
+    </script>
+
+  </head>
+  <body>
+    <div>
+      <form name="miFormulario" onsubmit="return Valida(this);" action="#">
+        Campo1 <input type="text" name="campo1"><br />
+        Campo2 <input type="text" name="campo2"><br />
+        Codigo postal<input type="text" name="cpostal"><br />
+        DNI <input type="text" name="dni"><br />
+        Email <input type="text" name="email"><br />
+        <input type="submit" value="Enviar" name="enviar">
+      </form>
+    </div>
+  </body>
+</html>

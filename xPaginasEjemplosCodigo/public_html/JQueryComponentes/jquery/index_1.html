@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="">
+    <script>
+      $("#dt").datepicker({
+        onSelect: function (dateText, inst) {
+          var date = $(this).val();
+          var time = $('#time').val();
+          alert('on select triggered');
+          $("#start").val(date + time.toString(' HH:mm').toString());
+          console.log(date + time.toString(' HH:mm').toString());
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div>
+      <form>
+        <input id="dt" />
+        <input type="text" id="time" />
+        <input type="hidden" id="start" />
+      </form>
+    </div>
+  </body>
+</html>

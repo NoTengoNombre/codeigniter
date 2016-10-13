@@ -1,0 +1,95 @@
+
+<!--
+  Fecha : 18-sep-2016, 23:52:16
+  Author     : RVS
+  Pag : http://www.aprenderaprogramar.com/index.php?option=com_content&view=article&id=870:javascript-validar-campo-texto-vacio-numerico-o-email-correo-electronico-ejemplos-formularios-cu01182e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+    <style type="text/css">
+      body {
+          background-color: #ffff33;
+          font-family: sans-serif;
+      }
+
+      label{
+          color : #cc3300;
+          display: block;
+          padding: 5px;
+      }
+    </style>
+    <script type="text/javascript">
+
+      window.onload = function () {
+          document.formularioContacto.nombre.focus();
+          document.formularioContacto.addEventListener('submit', validarFormulario);
+      };
+
+      function validarFormulario(evObject) {
+          evObject.preventDefault();
+          var todoCorrecto = true;
+          var formulario = document.formularioContacto;
+          for (var i = 0; i < formulario.length; i++) {
+              if (formulario[i].type === 'text') {
+                  if (formulario[i].value === null || formulario[i].value.length === 0
+                          || /^\s*$/.test(formulario[i].value)) {
+                      alert(formulario[i].name + ' No puede estar vacio o contener solo espacios en blanco ');
+                      todoCorrecto = false;
+                  }
+              }
+          }
+          if (todoCorrecto === true) {
+              formulario.submit();
+          }
+      }
+
+
+    </script>
+  </head>
+  <body>
+    <div>
+      <div id="cabecera">
+        <h1>Portal web aprender a programar.com</h1>
+      </div>
+      <h2>Didactica y divulgacion de la programacion</h2>
+    </div>
+    <form name="formularioContacto" class="formularioTipo1" method="get" action="#" >
+      <p> Si quieres contactar con nosotros</p>
+      <label for="nombre">
+        <span>
+          Nombre : 
+        </span>
+        <input id="nombre" type="text" name="nombre" />
+      </label>
+      <label for="apellidos">
+        <span>
+          Apellidos : 
+        </span>
+        <input id="apellidos" type="text" name="apellidos" />
+      </label>
+      <label for="email">
+        <span>
+          Email : 
+        </span>
+        <input id="email" type="text" name="email" />
+      </label>
+      <label>
+        <input type="submit" value="Enviar">
+      </label>
+      <label>
+        <input type="reset" value="Cancelar">
+      </label>
+    </form>
+
+  </body>
+</html>

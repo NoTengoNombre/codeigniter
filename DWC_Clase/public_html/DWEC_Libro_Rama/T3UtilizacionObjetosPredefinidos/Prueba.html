@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ejercicio 18 - Utilidades, Calendario</title>
+
+        <link rel="stylesheet" type="text/css" media="all" href="css/calendar-estilo.css" />
+
+        <script type="text/javascript" src="js/calendar.js"></script>
+        <script type="text/javascript" src="js/calendar-es.js"></script>
+        <script type="text/javascript" src="js/calendar-setup.js"></script>
+
+    </head>
+
+    <body>
+
+        <p></p>
+        <input type="hidden" name="fecha" id="fecha" />
+        <span style="background-color: #ffc; cursor:default; padding:.3em; border:thin solid #ff0; text-decoration:underline; color: blue;" 
+              onmouseover="this.style.cursor = 'pointer'; this.style.cursor = 'hand'; this.style.backgroundColor = '#ff8'; this.style.textDecoration = 'none';"
+              onmouseout="this.style.backgroundColor = '#ffc'; this.style.textDecoration = 'underline';"
+              id="fecha_usuario">
+            Pincha aquí para seleccionar la fecha
+        </span>
+
+
+        <script type="text/javascript">
+            Calendar.setup({
+                inputField: "fecha",
+                ifFormat: "%d/%m/%Y",
+                weekNumbers: false,
+                displayArea: "fecha_usuario",
+                daFormat: "%A, %d de %B de %Y"
+            });
+        </script>
+
+    </body>
+</html>

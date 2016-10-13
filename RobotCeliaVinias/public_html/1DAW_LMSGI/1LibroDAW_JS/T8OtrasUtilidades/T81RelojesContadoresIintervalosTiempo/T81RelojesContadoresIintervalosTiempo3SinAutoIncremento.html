@@ -1,0 +1,54 @@
+
+<!--
+  Fecha : 19-sep-2016, 18:23:52
+  Author     : RVS
+  Pag : 
+  Version : 1   
+  Enlaces : http://validator.w3.org/ 
+  Recomendaciones Tecnicas : https://www.w3.org/TR/WCAG10-CSS-TECHS/
+  Colores : https://www.w3.org/TR/CSS21/syndata.html#value-def-color
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" />
+  </head>
+  <body>
+    <div>
+      <form>
+        <input type="button" onclick="muestraReloj()" value="Pulsar">
+      </form>
+    </div>
+    <div>
+      <p id="reloj">Valor</p>
+    </div>
+    <script>
+      function muestraReloj() {
+          var fechaHora = new Date();
+          var horas = fechaHora.getHours();
+          var minutos = fechaHora.getMinutes();
+          var segundos = fechaHora.getSeconds();
+
+          if (horas < 10) {
+              horas = '0' + horas;
+          }
+
+          if (minutos < 10) {
+              minutos = '0' + minutos;
+          }
+          if (segundos < 10) {
+              segundos = '0' + segundos;
+          }
+          document.getElementById("reloj").innerHTML = horas + ':' + minutos + ':' + segundos;
+      }
+// Si esta fuera , se ejecuta automaticamente
+// y no se autoincrementa solo , tienes que darle al boton           
+          setTimeout(muestraReloj, 1000); 
+    </script>
+  </body>
+</html>
+
