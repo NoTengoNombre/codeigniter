@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <!--
-    @Created on : 16-oct-2016, 23:00:57
+    @Created on : 19-oct-2016, 16:36:51
     @Author     : RVS - N.F.N.D
     @Pag        :
     @version    :
+    @TODO       :
 -->
 <html>
   <head>
@@ -12,9 +13,7 @@
   </head>
   <body>
     <?php
-    phpinfo();
-    
-    phpinfo(INFO_MODULES);
+    echo "hello friend";
     ?>
   </body>
 </html>
