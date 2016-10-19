@@ -18,9 +18,9 @@
       static $valor = 1;
 
       static function valor() {
+        echo "mostrar valor static ";
         echo static::$valor += 10;
       }
-
     }
 
     Ver::valor();
