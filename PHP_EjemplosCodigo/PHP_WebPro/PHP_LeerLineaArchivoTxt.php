@@ -22,8 +22,8 @@
 
 //    Guardar las lineas del documento
     $fp = fopen($doc, "r");
-    for ($i = 0; $i <= $ulv; $i++) {
-      $EstWebs[$i] = fgets($fp);
+    for ($indice = 0; $indice <= $ulv; $indice++) {
+      $EstWebs[$indice] = fgets($fp);
     }
     fclose($fp);
     ?>

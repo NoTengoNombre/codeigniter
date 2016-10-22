@@ -17,7 +17,7 @@
     class Login {
 
       /**
-       * 
+       * Mostrar Login
        */
       public function showForm() {
         ?>
@@ -42,7 +42,7 @@
     }
 
     /**
-     * 
+     * Comprueba el login
      */
     public function checkLogin() {
       echo "<html>";
