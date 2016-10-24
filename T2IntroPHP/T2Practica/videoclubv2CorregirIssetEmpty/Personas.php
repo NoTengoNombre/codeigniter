@@ -76,8 +76,9 @@ class Personas {
           . '</tr>';
         }
       }
+      $mysqli->close();
     }
-    $mysqli->close();
+    echo ("<br><strong>No se han encontrado valores </strong><br>");
   }
 
   /**
@@ -91,19 +92,31 @@ class Personas {
     }
     if (isset($_GET['cod_persona'])) {
       if (empty($_GET['cod_persona'])) {
-        echo "<em>Atencion : No se pueden añadir campos <strong>vacios o nulos</strong></em>";
+        echo "<em>Atencion : No se pueden añadir campos <strong>vacios o nulos</strong></em><br>";
       } else {
-        $sql = "INSERT INTO Personas (cod_persona,nombre,apellidos,pais) VALUES ('" .
-                $this->cod_persona . "','" . $this->nombre . "','" . $this->apellidos . "','" . $this->pais . "' ) ; ";
-        $inserccion = $mysqli->query($sql);
-        if ($inserccion === true) {
-          echo ("<em> Nueva Inserccion del Registro </em><br>");
-        } else {
-          echo ("<br><b> No se Realizo Inserccion del Registro</b><br>");
+        $sql = "INSERT INTO Personas (cod_persona,nombre,apellidos,pais) VALUES ('" . $this->cod_persona . "','" . $this->nombre . "','" . $this->apellidos . "','" . $this->pais . "');";
+        $mysqli->query($sql);
+        echo ("<em> Nueva Inserccion del Registro </em><br>");
+        $resultado = $mysqli->query("SELECT * FROM Personas WHERE cod_persona LIKE '" . $this->cod_persona . "';");
+        echo "<br><table border='1'>"
+        . "<tr>"
+        . "<th> cod_persona </th>"
+        . "<th> nombre </th>"
+        . "<th> apellidos </th>"
+        . "<th> pais </th>"
+        . "</tr>";
+        while ($registro = $resultado->fetch_assoc()) {
+          echo '<tr>'
+          . '<td>' . $registro['cod_persona'] . '</td>'
+          . '<td>' . $registro['nombre'] . '</td>'
+          . '<td>' . $registro['apellidos'] . '</td>'
+          . '<td>' . $registro['pais'] . '</td>'
+          . '</tr>';
         }
         $mysqli->close();
       }
     }
+    echo ("<br><b> No se Realizo Inserccion del Registro</b><br>");
   }
 
   /**
@@ -122,6 +135,14 @@ class Personas {
     if ($registro == true) {
       echo "<strong><br> Consulta realizada</strong>";
       echo "<br>";
+      while ($registro = $resultado->fetch_assoc()) {
+        echo '<tr>'
+        . '<td>' . $registro['cod_persona'] . '</td>'
+        . '<td>' . $registro['nombre'] . '</td>'
+        . '<td>' . $registro['apellidos'] . '</td>'
+        . '<td>' . $registro['pais'] . '</td>'
+        . '</tr>';
+      }
     }
     $mysqli->close();
   }
@@ -140,10 +161,26 @@ class Personas {
       $resultado = $mysqli->query("DELETE FROM Personas WHERE cod_persona LIKE '" . $this->cod_persona . "';");
       if ($resultado == true) {
         echo "<br> <strong> Registro Borrado CON EXITO </strong>";
+        while ($registro = $resultado->fetch_assoc()) {
+          echo '<tr>'
+          . '<td>' . $registro['cod_persona'] . '</td>'
+          . '<td>' . $registro['nombre'] . '</td>'
+          . '<td>' . $registro['apellidos'] . '</td>'
+          . '<td>' . $registro['pais'] . '</td>'
+          . '</tr>';
+        }
         $mysqli->close();
       } else {
         echo "<br> <strong> Registro NO Borrado </strong><br>";
         echo "<br>  Comprueba <strong>cod_persona</strong> es correcto <br>";
+        while ($registro = $resultado->fetch_assoc()) {
+          echo '<tr>'
+          . '<td>' . $registro['cod_persona'] . '</td>'
+          . '<td>' . $registro['nombre'] . '</td>'
+          . '<td>' . $registro['apellidos'] . '</td>'
+          . '<td>' . $registro['pais'] . '</td>'
+          . '</tr>';
+        }
         $mysqli->close();
       }
     } else {
