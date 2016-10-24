@@ -13,7 +13,7 @@
   </head>
   <body>
     <?php
-    echo "hello friend";
+    echo "hello friend !!!";
     ?>
   </body>
 </html>
