@@ -91,9 +91,10 @@ class Personas {
     }
     if (isset($_GET['cod_persona'])) {
       if (empty($_GET['cod_persona'])) {
-        echo "<br><em>No se pueden añadir campos vacios o nulos</em>";
+        echo "<em>Atencion : No se pueden añadir campos <strong>vacios o nulos</strong></em>";
       } else {
-        $sql = "INSERT INTO Personas (cod_persona,nombre,apellidos,pais) VALUES ('" . $this->cod_persona . "','" . $this->nombre . "','" . $this->apellidos . "','" . $this->pais . "' ) ; ";
+        $sql = "INSERT INTO Personas (cod_persona,nombre,apellidos,pais) VALUES ('" .
+                $this->cod_persona . "','" . $this->nombre . "','" . $this->apellidos . "','" . $this->pais . "' ) ; ";
         $inserccion = $mysqli->query($sql);
         if ($inserccion === true) {
           echo ("<em> Nueva Inserccion del Registro </em><br>");
@@ -161,8 +162,8 @@ if (isset($_GET['enviar'])) {
   $per->nombre = $_GET['nombre'];
   $per->apellidos = $_GET['apellidos'];
   $per->pais = $_GET['pais'];
-  $per->consultar_personas();
-//  $per->aniadir_personas();
+//  $per->consultar_personas();
+  $per->aniadir_personas();
 //      $per->modificar_personas();
 //      $per->borrar_personas();
 }
