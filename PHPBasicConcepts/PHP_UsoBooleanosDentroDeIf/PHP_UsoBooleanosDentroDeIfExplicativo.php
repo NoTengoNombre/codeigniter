@@ -32,6 +32,11 @@
 
 <?php
 if ((isset($_REQUEST['cod_persona']) && isset($_REQUEST['nombre'])) && (isset($_REQUEST['apellidos']) && isset($_REQUEST['pais']))) {
+  echo "<hr>";
+  echo "<br>1 valor " . $_REQUEST['cod_persona'];
+  echo "<br>2 valor " . $_REQUEST['nombre'];
+  echo "<br>3 valor " . $_REQUEST['apellidos'];
+  echo "<br>4 valor " . $_REQUEST['pais'];
   if ((!empty($_REQUEST['cod_persona']) && !empty($_REQUEST['nombre'])) && (!empty($_REQUEST['apellidos']) && !empty($_REQUEST['pais']))) {
     echo "<hr>";
     echo "<h3>Datos Definidos</h3>";
@@ -43,6 +48,15 @@ if ((isset($_REQUEST['cod_persona']) && isset($_REQUEST['nombre'])) && (isset($_
     echo "<hr>";
   } else {
     echo "<h3>Datos no definidos</h3>";
+    echo "<hr>";
+    echo "<br>9 valor null ? " . is_null($_REQUEST['cod_persona']);
+    echo "<br>9 valor tipo " . var_dump($_REQUEST['cod_persona']);
+    echo "<br>10 valor null ? " . is_null($_REQUEST['nombre']);
+    echo "<br>10 valor tipo " . var_dump($_REQUEST['nombre']);
+    echo "<br>11 valor null ? " . is_null($_REQUEST['apellidos']);
+    echo "<br>11 valor tipo " . var_dump($_REQUEST['apellidos']);
+    echo "<br>12 valor null ? " . is_null($_REQUEST['pais']);
+    echo "<br>12 valor tipo " . var_dump($_REQUEST['pais']);
   }
 }
 ?>

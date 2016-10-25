@@ -37,7 +37,7 @@ if (isset($_REQUEST['cod_persona'], $_REQUEST['nombre'], $_REQUEST['apellidos'],
   echo "<br>2 definida " . $_REQUEST['nombre'];
   echo "<br>3 definida " . $_REQUEST['apellidos'];
   echo "<br>4 definida " . $_REQUEST['pais'];
-  if (empty($_REQUEST['cod_persona']) && empty($_REQUEST['nombre']) && empty($_REQUEST['apellidos']) || empty($_REQUEST['pais'])) {
+  if (empty($_REQUEST['cod_persona']) && empty($_REQUEST['nombre']) || (empty($_REQUEST['apellidos']) && empty($_REQUEST['pais']))) {
     echo "<h3>Datos no definidos</h3>";
   } else {
     echo "<h3>Datos Definidos</h3>";

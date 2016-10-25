@@ -54,16 +54,12 @@ if ((empty($_REQUEST['cod_persona']) && empty($_REQUEST['nombre'])) && (empty($_
   echo "No Introducir datos en el campo devuelve <strong>Verdadero</strong>";
   echo "<br>";
   echo "• cod_persona: " . var_dump((empty($_REQUEST['cod_persona'])));
-  echo "• cod_persona es nula : " . is_null($_REQUEST['cod_persona']);
   echo "<br>";
   echo "• nombre: " . var_dump((empty($_REQUEST['nombre'])));
-  echo "• nombre es nula : " . is_null($_REQUEST['nombre']);
   echo "<br>";
   echo "• apellidos : " . var_dump((empty($_REQUEST['apellidos'])));
-  echo "• apellidos es nula : " . is_null($_REQUEST['apellidos']);
   echo "<br>";
   echo "• pais: " . var_dump((empty($_REQUEST['pais'])));
-  echo "• pais es nula : " . is_null($_REQUEST['pais']);
   echo "<br>";
 } else {
   echo "Introducir datos en el campo devuelve <strong>falso</strong>";
