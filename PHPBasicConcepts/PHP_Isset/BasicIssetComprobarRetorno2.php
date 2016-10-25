@@ -26,15 +26,18 @@
 //    $valor = $_GET['cod_persona']; No definida 1º vez en el formulario
 
 if (isset($_REQUEST['cod_persona'])) {
+  echo "♦ cod_persona: " . var_dump($_REQUEST['cod_persona']);
+  echo "<br>";
   if (empty($_REQUEST['cod_persona'])) {
     $var0 = $_REQUEST['cod_persona'];
     echo " -> No definida " . $var0 . " <h3>Esta vacia</h3>";
+    echo "• cod_persona: " . var_dump((empty($_REQUEST['cod_persona'])));
+    echo "<br>";
   } else {
     $var = $_REQUEST['cod_persona'];
     echo "♦ Variable : " . $var;
   }
 }
-?>  
 
 
 

@@ -113,7 +113,7 @@ class peliculas {
       die(" Error : No se establecio la conexion . " . $db->connect_error);
     }
     echo "Conexion Establecida";
-    if (!empty($_GET['cod_pelicula']) || isset($_GET['cod_pelicula'])) {
+    if (!empty($_REQUEST['cod_pelicula']) || isset($_REQUEST['cod_pelicula'])) {
       $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula = '$this->cod_pelicula'");
       if ($resultado == true) {
         echo "<br> <b> Borrado CON EXISTO </b>";

@@ -25,7 +25,7 @@ class Personas {
     if ($mysqli->connect_errno) {
       die("Error : No se establecido la conexion . " . $mysqli->connect_error);
     }
-    if (!isset($_GET['cod_persona']) || empty($_GET['cod_persona'])) {
+    if (!isset($_REQUEST['cod_persona']) || empty($_REQUEST['cod_persona'])) {
       echo "<em>No hay ningun cod_persona seleccionado</em><br><br>";
     }
     $resultado = $mysqli->query("SELECT * FROM Personas WHERE cod_persona LIKE '" . $this->cod_persona . "';");
@@ -63,7 +63,7 @@ class Personas {
     if ($mysqli->connect_errno) {
       die("Error : No se establecido la conexion . " . $mysqli->connect_error);
     }
-    if (empty($_GET['cod_persona']) || !isset($_GET['cod_persona'])) {
+    if (empty($_REQUEST['cod_persona']) || !isset($_REQUEST['cod_persona'])) {
       echo "<br><em>No se pueden añadir campos vacios o nulos</em>";
     } else {
       $sql = "INSERT INTO Personas (cod_persona,nombre,apellidos,pais) VALUES ('" . $this->cod_persona . "','" . $this->nombre . "','" . $this->apellidos . "','" . $this->pais . "' ) ; ";
@@ -107,7 +107,7 @@ class Personas {
       die(" <br> Error : No se ha establecio la conexion . " . $mysqli->connect_error);
     }
     echo " ♦ Valor de la variable cod_persona :  " . $this->cod_persona;
-    if (isset($_GET['enviar'])) {
+    if (isset($_REQUEST['enviar'])) {
       $resultado = $mysqli->query("DELETE FROM Personas WHERE cod_persona LIKE '" . $this->cod_persona . "';");
       if ($resultado == true) {
         echo "<br> <strong> Registro Borrado CON EXITO </strong>";
@@ -127,12 +127,12 @@ class Personas {
 // Objeto para añadir los datos del formulario a los atributos de clase 
 $per = new Personas();
 
-if (isset($_GET['enviar'])) {
+if (isset($_REQUEST['enviar'])) {
 // Datos se envian formulario se almacenan atributos clase
-  $per->cod_persona = $_GET['cod_persona'];
-  $per->nombre = $_GET['nombre'];
-  $per->apellidos = $_GET['apellidos'];
-  $per->pais = $_GET['pais'];
+  $per->cod_persona = $_REQUEST['cod_persona'];
+  $per->nombre = $_REQUEST['nombre'];
+  $per->apellidos = $_REQUEST['apellidos'];
+  $per->pais = $_REQUEST['pais'];
 //  $per->consultar_personas();
   $per->aniadir_personas();
 //      $per->modificar_personas();

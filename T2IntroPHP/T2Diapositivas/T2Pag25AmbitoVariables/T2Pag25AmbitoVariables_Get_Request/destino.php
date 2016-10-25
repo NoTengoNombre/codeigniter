@@ -14,8 +14,8 @@
   <body>
     <?php
 //    Usar siempre GET para URL
-    $saludo_get = $_GET["saludo"];
-    $texto_get = $_GET["texto"];
+    $saludo_get = $_REQUEST["saludo"];
+    $texto_get = $_REQUEST["texto"];
 
     $saludo_request = $_REQUEST["saludo"];
     $texto_request = $_REQUEST["texto"];

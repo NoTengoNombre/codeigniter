@@ -34,7 +34,6 @@ if (isset($_REQUEST['cod_persona'])) {
     echo "♦ Variable : " . $var;
   }
 }
-?>  
 
 
 
