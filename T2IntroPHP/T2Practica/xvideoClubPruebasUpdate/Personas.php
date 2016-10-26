@@ -31,9 +31,9 @@
   <body>
     <form name="form1" method="get" action ="<?php echo $_SERVER['PHP_SELF'] ?>">
       <label><h3>Formulario</h3></label>
-      Cod_persona : <input type="text" name="cod_persona2" value="">
+      Seleccionar Cod_persona  : <input type="text" name="cod_persona2" value="">
       <br>
-      Cod_persona a Cambiar : <input type="text" name="cod_persona" value="">
+      Cambiar Cod_persona  : <input type="text" name="cod_persona" value="">
       <br>
       Nombre :  <input type="text" name="nombre" value="">
       <br>
@@ -96,9 +96,9 @@ class Personas {
   /**
    * ♥ UPDATE
    */
-  public function modificar_personas0() {
+  public function modificar_personas_anterior() {
     $p = new Personas();
-    $p->consultar_personas();
+    $p->consulta_basica();
     echo "<br>";
     echo "<hr>";
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
@@ -115,6 +115,7 @@ class Personas {
           while ($fila = $resultado->fetch_assoc()) {
             echo '<tr>'
             . '<td>' . $fila['cod_persona'] . '</td>'
+            . '<td>' . $fila['cod_persona2'] . '</td>'
             . '<td>' . $fila['nombre'] . '</td>'
             . '<td>' . $fila['apellidos'] . '</td>'
             . '<td>' . $fila['pais'] . '</td>'
@@ -136,18 +137,18 @@ class Personas {
    */
   public function modificar_personas() {
     $p = new Personas();
-    $p->consultar_personas();
+    $p->consulta_basica();
     $db = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($db->connect_errno) {
       die("Error : No se establecido la conexion . " . $db->connect_error);
     }
-    if ((isset($_REQUEST['cod_persona']) && isset($_REQUEST['nombre'])) && (isset($_REQUEST['apellidos']) && isset($_REQUEST['pais']) && isset($_REQUEST['cod_persona2']) )) {
-      if ((!empty($_REQUEST['cod_persona']) && !empty($_REQUEST['nombre'])) && (!empty($_REQUEST['apellidos']) && !empty($_REQUEST['pais']) && !empty($_REQUEST['cod_persona2']))) {
+    if ((isset($_REQUEST['cod_persona2']) && isset($_REQUEST['cod_persona']) && isset($_REQUEST['nombre'])) && (isset($_REQUEST['apellidos']) && isset($_REQUEST['pais']))) {
+      if ((!empty($_REQUEST['cod_persona2']) && !empty($_REQUEST['cod_persona']) && !empty($_REQUEST['nombre'])) && (!empty($_REQUEST['apellidos']) && !empty($_REQUEST['pais']))) {
         $consulta = "UPDATE personas SET cod_persona='" . $this->cod_persona . "', nombre='" . $this->nombre . "', apellidos='"
                 . $this->apellidos . "', pais='" . $this->pais . "' WHERE cod_persona = '" . $this->cod_persona2 . "';";
         $resultado = $db->query($consulta);
         if ($resultado != 0) {
-          echo "<br><strong>Consulta realizada</strong><br>";
+          echo "<br><strong>Consulta realizada : </strong> .  $resultado .<br>";
           $resultado->free();
           $db->close();
         } else {
@@ -155,24 +156,27 @@ class Personas {
           $db->close();
         }
       }
-      echo "Error en el isset ";
     }
+    echo "Error en el isset ";
+  }
 
+}
 
 // Objeto para añadir los datos del formulario a los atributos de clase 
-    $per = new Personas();
+$per = new Personas();
 
-    if (isset($_REQUEST['enviar'])) {
+if (isset($_REQUEST['enviar'])) {
 // Datos se envian formulario se almacenan atributos clase
-      $per->cod_persona = $_REQUEST['cod_persona'];
-      $per->nombre = $_REQUEST['nombre'];
-      $per->apellidos = $_REQUEST['apellidos'];
-      $per->pais = $_REQUEST['pais'];
-      $per->consulta_basica();
+  $per->cod_persona = $_REQUEST['cod_persona'];
+  $per->cod_persona2 = $_REQUEST['cod_persona2'];
+  $per->nombre = $_REQUEST['nombre'];
+  $per->apellidos = $_REQUEST['apellidos'];
+  $per->pais = $_REQUEST['pais'];
+//  $per->consulta_basica();
 //  $per->consultar_personas();
 //  $per->aniadir_personas();
-//  $per->modificar_personas();
+  $per->modificar_personas();
 //  $per->borrar_personas();
-    }
+}
 
     
