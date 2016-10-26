@@ -60,7 +60,7 @@
 <hr>
 <?php
 
-class peliculas {
+class Peliculas {
 
 // Atributos
   public $cod_pelicula;
@@ -170,7 +170,7 @@ class peliculas {
 
 }
 
-$pe = new peliculas();
+$pe = new Peliculas();
 if (isset($_POST['enviar'])) {
   $pe->cod_pelicula = $_POST['cod_pelicula'];
   $pe->titulo = $_POST['titulo'];

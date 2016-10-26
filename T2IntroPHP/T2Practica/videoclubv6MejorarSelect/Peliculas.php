@@ -57,15 +57,14 @@ class Peliculas {
   public $pais;
   public $anio;
 
-  public function consulta_basica() {
+  public function consulta_basica($var0, $var1) {
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($mysqli->connect_errno) {
       die("Error : No se establecido la conexion . " . $mysqli->connect_error);
     }
-    $resultado = $mysqli->query("SELECT * FROM peliculas WHERE cod_pelicula LIKE '%';"); // Todos los resultados
-
+    $resultado = $mysqli->query("SELECT * FROM peliculas WHERE $var0 LIKE '$var1';"); // Todos los resultados
     if ($resultado->num_rows > 0) {
-      echo '<em><strong>Total de Numeros de Registros</strong></em> = ' . $resultado->num_rows . '';
+      echo '<em><strong>Total de Peliculas Encontradas </strong></em> = ' . $resultado->num_rows . '';
       echo "<br><table border='1'>"
       . "<tr>"
       . "<th> Cod_pelicula </th>"
@@ -87,47 +86,53 @@ class Peliculas {
     $mysqli->close();
   }
 
-  /**
-   * ♥ Funciona con objetos y arrays asociativo
-   * Metodo ejecuta la consulta para 
-   * ello necesita el objeto
-   *  para realizar la conexion
-   */
   public function consultar_pelicula() {
-    $p = new Peliculas();
-    $p->consulta_basica();
+    $pe = new Peliculas();
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($mysqli->connect_errno) {
       die("<b><br>Error en la conexion : </b>" . $mysqli->connect_error);
     }
-    if ((isset($_REQUEST['cod_pelicula']) && isset($_REQUEST['titulo'])) && (isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anio']))) {
-//      if ((!empty($_REQUEST['cod_pelicula']) || !empty($_REQUEST['titulo'])) || ((!empty($_REQUEST['genero']) && !empty($_REQUEST['pais'])) || (!empty($_REQUEST['anio']) >= 1900))) {
-      $resultado = $mysqli->query("SELECT * FROM peliculas WHERE cod_pelicula LIKE '" . $this->cod_pelicula . "' OR titulo='" . $this->titulo . "' OR genero ='" . $this->genero . "' OR pais='" . $this->pais . "' OR anio= '" . $this->anio . "';");
-      echo "Numero de filas : " . $numeroRegistros = $resultado->num_rows;
-      if ($resultado->num_rows > 0) {
-        echo "<br><em> El Numero de Registros Encontrados  </em>: ", $numeroRegistros, " ";
-        echo "<hr>";
-        echo "<table border='1'>"
-        . "<tr>"
-        . "<th> Cod_pelicula </th>"
-        . "<th> Titulo </th>"
-        . "<th> Genero </th>"
-        . "<th> Pais </th>"
-        . "<th> Anio </th>"
-        . "</tr>";
-      }
-      while ($registro = $resultado->fetch_assoc()) {
-        echo'<tr>'
-        . '<td>' . $registro["cod_pelicula"] . '</td>';
-        echo'<td><br>' . $registro["titulo"] . '</td>';
-        echo'<td><br>' . $registro["genero"] . '</td>';
-        echo'<td><br>' . $registro["pais"] . '</td>';
-        echo'<td><br>' . $registro["anio"] . '</td>'
-        . '</tr>';
-      }
-      $mysqli->close();
-//      }
+    $tmp = (isset($_REQUEST["cod_pelicula"])) ? trim(htmlspecialchars($_REQUEST["cod_pelicula"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp1 = (isset($_REQUEST["titulo"])) ? trim(htmlspecialchars($_REQUEST["titulo"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp2 = (isset($_REQUEST["genero"])) ? trim(htmlspecialchars($_REQUEST["genero"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp3 = (isset($_REQUEST["pais"])) ? trim(htmlspecialchars($_REQUEST["pais"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp4 = (isset($_REQUEST["anio"])) ? trim(htmlspecialchars($_REQUEST["anio"], ENT_QUOTES, "UTF-8")) : "";
+
+    if ($tmp == "") {
+      
+    } else {
+      $pe->consulta_basica("cod_pelicula", $tmp);
+      echo "<hr>";
     }
+
+    if ($tmp1 == "") {
+      
+    } else {
+      $pe->consulta_basica("titulo", $tmp1);
+      echo "<hr>";
+    }
+
+    if ($tmp2 == "") {
+      
+    } else {
+      $pe->consulta_basica("genero", $tmp2);
+      echo "<hr>";
+    }
+
+    if ($tmp3 == "") {
+      
+    } else {
+      $pe->consulta_basica("pais", $tmp3);
+      echo "<hr>";
+    }
+
+    if ($tmp4 == "") {
+      
+    } else {
+      $pe->consulta_basica("anio", $tmp4);
+      echo "<hr>";
+    }
+    $mysqli->close();
   }
 
   /**

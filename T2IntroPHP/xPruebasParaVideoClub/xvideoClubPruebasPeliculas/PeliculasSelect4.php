@@ -4,12 +4,6 @@
     @Pag        :
     @version    :
     @TODO       : Crea una base de datos nueva llamada Videoclub en MySQL con la siguiente estructura:
-
-                  *Películas (cod_película, título, género, país, año)
-                  *Personas (cod_persona, nombre, apellidos, país)
-                  *Actúan (cod_película#, cod_persona#)
-                  *Usuarios (id, user, pass)
- 
                   También debe ser posible hacer un mantenimiento de la tabla Películas 
                   (Añadir, eliminar y modificar), pero ten cuidado, porque en este caso 
                   hay que enlazarla con la tabla Actúan para especificar los actores que trabajan en la película.
@@ -20,7 +14,6 @@
                   El acceso a la aplicación tiene que estar controlado mediante 
                   una pantalla de login que solo permita acceder al programa a los usuarios registrados.
 -->
-<hr>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -63,7 +56,6 @@ class Peliculas {
       die("Error : No se establecido la conexion . " . $mysqli->connect_error);
     }
     $resultado = $mysqli->query("SELECT * FROM peliculas WHERE cod_pelicula LIKE '%';"); // Todos los resultados
-
     if ($resultado->num_rows > 0) {
       echo '<em><strong>Total de Numeros de Registros</strong></em> = ' . $resultado->num_rows . '';
       echo "<br><table border='1'>"
@@ -87,22 +79,29 @@ class Peliculas {
     $mysqli->close();
   }
 
-  /**
-   * ♥ Funciona con objetos y arrays asociativo
-   * Metodo ejecuta la consulta para 
-   * ello necesita el objeto
-   *  para realizar la conexion
-   */
   public function consultar_pelicula() {
-    $p = new Peliculas();
-    $p->consulta_basica();
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($mysqli->connect_errno) {
       die("<b><br>Error en la conexion : </b>" . $mysqli->connect_error);
     }
-    if ((isset($_REQUEST['cod_pelicula']) && isset($_REQUEST['titulo'])) && (isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anio']))) {
-//      if ((!empty($_REQUEST['cod_pelicula']) || !empty($_REQUEST['titulo'])) || ((!empty($_REQUEST['genero']) && !empty($_REQUEST['pais'])) || (!empty($_REQUEST['anio']) >= 1900))) {
+    $tmp = (isset($_REQUEST["cod_pelicula"])) ? trim(htmlspecialchars($_REQUEST["cod_pelicula"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp1 = (isset($_REQUEST["titulo"])) ? trim(htmlspecialchars($_REQUEST["titulo"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp2 = (isset($_REQUEST["genero"])) ? trim(htmlspecialchars($_REQUEST["genero"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp3 = (isset($_REQUEST["pais"])) ? trim(htmlspecialchars($_REQUEST["pais"], ENT_QUOTES, "UTF-8")) : "";
+    $tmp4 = (isset($_REQUEST["anio"])) ? trim(htmlspecialchars($_REQUEST["anio"], ENT_QUOTES, "UTF-8")) : "";
+    if ($tmp == "" && $tmp1 == "" && $tmp2 == "" && $tmp3 == "" && $tmp4 == "") {
+      print "<p>No ha escrito ningun nombre $tmp</p>";
+      print "<p>No ha escrito ningun nombre $tmp1</p>";
+      print "<p>No ha escrito ningun nombre $tmp2</p>";
+      print "<p>No ha escrito ningun nombre $tmp3</p>";
+      print "<p>No ha escrito ningun nombre $tmp4</p>";
+    } else {
       $resultado = $mysqli->query("SELECT * FROM peliculas WHERE cod_pelicula LIKE '" . $this->cod_pelicula . "' OR titulo='" . $this->titulo . "' OR genero ='" . $this->genero . "' OR pais='" . $this->pais . "' OR anio= '" . $this->anio . "';");
+      print "<p> Su nombre es " . $tmp . "</p>";
+      print "<p> Su nombre es " . $tmp1 . "</p>";
+      print "<p> Su nombre es " . $tmp2 . "</p>";
+      print "<p> Su nombre es " . $tmp3 . "</p>";
+      print "<p> Su nombre es " . $tmp4 . "</p>";
       echo "Numero de filas : " . $numeroRegistros = $resultado->num_rows;
       if ($resultado->num_rows > 0) {
         echo "<br><em> El Numero de Registros Encontrados  </em>: ", $numeroRegistros, " ";
@@ -126,70 +125,7 @@ class Peliculas {
         . '</tr>';
       }
       $mysqli->close();
-//      }
     }
-  }
-
-  /**
-   * ♥ Parece que funciona bien 
-   * Comprueba que no esta vacio el cod_pelicula
-   * si lo estas no realiza inserccion
-   */
-  public function aniadir_pelicula() {
-    $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
-    if ($mysqli->connect_errno) {
-      die("Error : No se establecido la conexion . " . $mysqli->connect_error);
-    }
-    echo "Conexion establecida";
-    $sql = "INSERT INTO peliculas (cod_pelicula,titulo,genero,pais,anio) VALUES ('" . $this->cod_pelicula . "','" . $this->titulo . "','" . $this->genero . "','" . $this->pais . "' , '" . $this->anio . "');";
-    $inserccion = $mysqli->query($sql);
-    echo "<br>";
-    if ($inserccion === true) {
-      echo ("<em> Nueva Inserccion del Registro </em><br>");
-    } else {
-      echo ("<b> No se Realizo Inserccion del Registro</b><br>");
-    }
-    $mysqli->close();
-  }
-
-  /**
-   * ♥ Parte 1º
-   * Recibe del metodo consultar_return_borrar el cod_pelicula 
-   * que quiero borrar
-   * Borra la pelicula por medio del cod_pelicula
-   */
-  public function borrar_pelicula() {
-    $db = new mysqli("localhost", "root", "", "videoclubprueba");
-    if ($db->connect_errno) {
-      die(" Error : No se establecio la conexion . " . $db->connect_error);
-    }
-    echo "Conexion Establecida";
-    if (!empty($_REQUEST['cod_pelicula']) || isset($_REQUEST['cod_pelicula'])) {
-      $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula = '$this->cod_pelicula'");
-      if ($resultado == true) {
-        echo "<br> <b> Borrado CON EXISTO </b>";
-        $db->close();
-      } else {
-        echo "<br> <b> Borrado SIN EXISTO </b><br>";
-        echo "<br> <b> Comprueba cod_pelicula es correcto </b><br>";
-        $db->close();
-      }
-    } else {
-      echo " <br> Sin acceso <br> Introduce el <strong>cod_pelicula</strong> en el campo <b>cod_pelicula</b> ";
-    }
-  }
-
-// forma de crear el formulario con lenguaje PHP 
-  function crear_formulario() {
-    echo "<form name='form_peliculas' method='post' action='index.php'>";
-    echo " Cod Pelicula " . "<input type='text' name='cod_pelicula'><br>";
-    echo " Titulo " . "<input type='text' name='titulo'><br>";
-    echo " Genero " . "<input type='text' name='genero'><br>";
-    echo " Pais " . "<input type='text' name='pais'><br>";
-    echo " Anio " . "<input type='number' name='anio'><br>";
-    echo "<input type='hidden' name='accion' value='inserta' />";
-    echo "<input type='submit' name='formfunc' value='enviar'><br>";
-    echo "</from>";
   }
 
 }
@@ -201,10 +137,6 @@ if (isset($_POST['enviar'])) {
   $pe->genero = $_POST['genero'];
   $pe->pais = $_POST['pais'];
   $pe->anio = $_POST['anio'];
-//  $pe->consulta_basica();
   $pe->consultar_pelicula();
-//  $pe->aniadir_pelicula();
-// $pe->insertar_pelicula();
-//  $pe->borrar_pelicula();
 }
 ?>
