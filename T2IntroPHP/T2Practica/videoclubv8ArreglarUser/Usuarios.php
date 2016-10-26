@@ -118,7 +118,8 @@ class Usuarios {
   }
 
   /**
-   * ♥ Actualizar
+   * ♥ Funciona 
+   * Actualizar
    */
   public function actualizar_usuarios() {
     $p = new Usuarios();
@@ -127,13 +128,17 @@ class Usuarios {
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
     if (isset($_REQUEST['id'])) {
       if (!empty($_REQUEST['id'])) {
-        $registro = $mysqli->query("UPDATE usuarios1 SET user ='" . $this->user . "' , pass ='" . $this->pass . "' WHERE id ='" . $this->id . "';");
-        if ($registro == true) {
-          echo "<strong><br> Consulta realizada </strong>";
+        $registro = $mysqli->query("UPDATE usuarios SET user ='" . $this->user . "' , pass ='" . $this->pass . "' WHERE id ='" . $this->id . "';");
+        if ($registro === true) {
+          echo "<strong>Consulta realizada</strong>";
         } else {
           echo "<strong>Consulta NO Realizada</strong><br>Comprueba que el <strong>id</strong> sea correcto.";
+          echo "<br>Posible error <strong>: " . $mysqli->error;
           echo "<hr> ";
         }
+      } else {
+        echo "Valor de <strong>'id'</strong> esta vacio";
+        echo "<br>Para hacer actualizaciones es necesarios introducir el <strong>'id'</strong>";
       }
     }
     $mysqli->close();
@@ -141,23 +146,25 @@ class Usuarios {
 
   /**
    * ♥ Funciona
+   * Borra por id
    */
   public function borrar_usuarios() {
+    $p = new Usuarios();
+    $p->consultar_usuarios();
     $db = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($db->connect_errno) {
       die(" <br> Error : No se establecio la conexion . " . $db->connect_error);
     }
-    echo $this->id;
-    if (isset($_POST['enviar2']) && !empty($this->id)) {
-      if ($this->consultar_return_borrar() == $_POST['idb']) {
-        $ver = $resultado = $db->query("DELETE FROM usuarios WHERE id = '$this->id'");
-        if ($ver == true) {
-          echo "<br> <b> Registro Borrado CON EXISTO </b>";
+    if (isset($_REQUEST['id'])) {
+      if (!empty($_REQUEST['id'])) {
+        $resultado = $db->query("DELETE FROM usuarios WHERE id = '$this->id';");
+        if ($resultado === true) {
+          echo "<br>Registro Borrado <strong>CON EXISTO</strong>";
           $db->close();
         }
       } else {
-        echo "<br> <b> Registro NO Borrado </b><br>";
-        echo "<br> <b> Comprueba Id es correcto </b><br>";
+        echo "<br>Registro <strong>NO Borrado</strong><br>";
+        echo "<br>Posible error <strong>: " . $db->error . "</strong>";
         $db->close();
       }
     } else {
@@ -174,7 +181,8 @@ if (isset($_POST['enviar'])) {
   echo $us->pass = $_POST['pass'];
 //  $us->consultar_usuarios();
 //  $us->anadir_usuarios();
-  $us->actualizar_usuarios();
+//  $us->actualizar_usuarios();
+  $us->borrar_usuarios();
 }
 ?>
 
