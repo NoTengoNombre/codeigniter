@@ -210,7 +210,7 @@ if (isset($_POST['enviar'])) {
 //  $pe->consulta_basica('cod_pelicula', '%');
 //  $pe->consultar_pelicula();
 //  $pe->aniadir_pelicula();
-// $pe->insertar_pelicula();
+ $pe->insertar_pelicula();
   $pe->borrar_pelicula();
 }
 ?>

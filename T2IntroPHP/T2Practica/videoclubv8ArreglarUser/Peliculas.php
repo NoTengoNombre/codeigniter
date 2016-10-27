@@ -158,6 +158,32 @@ class Peliculas {
   }
 
   /**
+   * ♦ Actualizar : FUNCIONA
+   */
+  public function actualizar_peliculas() {
+    $p = new Peliculas();
+    $p->consulta_basica("cod_pelicula", "%");
+    $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
+    if ($mysqli->connect_errno) {
+      die("Error : No se ha establecido la conexion . " . $mysqli->connect_error);
+    }
+    if ((isset($_REQUEST['cod_pelicula']) && isset($_REQUEST['titulo'])) && (isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anio']))) {
+      if ((!empty($_REQUEST['cod_pelicula']) && !empty($_REQUEST['titulo'])) && (!empty($_REQUEST['genero']) && !empty($_REQUEST['pais']) && !empty($_REQUEST['anio']))) {
+        echo "<em>Conexion establecida</em>";
+
+        $sql = "UPDATE peliculas SET titulo='" . $this->titulo . "' , genero='" . $this->genero . "' , pais='" . $this->pais . "' , anio='" . $this->anio . "' WHERE cod_pelicula='" . $this->cod_pelicula . "';";
+
+        if ($mysqli->query($sql) === TRUE) {
+          echo "<br><strong>Consulta realizada :</strong><br>. $sql .<br>";
+        } else {
+          echo "Error UPDATE <br> " . $mysqli->error;
+        }
+        $mysqli->close();
+      }
+    }
+  }
+
+  /**
    * ♥ Funciona
    * Borra la pelicula por medio del cod_pelicula
    * No acepta valores que no esten en la bd
@@ -210,7 +236,7 @@ if (isset($_POST['enviar'])) {
 //  $pe->consulta_basica('cod_pelicula', '%');
 //  $pe->consultar_pelicula();
 //  $pe->aniadir_pelicula();
-// $pe->insertar_pelicula();
+//  $pe->actualizar_peliculas();
   $pe->borrar_pelicula();
 }
 ?>

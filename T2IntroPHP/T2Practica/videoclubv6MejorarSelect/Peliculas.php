@@ -209,7 +209,7 @@ if (isset($_POST['enviar'])) {
 //  $pe->consulta_basica();
   $pe->consultar_pelicula();
 //  $pe->aniadir_pelicula();
-// $pe->insertar_pelicula();
+ $pe->insertar_pelicula();
 //  $pe->borrar_pelicula();
 }
 ?>

@@ -172,7 +172,7 @@ class Personas {
    * ! Ver como mostrar antes y despues el SELECT
    * 
    */
-  public function modificar_personas() {
+  public function actualizar_personas() {
     $p = new Personas();
     $p->consulta_basica();
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
@@ -222,6 +222,18 @@ class Personas {
         echo "<br>♦ Introduce el <strong>Cod_Persona</strong> en el campo correspondiente para borrar todos los datos<hr>";
       }
     }
+  }
+
+  // forma de crear el formulario con lenguaje PHP 
+  function crear_formulario() {
+    echo "<form name='form_peliculas' method='post' action='index.php'>";
+    echo "Cod Persona " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Nombre " . "<input type='text' name='nombre'><br>";
+    echo "Apellidos " . "<input type='text' name='apellidos'><br>";
+    echo "Pais " . "<input type='text' name='pais'><br>";
+    echo "<input type='hidden' name='accion' value='inserta' />";
+    echo "<input type='submit' name='formfunc' value='enviar'><br>";
+    echo "</from>";
   }
 
 }
