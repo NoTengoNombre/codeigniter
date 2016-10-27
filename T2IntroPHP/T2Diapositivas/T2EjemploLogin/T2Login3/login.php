@@ -17,7 +17,7 @@
     class Login {
 
       /**
-       * 
+       * Metodo que muestra un formulario 
        */
       public function showForm() {
         ?>
@@ -31,7 +31,7 @@
             <input type="text" name="usuario" />
             <br>
             Contraseña:
-            <input type="password" name="passwd" />
+            <input type="text" name="passwd" />
             <br>
             <input type="hidden" name="do" value="checklogin" />
             <input type="submit" />
@@ -42,7 +42,13 @@
     }
 
     /**
-     * 
+     * ♦ Metodo que crea un formulario 
+     * • Comprueba el usuario y el pass 
+     *   Crea una conexion 
+     * ♠ Si la conexion es correcta entra y 
+     * muestra todos los enlaces con los distintos
+     * metodos 
+     * ♣ Si no es correcta : error
      */
     public function checkLogin() {
       echo "<html>";
@@ -53,19 +59,19 @@
       $usuario = $_REQUEST["usuario"];
       $p = $_REQUEST["passwd"];
 
-      $conex = new mysqli("localhost", "root", "", "videoclub");
+      $conex = new mysqli("localhost", "root", "", "videoclubprueba");
 
       if ($conex->connect_error) {
-        die("♦ Error al conectar con la BD : " . $conex->connect_error);
+        die("♦ Error al conectar con la BD: " . $conex->connect_error);
         echo $conex->connect_errno;
-        $result = $conex->query("SELECT user FROM usuarios WHERE user = '$usuario' AND pass='$p'");
+        $result = $conex->query("SELECT user FROM usuarios WHERE user ='$usuario' AND pass='$p'");
         if ($result->num_rows > 0) {
-          echo "Bienvenido a la web , $usuario <br>";
+          echo "Bienvenido a la web : " . $usuario . " <br>";
           echo "Menu<br>";
           echo "<a href='index.php?do=anadirpelicula'>Añadir Pelicula</a><br>";
           echo "<a href='index.php?do=buscarpelicula'>Buscar Pelicula</a><br>";
-          echo "<a href=''>Borrar pelicula</a><br>";
-          echo "<a href=''>Modificar pelicula</a><br>";
+          echo "<a href='index.php?do='>Actualizar pelicula</a><br>";
+          echo "<a href='index.php?do='>Borrar pelicula</a><br>";
         } else {
           echo "Nombre de usuario o contraseña incorrecta<br>";
           echo "<a href='..'>Volver</a>";

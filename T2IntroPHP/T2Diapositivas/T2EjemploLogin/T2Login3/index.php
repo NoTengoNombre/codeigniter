@@ -7,12 +7,12 @@
 -->
 
 <?php
-include_once 'login.php';
+include 'login.php';
 
-if (!isset(filter_input(INPUT_GET, 'do'))) {
+if (!isset($_REQUEST["do"])) {
   $accion = "mostrarformulariologin";
 } else {
-  $accion = filter_input(INPUT_GET, 'do');
+  $accion = $_REQUEST["do"];
 
   switch ($accion) {
     case "mostrarformulariologin":

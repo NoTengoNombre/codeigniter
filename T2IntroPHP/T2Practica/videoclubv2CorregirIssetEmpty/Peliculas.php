@@ -11,7 +11,6 @@
                   *Usuarios (id, user, pass)
 
                   *En la tabla Actúan, las claves primarias son también claves ajenas.
-                  
                   *Después escribe un programa en PHP para mantener la tabla Personas. 
 
                   El programa debe permitir:
