@@ -175,49 +175,49 @@ class Peliculas {
     $pe->consulta_basica("cod_pelicula", "%");
     $db = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($db->connect_errno) {
-      die(" Error : No se establecio la conexion . " . $db->connect_error);
+      die("Error: No se establecio la conexion. " . $db->connect_error);
     }
     echo "Conexion Establecida";
     if (!empty($_REQUEST['cod_pelicula']) && isset($_REQUEST['cod_pelicula'])) {
-      $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula = '$this->cod_pelicula'");
+      $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula ='$this->cod_pelicula'");
       if ($resultado == true && $db->affected_rows > 0) {
-        echo "<br> <b> Borrado CON EXISTO </b>";
+        echo "<br><strong>Borrado CON EXISTO</strong>";
         $db->close();
       } else {
-        echo "<br> <strong> Borrado SIN EXISTO </strong>";
-        echo "<br> Comprueba <strong>cod_pelicula</strong> es correcto <br>";
+        echo "<br><strong>Borrado SIN EXISTO</strong>";
+        echo "<br>Comprueba<strong>cod_pelicula</strong> es correcto <br>";
         $db->close();
       }
     } else {
-      echo " <br> <em>Sin acceso</em> <br> Introduce el <strong>cod_pelicula</strong> en el campo <b>cod_pelicula</b> ";
+      echo "<br><em>Sin acceso</em><br>Introduce el <strong>cod_pelicula</strong>en el campo<strong>cod_pelicula</strong>";
     }
     echo "<a href='index.php'>";
   }
 
   function crear_formulario_consultar() {
     echo "<form name='form_peliculas' method='get' action='index.php'>";
-    echo " Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
-    echo " Titulo: " . "<input type='text' name='titulo'><br>";
-    echo " Genero: " . "<input type='text' name='genero'><br>";
-    echo " Pais: " . "<input type='text' name='pais'><br>";
-    echo " Anio: " . "<input type='number' name='anio'><br>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Titulo: " . "<input type='text' name='titulo'><br>";
+    echo "Genero: " . "<input type='text' name='genero'><br>";
+    echo "Pais: " . "<input type='text' name='pais'><br>";
+    echo "Anio: " . "<input type='number' name='anio'><br>";
     echo "<hr>";
     echo "<input type='hidden' name='do' value='consultar_pelicula' />";
     echo "<input type='submit' name='enviar' value='enviar'><br>";
-    echo "</from>";
+    echo "</form>";
   }
 
   function crear_formulario_aniadir() {
     echo "<form name='form_peliculas' method='get' action='index.php'>";
-    echo " Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
-    echo " Titulo: " . "<input type='text' name='titulo'><br>";
-    echo " Genero: " . "<input type='text' name='genero'><br>";
-    echo " Pais: " . "<input type='text' name='pais'><br>";
-    echo " Anio: " . "<input type='number' name='anio'><br>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Titulo: " . "<input type='text' name='titulo'><br>";
+    echo "Genero: " . "<input type='text' name='genero'><br>";
+    echo "Pais: " . "<input type='text' name='pais'><br>";
+    echo "Anio: " . "<input type='number' name='anio'><br>";
     echo "<hr>";
     echo "<input type='hidden' name='do' value='aniadir_pelicula' />";
     echo "<input type='submit' name='enviar' value='enviar'><br>";
-    echo "</from>";
+    echo "</form>";
   }
 
   function crear_formulario_actualizar() {
@@ -230,7 +230,7 @@ class Peliculas {
     echo "<hr>";
     echo "<input type='hidden' name='do' value='actualizar_pelicula' />";
     echo "<input type='submit' name='enviar' value='enviar'><br>";
-    echo "</from>";
+    echo "</form>";
   }
 
   function crear_formulario_borrar() {

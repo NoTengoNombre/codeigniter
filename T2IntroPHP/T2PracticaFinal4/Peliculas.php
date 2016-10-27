@@ -19,33 +19,6 @@
 
                   El acceso a la aplicación tiene que estar controlado mediante 
                   una pantalla de login que solo permita acceder al programa a los usuarios registrados.
--->
-<hr>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Prueba para fijar datos por medio de formularios</title>
-  </head>
-  <body>
-    <p align="center"> Formulario </p>
-    <h4>Formulario para consultar datos </h4>
-    <hr> 
-    <form method="post" name="formGeneral" action=" <?php echo $_SERVER["PHP_SELF"] ?>">
-      Cod Pelicula  : <input type="text" name="cod_pelicula" value="">
-      <br>
-      Titulo : <input type="text" name="titulo" value="">
-      <br>
-      Genero : <input type="text" name="genero" value="">
-      <br>
-      Pais : <input type="text" name="pais" value="">
-      <br>
-      Anio : <input type="text" name="anio" value="">
-      <br>
-      <input type="submit" name="enviar" value="Enviar">
-    </form>
-  </body>
-</html>
-<hr>
 <?php
 
 class Peliculas {
@@ -58,7 +31,8 @@ class Peliculas {
   public $anio;
 
   /**
-   * ♥ Funciona
+   * ♥ Funciona.
+   * ♦ Consultar_basica
    * Metodo de apoyo para consultar_pelicula
    * @param type $var0 parametro relacionado bd
    * @param type $var1 valor a consultar en la bd
@@ -66,11 +40,11 @@ class Peliculas {
   public function consulta_basica($var0, $var1) {
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($mysqli->connect_errno) {
-      die("Error : No se establecido la conexion . " . $mysqli->connect_error);
+      die("Error:No se establecido la conexion." . $mysqli->connect_error);
     }
     $resultado = $mysqli->query("SELECT * FROM peliculas WHERE $var0 LIKE '$var1';"); // Todos los resultados
     if ($resultado->num_rows > 0) {
-      echo '<em><strong>Total de Peliculas Encontradas </strong></em> = ' . $resultado->num_rows . '';
+      echo '<em><strong>Total de Peliculas Encontradas</strong></em> = ' . $resultado->num_rows . '';
       echo "<br><table border='1'>"
       . "<tr>"
       . "<th> Cod_pelicula </th>"
@@ -93,8 +67,9 @@ class Peliculas {
   }
 
   /**
-   * ♥ Funciona
-   * Utiliza Switch 
+   * ♥ Funciona !! 
+   * ♦ Consultar_pelicula 
+   * Utiliza Switch
    * Puede utilizar el metodo PeliculasSelect6CrearMetodoVersionGitana 
    * por medio de If else , muestra varios resultados
    */
@@ -125,10 +100,12 @@ class Peliculas {
         break;
     }
     $mysqli->close();
+    echo "<a href='index.php'>Volver al indice</a>";
   }
 
   /**
-   * ♥ Parece que funciona bien 
+   * ♥ Funciona !!
+   * ♦ Añadir Pelicula
    * Comprueba que no esta vacio el cod_pelicula
    * si lo estas no realiza inserccion
    */
@@ -139,28 +116,29 @@ class Peliculas {
     if ($mysqli->connect_errno) {
       die("Error : No se establecido la conexion . " . $mysqli->connect_error);
     }
+    echo "<em>Conexion establecida</em><br>";
     if ((isset($_REQUEST['cod_pelicula']) && isset($_REQUEST['titulo'])) && (isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anio']))) {
       if ((!empty($_REQUEST['cod_pelicula']) && !empty($_REQUEST['titulo'])) && (!empty($_REQUEST['genero']) && !empty($_REQUEST['pais']) && !empty($_REQUEST['anio']))) {
-        echo "<em>Conexion establecida</em>";
-        $sql = "INSERT INTO peliculas (cod_pelicula,titulo,genero,pais,anio) VALUES ('" . $this->cod_pelicula . "','" . $this->titulo . "','" . $this->genero . "','" . $this->pais . "' , '" . $this->anio . "');";
+//      Ejecuta la consulta
+        $sql = "INSERT INTO peliculas(cod_pelicula,titulo,genero,pais,anio) VALUES ('" . $this->cod_pelicula . "','" . $this->titulo . "','" . $this->genero . "','" . $this->pais . "','" . $this->anio . "');";
         $inserccion = $mysqli->query($sql);
-        echo "<br>";
         if ($inserccion === true) {
-          echo ("<em> Nueva Inserccion del Registro </em><br>");
-          $mysqli->close();
+          echo "<em>Nueva Inserccion del Registro </em><br>";
         } else {
-          echo ("<b> No se Realizo Inserccion del Registro</b><br>");
-          $mysqli->close();
+          echo "<b> No se Realizo Inserccion del Registro</b><br>";
         }
         echo "<em>Atencion : No se pueden añadir campos <strong>vacios o nulos</strong></em><br>";
       }
     }
+    echo "<a href='index.php'>Volver al indice</a>";
   }
 
   /**
-   * ♦ Actualizar : FUNCIONA
+   * ♥ Funciona !!
+   * ♦ Actualizar Pelicula
+   * 
    */
-  public function actualizar_peliculas() {
+  public function actualizar_pelicula() {
     $p = new Peliculas();
     $p->consulta_basica("cod_pelicula", "%");
     $mysqli = new mysqli("localhost", "root", "", "videoclubprueba");
@@ -170,21 +148,25 @@ class Peliculas {
     if ((isset($_REQUEST['cod_pelicula']) && isset($_REQUEST['titulo'])) && (isset($_REQUEST['genero']) && isset($_REQUEST['pais']) && isset($_REQUEST['anio']))) {
       if ((!empty($_REQUEST['cod_pelicula']) && !empty($_REQUEST['titulo'])) && (!empty($_REQUEST['genero']) && !empty($_REQUEST['pais']) && !empty($_REQUEST['anio']))) {
         echo "<em>Conexion establecida</em>";
-
-        $sql = "UPDATE peliculas SET titulo='" . $this->titulo . "' , genero='" . $this->genero . "' , pais='" . $this->pais . "' , anio='" . $this->anio . "' WHERE cod_pelicula='" . $this->cod_pelicula . "';";
-
-        if ($mysqli->query($sql) === TRUE) {
-          echo "<br><strong>Consulta realizada :</strong><br>. $sql .<br>";
+        $sql = "INSERT INTO peliculas (cod_pelicula,titulo,genero,pais,anio) VALUES ('" . $this->cod_pelicula . "','" . $this->titulo . "','" . $this->genero . "','" . $this->pais . "','" . $this->anio . "');";
+        $inserccion = $mysqli->query($sql);
+        echo "<br>";
+        if ($inserccion === true) {
+          echo "<em>Nueva Inserccion del Registro </em><br>";
+          $mysqli->close();
         } else {
-          echo "Error UPDATE <br> " . $mysqli->error;
+          echo ("<strong> No se Realizo Inserccion del Registro</strong><br>");
+          $mysqli->close();
         }
-        $mysqli->close();
+        echo "<em>Atencion : No se pueden añadir campos <strong>vacios o nulos</strong></em><br>";
       }
     }
+    echo "<a href='index.php'>Volver al indice</a>";
   }
 
   /**
-   * ♥ Funciona
+   * ♥ Funciona !!
+   * ♦ Borrar Pelicula
    * Borra la pelicula por medio del cod_pelicula
    * No acepta valores que no esten en la bd
    */
@@ -193,50 +175,71 @@ class Peliculas {
     $pe->consulta_basica("cod_pelicula", "%");
     $db = new mysqli("localhost", "root", "", "videoclubprueba");
     if ($db->connect_errno) {
-      die(" Error : No se establecio la conexion . " . $db->connect_error);
+      die("Error: No se establecio la conexion." . $db->connect_error);
     }
     echo "Conexion Establecida";
-    if (!empty($_REQUEST['cod_pelicula']) && isset($_REQUEST['cod_pelicula'])) {
-      $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula = '$this->cod_pelicula'");
+    if (isset($_REQUEST['cod_pelicula']) && !empty($_REQUEST['cod_pelicula'])) {
+      $resultado = $db->query("DELETE FROM peliculas WHERE cod_pelicula ='$this->cod_pelicula';");
       if ($resultado == true && $db->affected_rows > 0) {
-        echo "<br> <b> Borrado CON EXISTO </b>";
+        echo "<br><strong>Borrado CON EXISTO</strong>";
         $db->close();
       } else {
-        echo "<br> <strong> Borrado SIN EXISTO </strong>";
-        echo "<br> Comprueba <strong>cod_pelicula</strong> es correcto <br>";
+        echo "<br><strong>Borrado SIN EXISTO</strong>";
+        echo "<br>Comprueba<strong>cod_pelicula</strong> es correcto<br>";
         $db->close();
       }
     } else {
-      echo " <br> <em>Sin acceso</em> <br> Introduce el <strong>cod_pelicula</strong> en el campo <b>cod_pelicula</b> ";
+      echo "<br><em>Sin acceso</em><br>Introduce el <strong>cod_pelicula</strong> en el campo <strong>cod_pelicula</strong>";
     }
+    echo "<a href='index.php'>Volver al indice</a>";
   }
 
-// forma de crear el formulario con lenguaje PHP 
-  function crear_formulario() {
-    echo "<form name='form_peliculas' method='post' action='index.php'>";
-    echo " Cod Pelicula " . "<input type='text' name='cod_pelicula'><br>";
-    echo " Titulo " . "<input type='text' name='titulo'><br>";
-    echo " Genero " . "<input type='text' name='genero'><br>";
-    echo " Pais " . "<input type='text' name='pais'><br>";
-    echo " Anio " . "<input type='number' name='anio'><br>";
-    echo "<input type='hidden' name='accion' value='inserta' />";
-    echo "<input type='submit' name='formfunc' value='enviar'><br>";
-    echo "</from>";
+  function crear_formulario_consultar() {
+    echo "<form method='get' action='index.php'>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Titulo: " . "<input type='text' name='titulo'><br>";
+    echo "Genero: " . "<input type='text' name='genero'><br>";
+    echo "Pais: " . "<input type='text' name='pais'><br>";
+    echo "Anio: " . "<input type='number' name='anio'><br>";
+    echo "<hr>";
+    echo "<input type='hidden' name='do' value='consultar_pelicula'>";
+    echo "<input type='submit' name='enviar' value='enviar'><br>";
+    echo "</form>";
+  }
+
+  function crear_formulario_aniadir() {
+    echo "<form method='get' action='index.php'>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Titulo: " . "<input type='text' name='titulo'><br>";
+    echo "Genero: " . "<input type='text' name='genero'><br>";
+    echo "Pais: " . "<input type='text' name='pais'><br>";
+    echo "Anio: " . "<input type='number' name='anio'><br>";
+    echo "<hr>";
+    echo "<input type='hidden' name='do' value='aniadir_pelicula'>";
+    echo "<input type='submit' name='enviar' value='enviar'><br>";
+    echo "</form>";
+  }
+
+  function crear_formulario_actualizar() {
+    echo "<form method='get' action='index.php'>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "Titulo: " . "<input type='text' name='titulo'><br>";
+    echo "Genero: " . "<input type='text' name='genero'><br>";
+    echo "Pais: " . "<input type='text' name='pais'><br>";
+    echo "Anio: " . "<input type='number' name='anio'><br>";
+    echo "<hr>";
+    echo "<input type='hidden' name='do' value='actualizar_pelicula'>";
+    echo "<input type='submit' name='enviar' value='enviar'><br>";
+    echo "</form>";
+  }
+
+  function crear_formulario_borrar() {
+    echo "<form method='get' action='index.php'>";
+    echo "Cod Pelicula: " . "<input type='text' name='cod_pelicula'><br>";
+    echo "<hr>";
+    echo "<input type='hidden' name='do' value='borrar_pelicula'>";
+    echo "<input type='submit' name='enviar' value='enviar'><br>";
+    echo "</form>";
   }
 
 }
-
-$pe = new Peliculas();
-if (isset($_POST['enviar'])) {
-  $pe->cod_pelicula = $_POST['cod_pelicula'];
-  $pe->titulo = $_POST['titulo'];
-  $pe->genero = $_POST['genero'];
-  $pe->pais = $_POST['pais'];
-  $pe->anio = $_POST['anio'];
-//  $pe->consulta_basica('cod_pelicula', '%');
-//  $pe->consultar_pelicula();
-  $pe->aniadir_pelicula();
-//  $pe->actualizar_peliculas();
-//  $pe->borrar_pelicula();
-}
-?>
