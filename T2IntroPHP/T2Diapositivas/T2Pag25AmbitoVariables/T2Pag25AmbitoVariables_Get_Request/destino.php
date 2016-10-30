@@ -26,9 +26,8 @@
     echo "<br />";
     echo $texto_get;
 
-    echo "<br /> ---------------------";
+    echo "<hr>";
 
-    echo "<br />";
     echo $saludo_get;
     echo "<br />";
     echo $texto_get;

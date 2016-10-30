@@ -38,8 +38,8 @@ echo "<hr>";
 
 
 print Bar::$mi_static . "\n";
-$bar = new Bar();
-print $bar->fooStatic() . "\n";
+$bart = new Bar();
+print $bart->fooStatic() . "\n";
 
 
 

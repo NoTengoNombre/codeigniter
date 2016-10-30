@@ -32,6 +32,7 @@
 ////////////////////////////////////////////////////////////////    
     $miObjeto = new MiClase();
     $miObjeto->mostrarVar();
+    echo '<br>';
     ?>
   </body>
 </html>

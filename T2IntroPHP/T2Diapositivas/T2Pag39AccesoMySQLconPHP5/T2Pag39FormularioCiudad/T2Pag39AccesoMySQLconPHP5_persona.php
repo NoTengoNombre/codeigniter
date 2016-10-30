@@ -14,7 +14,7 @@
   <body>
     <?php
     $conexdb = new mysqli('127.0.0.1', 'root', '', 'persona', '3306');
-    if ($conexdb->connect_error) {
+    if ($conexdb->connect_errno) {
       die("<strong>Error en la conexion </strong>" . $conexdb->connect_error);
     } else {
       $nombre = filter_input(INPUT_POST, 'nombre');
