@@ -7,5 +7,9 @@
 -->
 
 <?php
-$_FILE['campoFile']['name'];
+if (isset($_FILES['campoFile']['name'])) {
+  $var = $_FILE['campoFile']['name'];
+  echo 'Recibir fichero : ' . $var;
+  print_r($var);
+}
 ?>

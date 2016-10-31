@@ -14,14 +14,14 @@ Insert - INSERT INTO `persona`(`id`, `nombre`, `apellidos`, `edad`) VALUES ('p1'
   </head>
   <body>
     <?php
-    $conexion = new mysqli("localhost", "root", "", "paises");
+    $conn = new mysqli("localhost", "root", "", "paises");
 
-    if ($conexion->connect_error) {
+    if ($conn->connect_error) {
       
     }
-    $conexion->query("SELECT * FROM ciudad");
+    $conn->query("SELECT * FROM ciudad");
 
-    $conexion->affected_rows;
+    $conn->affected_rows;
     ?>
   </body>
 </html>
