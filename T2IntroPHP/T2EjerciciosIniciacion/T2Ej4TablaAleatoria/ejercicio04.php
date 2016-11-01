@@ -30,19 +30,20 @@
     echo "</tr>";
     echo '</table>';
     ?>
+    <br>
 
     <?php
     echo "<table class ='nuevo2'>";
     for ($n1 = 0; $n1 < $_REQUEST['numero1']; $n1++) {
 //    coluna
-     echo "<tr>";
+      echo "<tr>";
 //    fila
-     echo "<td>", $_REQUEST['numero1'] * rand(1, 100), "</td>";
-     for ($n2 = 0; $n2 < $_REQUEST['numero2'] - 1; $n2++) {
+      echo "<td>", $_REQUEST['numero1'] * rand(1, 100), "</td>";
+      for ($n2 = 0; $n2 < $_REQUEST['numero2'] - 1; $n2++) {
 //    fila
-      echo "<td>", $_REQUEST['numero2'] * rand(1, 100), "</td>";
-     }
-     echo '</tr>';
+        echo "<td>", $_REQUEST['numero2'] * rand(1, 100), "</td>";
+      }
+      echo '</tr>';
     }
     echo '</table>';
     ?> 
