@@ -12,7 +12,7 @@ $y = 100;
 
 $Lista = array("Carlos1", "Carlos2", "Carlos3", "Carlos4", "Carlos5");
 
-for ($index = 0; $index < count($Lista); $index++) {
-  echo '<hr>' . $Lista[$index];
+for ($v = 0; $v < count($Lista); $v++) {
+  echo '<hr>' . $Lista[$v];
 }
 ?>

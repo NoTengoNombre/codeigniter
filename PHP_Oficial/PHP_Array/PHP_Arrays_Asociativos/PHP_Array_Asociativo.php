@@ -28,8 +28,8 @@ foreach ($asociativo as $valor) {
 
 echo '<hr>';
 
-for ($index = 0; $index < count($asociativo); $index++) {
-  echo $asociativo[$index];
+for ($v = 0; $v < count($asociativo); $v++) {
+  echo $asociativo[$v];
   echo '<br>';
 }
 

@@ -16,7 +16,7 @@ function make_seed() {
 }
 
 print "○ valor : " . srand(make_seed());
-for ($index = 0; $index < 10; $index++) {
+for ($v = 0; $v < 10; $v++) {
   $randval = rand();
   print "<br>";
   print "♠ valor : " . $randval;

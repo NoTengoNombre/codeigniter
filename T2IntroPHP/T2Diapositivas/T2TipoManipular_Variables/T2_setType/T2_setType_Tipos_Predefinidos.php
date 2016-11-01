@@ -59,8 +59,8 @@ $arreglo = settype($array, "array");
 if (is_array($array)) {
   echo '<br>';
   echo 'si';
-  for ($index = 0; $index < count($array); $index++) {
-    echo $index;
+  for ($v = 0; $v < count($array); $v++) {
+    echo $v;
   }
 }
 
@@ -70,9 +70,9 @@ if (is_array($array)) {
   $array[1] = "b";
   $array[2] = "c";
   $array[3] = "d";
-  for ($index = 0; $index < count($array); $index++) {
+  for ($v = 0; $v < count($array); $v++) {
     echo '<br>';
-    echo $index . " - " . $array[$index];
+    echo $v . " - " . $array[$v];
   }
 }
 

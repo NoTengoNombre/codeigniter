@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-nov-2015, 1:04:41
+    Author     : TED
+*/
+
+/*  estilo */
+table.egt {
+    border-collapse: separate;
+    border-spacing: 1px;
+    background-color: #ccccff;
+    width: 4%;
+    color: #fff;
+}
+td, th {
+    width: 3%;
+    background: #fff;
+    color: #000;
+}
+
+/*  estilo */
+table.nuevo{
+    width: 100%;
+    border: 1px solid #000;
+}
+th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+caption {
+    padding: 0.3em;
+}
+
+table.egt1{
+    width: 5%;
+    border: 1px solid #000;
+}
+th, td {
+    width: 5%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+caption {
+    padding: 0.3em;
+}
+
+/*  estilo */
+table.n1 {
+    border-collapse: separate;
+    border-spacing: 5px;
+    background: #000 ;
+    color: #fff;
+}
+td, th {
+    background: #fff;
+    color: #000;
+}
+
+
+/*  estilo */
+table.p1{
+    width: 10%;
+}
+
+th,th{
+    width:10%;
+}

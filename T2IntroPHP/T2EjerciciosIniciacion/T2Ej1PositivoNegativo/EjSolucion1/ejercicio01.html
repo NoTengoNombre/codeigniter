@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Diseña un formulario –ejercicio01.html- 
+con un campo de texto en 
+el que puedas escribir
+números. 
+Al pulsar el botón de enviar 
+debe llamar a un script 
+–ejercicio01.php- que debe
+decirnos si el número enviado 
+fue positivo, cero o negativo.
+A la página ejercicio01.php añádele 
+un enlace HTML que permita 
+volver a la página anterior.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, 3initial-scale=1.0">
+  </head>
+  <body>
+    <!--forma de envio de los valores y hacia donde va dirigido-->
+    <form method="post" action="T2EjercicioPruebas.php">
+      Numero<br>
+      <!--hace que se le introduzca un valor por teclado--> 
+      <input type="number" name="numero"><br>
+      <!-- cambiar el nombre de value ="resumen" -->
+      <br>
+      <input type="submit" name="envio" value="resumen">
+      <!-- Forma incorrecta cambiar submit por resumen--> 
+      <!--<input type="submit" value="submit">-->
+    </form>
+  </body>
+</html>
+

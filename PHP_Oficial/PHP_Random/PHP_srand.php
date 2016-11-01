@@ -27,7 +27,7 @@ $radval = rand();
 $se = new Semilla();
 $cal = $se->make_seed();
 
-for ($index = 0; $index < 10; $index++) {
+for ($v = 0; $v < 10; $v++) {
   print "<hr> " . $cal;
 }
 

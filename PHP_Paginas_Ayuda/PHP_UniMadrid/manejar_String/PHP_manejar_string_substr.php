@@ -13,7 +13,7 @@
   </head>
   <body> 
     <?php
-    for ($index = 0; $index < 3; $index++) {
+    for ($v = 0; $v < 3; $v++) {
       $v = rand(0, 25);
       print_r('Valores : ' . $v);
       $var = substr("abcdefghijklmnopqrstuvwxyz", $v);
