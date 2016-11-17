@@ -3,29 +3,29 @@
 class Seguridad {
 
   public static function getIdUsuario() {
-    if (isset($_SESSION["idusuario"]))
+    if (isset($_SESSION["idusuario"])) {
       $idusr = $_SESSION["idusuario"];
-    else
+    } else {
       $idusr = "";
-
+    }
     return $idusr;
   }
 
   public static function getTipoUsuario() {
-    if (isset($_SESSION["tipousuario"]))
+    if (isset($_SESSION["tipousuario"])) {
       $tipousr = $_SESSION["tipousuario"];
-    else
+    } else {
       $tipousr = "";
-
+    }
     return $tipousr;
   }
 
   public static function getNombreUsuario() {
-    if (isset($_SESSION["usuario"]))
+    if (isset($_SESSION["usuario"])) {
       $nombreusr = $_SESSION["usuario"];
-    else
+    } else {
       $nombreusr = "";
-
+    }
     return $nombreusr;
   }
 

@@ -8,12 +8,13 @@ class Login {
     $usuario = $_REQUEST["usuario"];
     $p = $_REQUEST["passwd"];
 
-    $conex = new mysqli("localhost", "root", "", "test");
+    $conex = new mysqli("localhost", "root", "", "portal");
 
-    if ($conex->connect_error)
+    if ($conex->connect_error) {
       die("Error al conectar con la DB: " . $conex->connect_error);
+    }
 
-    $sql = "SELECT user FROM usuarios WHERE user = '$usuario' AND pass = '$p'";
+    $sql = "SELECT id_usuario FROM usuarios WHERE user = '$usuario' AND pass = '$p'";
     $result = $conex->query($sql);
 
     if ($result->num_rows > 0) {
