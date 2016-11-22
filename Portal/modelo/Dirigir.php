@@ -3,7 +3,7 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       :
+    @TODO       : Aqui debe de ir los inner join 
 -->
 <!DOCTYPE html>
 <html>
