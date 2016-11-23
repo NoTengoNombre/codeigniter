@@ -55,7 +55,7 @@
       /**
        * 
        */
-      function printHello() {
+      function print_Hello() {
         echo $this->public;
         echo $this->protected;
 //        echo $this->private;  // ERROR
@@ -68,7 +68,7 @@
 //    echo $obj2->protected; Error
 //    echo $obj2->private; Error
 
-    $obj2->printHello();
+    $obj2->print_Hello();
     ?>
   </body>
 </html>
