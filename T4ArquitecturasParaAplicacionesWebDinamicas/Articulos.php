@@ -13,10 +13,8 @@ class Articulos {
   public function getAllArticulos() {
     $db = new DBAbstract();
     $db->crearConexion('localhost', 'root', '', 'almacen');
-    $articulos = $db->consulta("SELECT fecha , titulo FROM articulo");
+    $articulos = $db->consulta("SELECT fecha , titulo FROM articulos");
     $db->cerrarConexion();
     return $articulos;
   }
-
 }
-?>

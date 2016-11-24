@@ -1,10 +1,13 @@
 <!--
-    @Created on : 23-nov-2016, 0:33:13
+    @Created on : 24-nov-2016, 12:41:34
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
     @TODO       :
 -->
 <?php
-$controlador = new Controlador();
-$controlador->main();
+$a = 1;
+goto salto;
+$a++;
+salto:
+echo $a;

@@ -1,10 +1,14 @@
 <!--
-    @Created on : 23-nov-2016, 0:33:13
+    @Created on : 24-nov-2016, 13:42:01
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
     @TODO       :
 -->
+
 <?php
-$controlador = new Controlador();
-$controlador->main();
+
+$modulo = 'DWES';
+$ciclo = 'DAW';
+
+?>

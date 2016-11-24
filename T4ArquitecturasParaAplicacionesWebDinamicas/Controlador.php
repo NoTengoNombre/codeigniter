@@ -5,8 +5,6 @@
     @version    :
     @TODO       :
 -->
-
-
 <?php
 include './Vista.php';
 include './Articulos.php';
@@ -14,15 +12,30 @@ include './Articulos.php';
 class Controlador {
 
   public function main() {
-    $estado = (isset($_REQUEST['do']) ? $_REQUEST['do'] : "formLogin");
 
+    $usuario = isset($_REQUEST['usuario']);
+    $password = isset($_REQUEST['password']);
+
+    if ($usuario == true) {
+      
+    }
+
+    echo "Bienvenido: " . $usuario;
+    echo "Password: " . $password;
+
+//    Lo que envia el name='do'
+    $estado = (isset($_REQUEST['do']) ? $_REQUEST['do'] : "formularioLoginPrueba");
+// do + name='estado'
     switch ($estado) {
-      case "formLogin" : "";
+      case "formLoginPrueba" :
+        break;
       case "checkLogin" : "";
+        break;
       case "showAllArticles" : "";
         $articulos = Articulos::getAllArticulos();
         Vista::show("showAllArticles");
         break;
+      default : $estado = "formLoginPrueba";
     }
   }
 
