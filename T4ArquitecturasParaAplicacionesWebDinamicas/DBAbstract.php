@@ -15,7 +15,6 @@ class DBAbstract {
    * Metodo set 
    */
   function crearConexion($servidor, $usuario, $clave, $dbname) {
-    print $conexion->serve
     $this->db = new mysqli($servidor, $usuario, $clave, $dbname);
   }
 
@@ -25,7 +24,7 @@ class DBAbstract {
     }
 
     function consulta($consulta) {
-      $this->db.mysqli_query();
+      $this->db . mysqli_query();
       $res = $resArray = array();
       if ($res) {
         $resArray = $res->fetch_all();

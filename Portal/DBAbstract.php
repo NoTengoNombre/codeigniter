@@ -12,7 +12,7 @@
 class DBAbstract {
 
   // Modificaré estas variables para cambiar de servidor de BD
-  public $dbName = "test";
+  public $dbName = "portal";
   public $dbHost = "localhost";
   public $dbUser = "root";
   public $dbPass = "";
@@ -32,7 +32,7 @@ class DBAbstract {
   // Cierra la conexión con la BD (si está abierta)
   public function desconectar() {
     if ($this->db) {
-      $db->close();
+      $this->db->close();
     }
   }
 
@@ -42,7 +42,7 @@ class DBAbstract {
     $resultArray = null;
 
     if ($this->db) {
-      $result = $db->query($sql);
+      $result = $this->db->query($sql);
       if ($result) {
         $resultArray = $result->fetch_all();
       }
@@ -56,9 +56,9 @@ class DBAbstract {
   public function manipulacion($sql) {
     $result = 0;
 
-    if ($db) {
-      $db->query($sql);
-      $result = $db->affected_rows;
+    if ($this->db) {
+      $this->db->query($sql);
+      $result = $this->db->affected_rows;
     }
 
     return $result;

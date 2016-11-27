@@ -7,7 +7,7 @@
 -->
 
 <h3>Alta de usuario</h3>
-<form action="../../index.php" method="get">
+<form method="get" action="../../Controlador.php">
   <label>  
     Nombre Usuario :
   </label>

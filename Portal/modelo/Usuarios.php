@@ -13,7 +13,20 @@ include_once '../dbAbstract.php';
 class Usuarios {
 
   public static function consultarUsuarios() {
-    
+//    $nombre = $_REQUEST["nombre"];
+//    $pass = $_REQUEST["password"];
+
+    $consulta = "SELECT * FROM usuarios";
+
+    $resultado = $mysqli->query($consulta);
+
+    if ($resultado->num_rows > 0) {
+      echo "<p> Lista de Usuarios " . $resultado->num_rows . " </p>";
+    }
+    $resultado = $resultado->fetch_assoc();
+    while ($resultado) {
+      printf("%s (%s)\n");
+    }
   }
 
   public static function insertarUsuario() {

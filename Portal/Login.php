@@ -40,7 +40,7 @@ class Login {
       Seguridad::setNombreUsuario($usuario);
       Seguridad::setTipoUsuario($fila["tipo_usuario"]);
       Seguridad::setImagenUsuario($fila["imagen_usuario"]);
-      $loginOk = true; 
+      $loginOk = true;
     } else {
       $loginOk = false;
     }
