@@ -54,7 +54,6 @@ class Controlador {
         }
         break;
 
-
       case "mostrarFormularioAltaUsuario":
         Vista::show("usuarios/formularioAltaUsuarios");
         break;
@@ -93,7 +92,7 @@ class Controlador {
       // ******************** PELICULAS *************************
       case "formAnadirPelicula":
         if (Seguridad::getTipoUsuario() == "admin") {
-          Vista::show("peliculas/formAddpelicula");
+          Vista::show("peliculas/formAddPelicula");
         } else {
           Vista::show("login/formLogin");
         }

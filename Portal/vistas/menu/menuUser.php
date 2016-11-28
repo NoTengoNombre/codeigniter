@@ -13,6 +13,18 @@ otra vez al controlador para realizar las acciones
 que seleccione 
 -->
 Bienvenido, <?php echo $data; ?><br/>
-Menu de usuario<br/>
-<a href='index.php?do=buscarpelicula'>Buscar pelicula</a><br/>
-<a href='index.php?do=cerrarsesion'>Cerrar sesion</a>
+
+<form method="get" action="../../Controlador.php">
+  <fieldset>
+    <legend>Menu Usuario</legend>
+    <ol>
+      <li>
+        <a href='index.php?do=buscarpelicula'>Buscar pelicula</a><br/>
+      </li>
+      <br>
+      <li>
+        <a href='index.php?do=cerrarsesion'>Cerrar sesion</a>
+      </li>
+    </ol>
+  </fieldset>
+</form>

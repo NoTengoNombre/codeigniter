@@ -8,11 +8,33 @@
 
 <!--Se muestra la vista con toda las acciones del administrador 
 que ha sido llamado desde el controlador -->
-Bienvenido, <?php echo $data; ?><br/>
-Menu de administración<br/>
-<a href='index.php?do=formanadirpelicula'>Añadir pelicula</a><br/>
-<a href='index.php?do=formborrarpelicula'>Borrar pelicula</a><br/>
-<a href='index.php?do=buscarPeliculas'>Buscar pelicula</a><br/>
-<a href='index.php?do=modificarPeliculas'>Modificar pelicula</a><br/>
 
-<a href='index.php?do=cerrarsesion'>Cerrar sesión</a>
+
+Bienvenido, <?php echo $data; ?><br/>
+<form method="get" action="../../Controlador.php">
+  <fieldset>
+    <legend>Menu Administrador</legend>
+    <ol>
+      <br>
+      <li>
+        <a href='index.php?do=formanadirpelicula'>Añadir pelicula</a><br/>
+      </li>
+      <br>
+      <li>
+        <a href='index.php?do=formborrarpelicula'>Borrar pelicula</a><br/>
+      </li>
+      <br>
+      <li>
+        <a href='index.php?do=buscarPeliculas'>Buscar pelicula</a><br/>
+      </li>
+      <br>
+      <li>
+        <a href='index.php?do=modificarPeliculas'>Modificar pelicula</a><br/>
+      </li>
+      <br>
+      <li>
+        <a href='index.php?do=cerrarsesion'>Cerrar sesión</a>
+      </li>
+    </ol>
+  </fieldset>
+</form>
