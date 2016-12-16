@@ -11,7 +11,7 @@ $s4 = 'a';
 $s1 = 1;
 $s2 = 1.11;
 $s3 = null;
-$a = array("Volvo", "BMW", "Toyota");
+$arrays_asociativos = array("Volvo", "BMW", "Toyota");
 echo gettype($s);
 echo '<br>';
 echo gettype($s4);
@@ -22,7 +22,7 @@ echo gettype($s2);
 echo '<br>';
 echo gettype($s3);
 echo '<br>';
-echo gettype($a);
+echo gettype($arrays_asociativos);
 $aa = "w";
-is_resource($a);
+is_resource($arrays_asociativos);
 ?>

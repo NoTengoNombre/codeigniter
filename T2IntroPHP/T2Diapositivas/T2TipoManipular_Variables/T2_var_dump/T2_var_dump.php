@@ -8,7 +8,7 @@
 
 <?php
 // 2 arrays en 1
-$a = array(1, 2, array("a", "b", "c"));
+$arrays_asociativos = array(1, 2, array("a", "b", "c"));
 
-var_dump($a);
+var_dump($arrays_asociativos);
 ?>

@@ -15,4 +15,5 @@ $Lista = array("Carlos1", "Carlos2", "Carlos3", "Carlos4", "Carlos5");
 for ($v = 0; $v < count($Lista); $v++) {
   echo '<hr>' . $Lista[$v];
 }
+print_f($Lista[$v]);
 ?>

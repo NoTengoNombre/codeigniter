@@ -7,10 +7,10 @@
 -->
 
 <?php
-$a = 3;
+$arrays_asociativos = 3;
 $b = 5;
 
-if ($a <> $b) {
+if ($arrays_asociativos <> $b) {
   echo '$a <> $b  -> <h4>Son diferentes</h4>';
 } else {
   echo '$a <> $b -> No son diferentes';

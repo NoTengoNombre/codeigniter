@@ -5,7 +5,7 @@
     @version    :
     @TODO       : header : siempre va 1º
 -->
-<!--<html> Si dejo esto produce error -->
+<html> Si dejo esto produce error 
 <?php
 header('Location: http://www.example.com');
 exit;

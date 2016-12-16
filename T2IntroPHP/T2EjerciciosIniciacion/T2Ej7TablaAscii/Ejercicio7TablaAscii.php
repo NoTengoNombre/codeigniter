@@ -13,7 +13,7 @@ and open the template in the editor.
     <?php
     echo "<table border='1'>";
     for ($i = 32; $i < 128; $i++) {
-      $a = 0;
+      $arrays_asociativos = 0;
       echo "<tr>";
       echo "<td>C&oacutedigo;</td>";
       echo "<td>Valor</td>";

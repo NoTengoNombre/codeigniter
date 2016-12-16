@@ -13,7 +13,7 @@
   </head>
   <body>
     <?php
-    $a = array();
+    $arrays_asociativos = array();
     $modulos = array("Programacion", "Base de datos", "Desarrollo web en entorno servidor");
     
     ?>

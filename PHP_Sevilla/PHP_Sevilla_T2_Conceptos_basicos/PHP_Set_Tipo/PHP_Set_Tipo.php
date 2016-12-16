@@ -7,9 +7,9 @@
 -->
 
 <?php
-$a = $b = "3.14159265";
+$arrays_asociativos = $b = "3.14159265";
 settype($b, "float");
-print "\$a vale $a y es de tipo " . gettype($a);
+print "\$a vale $arrays_asociativos y es de tipo " . gettype($arrays_asociativos);
 print "<br>";
 print "\$b vale $b y es de tipo " . gettype($b);
 

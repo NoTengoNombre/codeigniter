@@ -10,25 +10,25 @@
 include './PHP_Variables_Globales.php';
 echo '2º Script <br>';
 
-$a;
+$arrays_asociativos;
 $b = 5;
 
 function Suma() {
-  global $a, $b;
+  global $arrays_asociativos, $b;
   echo '<br>';
-  echo '• valor de $a ' . $a;
+  echo '• valor de $a ' . $arrays_asociativos;
   echo '<br>';
   echo '• valor de $b ' . $b;
 }
 
 function Suma2() {
-  global $a, $b;
-  $b += $a;
+  global $arrays_asociativos, $b;
+  $b += $arrays_asociativos;
   echo $b;
 }
 
 echo '<br> valor de \'a\' ';
-echo $a;
+echo $arrays_asociativos;
 echo '<br> valor de b: ';
 echo $b;
 echo '<br>';
@@ -36,7 +36,7 @@ echo '<br>';
 echo '<br> Suma() - ';
 Suma();
 echo '<br> a - ';
-echo $a;
+echo $arrays_asociativos;
 echo '<br> b - ';
 echo $b;
 echo '<br> Suma2() - ';

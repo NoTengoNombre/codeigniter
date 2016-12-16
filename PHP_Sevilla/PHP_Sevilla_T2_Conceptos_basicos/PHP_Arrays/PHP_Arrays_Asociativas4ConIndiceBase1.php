@@ -15,7 +15,7 @@
     <?php
     $modulo2 = array("0" => "1a", "1" => "2b", "2" => "3c", "3" => "4d", "5" => "6f");
 
-    foreach ($modulo2 as $key => $value) {
+    foreach ($modulo2 as $key => $valor) {
       echo '<br>' . $modulo2[$key];
     }
 

@@ -7,14 +7,14 @@
 -->
 
 <?php
-$a = 3;
-$b = &$a;
-print "$a\n";
+$arrays_asociativos = 3;
+$b = &$arrays_asociativos;
+print "$arrays_asociativos\n";
 print '<br>';
 print "$b\n";
 print '<br>';
 
-$a = 4;
-print "$a\n";
+$arrays_asociativos = 4;
+print "$arrays_asociativos\n";
 print "$b\n";
 ?>

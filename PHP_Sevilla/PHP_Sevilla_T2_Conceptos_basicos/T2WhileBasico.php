@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-$a = 1;
+$arrays_asociativos = 1;
 $i = rand(3, 4);
 $ii = rand(1, 5);
 
@@ -17,8 +17,8 @@ while ($i <= 10) {
 }
 echo "<br> ---------";
 
-while ($a <= 11) {
-  echo "<br> " . $a++;
+while ($arrays_asociativos <= 11) {
+  echo "<br> " . $arrays_asociativos++;
 }
 
 echo "<br> ---------";

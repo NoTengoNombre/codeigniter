@@ -18,13 +18,13 @@
         <br>
         <label>Id Paises</label>
         <input type="text" name="id_paises" value="">
-        <br>
+        <br><br>
         <label>Pais</label>
         <input type="text" name="pais" value="">
-        <br>
+        <br><br>
         <label>Ciudad</label>
         <input type="text" name="ciudad" value="">
-        <br>
+        <br><br>
         <input type="hidden" name="do" value="formulario_peliculas">
         <button name="enviar">Enviar</button>
     </fieldset>

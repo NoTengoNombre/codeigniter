@@ -5,10 +5,10 @@
 session_start();
 
 
-echo 'Bienvenido a la pagina #1';
+echo '<b>Bienvenido a la pagina #1 </b>';
 
 
-$_SESSION['numeroAleatorio'] = rand(1, 10);
+$_SESSION['numeroAleatorio'] = rand(1, 111);
 
 $_SESSION['color'] = 'verde';
 $_SESSION['animal'] = 'gato';

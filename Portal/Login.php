@@ -24,7 +24,6 @@ class Login {
     if ($conex->connect_error) {
       die("Error al conectar con la DB: " . $conex->connect_error);
     }
-
 //    Al ser un select usa fetch_array
     $sql = "SELECT id_usuario, tipo_usuario, imagen_usuario FROM usuarios WHERE nombre_usuario = '$usuario' AND password = '$password'";
     echo $sql . "<br/>";
@@ -44,8 +43,8 @@ class Login {
     } else {
       $loginOk = false;
     }
-    $result->free();
-    $conex->close();
+    $result->free(); // libera memoria
+    $conex->close(); // cierra bd
 
     return $loginOk;
   }

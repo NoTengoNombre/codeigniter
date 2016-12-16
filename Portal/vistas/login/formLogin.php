@@ -35,12 +35,15 @@
     </form>
     <!-- Enviar al index 'do' con la accion 'mostrarFormularioAltaUsuario' -->
     <!--<a href="index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>-->
-    <div>
-      <br>
-      <label>
-        <a href="../../index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
-      </label>
-    </div>
+    <br>
+    <fieldset>
+      <div>
+        <br>
+        <label>
+          <a href="../../index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
+        </label>
+      </div>
+    </fieldset>
   </body>
 </html>
 

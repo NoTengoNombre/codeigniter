@@ -7,9 +7,9 @@
 -->
 
 <?php
-$a = ($b = 4) + 5;
+$arrays_asociativos = ($b = 4) + 5;
 
-echo 'Valor de \'a\' ' . $a;
+echo 'Valor de \'a\' ' . $arrays_asociativos;
 echo '<br>';
 echo 'Valor de \'b\' ' . $b;
 ?>

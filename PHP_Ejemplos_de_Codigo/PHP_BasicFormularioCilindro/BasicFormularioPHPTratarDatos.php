@@ -1,8 +1,8 @@
 <?php
 
 //Ejemplo aprenderaprogramar.com
-$diametro = $_REQUEST['diam'];
-$altura = $_REQUEST['altu'];
+$diametro = $_REQUEST['diametro'];
+$altura = $_REQUEST['altura'];
 $radio = $diametro / 2;
 $Pi = 3.141593;
 $volumen = $Pi * $radio * $radio * $altura;

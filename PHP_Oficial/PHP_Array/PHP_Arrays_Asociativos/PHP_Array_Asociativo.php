@@ -7,13 +7,13 @@
 -->
 
 <?php
-$a["ESP"] = "Spain";
-$a["FRA"] = "France";
-$a["POR"] = "Portugal";
+$arrays_asociativos["ESP"] = "Spain";
+$arrays_asociativos["FRA"] = "France";
+$arrays_asociativos["POR"] = "Portugal";
 
 
-foreach ($a as $value) {
-  echo $value;
+foreach ($arrays_asociativos as $valor) {
+  echo $valor;
   echo '<br>';
 }
 

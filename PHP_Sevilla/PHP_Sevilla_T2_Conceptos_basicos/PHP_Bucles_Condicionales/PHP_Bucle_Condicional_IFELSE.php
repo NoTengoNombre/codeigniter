@@ -6,22 +6,22 @@
     @TODO       :
 -->
 <?php
-$a = rand(1, 10);
-echo "soy a : $a";
+$arrays_asociativos = rand(1, 10);
+echo "soy a : $arrays_asociativos";
 echo "<br>";
 $b = rand(1, 10);
 echo "soy b : $b";
 echo "<hr>";
 
 //for ($a; $a < 10; $a++) {
-if ($a < $b) {
-  print "$a es menor que $b";
+if ($arrays_asociativos < $b) {
+  print "$arrays_asociativos es menor que $b";
   echo "<br>";
-} elseif ($a > $b) {
-  print "$a es mayor que $b";
+} elseif ($arrays_asociativos > $b) {
+  print "$arrays_asociativos es mayor que $b";
   echo "<br>";
 } else {
-  print "$a es igual que $b";
+  print "$arrays_asociativos es igual que $b";
   echo "<br>";
 }
 //}

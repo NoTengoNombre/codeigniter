@@ -6,8 +6,8 @@
     @TODO       :
 -->
 <?php
-$a = 1;
+$arrays_asociativos = 1;
 goto salto;
-$a++;
+$arrays_asociativos++;
 salto:
-echo $a;
+echo $arrays_asociativos;

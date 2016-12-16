@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-$a = 3;
+$arrays_asociativos = 3;
 $aa = 4;
 $b = 5;
 $media = 52.75;
@@ -20,9 +20,9 @@ echo "<br> Separar la linea anterior ";
 
 echo "Primera linea php a separar con la 2 "."\n";
 
-$a = &$b;
+$arrays_asociativos = &$b;
 echo "<br>";
-echo $a;
+echo $arrays_asociativos;
 echo "<br>";
 echo $aa;
 echo "<br>";

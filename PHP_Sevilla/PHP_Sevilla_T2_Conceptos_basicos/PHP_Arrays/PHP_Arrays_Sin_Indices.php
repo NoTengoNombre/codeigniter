@@ -29,8 +29,8 @@
     $cadena[] = "4";
     $cadena[] = "5";
 
-    foreach ($cadena as $value) {
-      echo '<br>' . $value;
+    foreach ($cadena as $valor) {
+      echo '<br>' . $valor;
     }
     ?>
   </body>

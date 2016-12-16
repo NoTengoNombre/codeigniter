@@ -11,8 +11,8 @@ En otras palabras, timestamp es opcional y por defecto es el valor de time().
 <?php
 $hoy = getdate();
 
-foreach ($hoy as $key => $value) {
-  echo '<br>' . $value . " - tipo " . $key . " - ";
+foreach ($hoy as $key => $valor) {
+  echo '<br>' . $valor . " - tipo " . $key . " - ";
 }
 
 

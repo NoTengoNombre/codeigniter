@@ -7,10 +7,10 @@
  */
 
 
-$a = "10";
-echo $a;
-settype($a, "integer");
-echo $a + 10;
+$arrays_asociativos = "10";
+echo $arrays_asociativos;
+settype($arrays_asociativos, "integer");
+echo $arrays_asociativos + 10;
 
 // settype — Establece el tipo de una variable
 

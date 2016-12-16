@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-$a = 5;
+$arrays_asociativos = 5;
 $b = rand(1, 100);
 
 echo "<br>";
 echo $b;
 echo "<br>";
 
-if ($a > $b) {
+if ($arrays_asociativos > $b) {
   echo "A es mayor que B";
-} elseif ($a == $b) {
+} elseif ($arrays_asociativos == $b) {
   echo "A es igual que B";
 } else {
   echo "A es menor que B";
@@ -32,7 +32,7 @@ if ($aa > $bb) {
   echo "$aa";
   echo "<br>";
   echo "$bb";
-} else if ($a == $b) {
+} else if ($arrays_asociativos == $b) {
   echo "<br>";
   echo "$aa";
   echo "<br>";
@@ -57,11 +57,11 @@ echo "<br>";
 echo "  !!!!!!!!!! valor es !!!!!!!!! " . $bb;
 echo "<br>";
 /* Método correcto: */
-if ($a < $b):
-  echo $a . " es mayor que " . $b;
-elseif ($a == $b): // Tenga en cuenta la combinación de las palabras.
-  echo $a . " igual " . $b;
+if ($arrays_asociativos < $b):
+  echo $arrays_asociativos . " es mayor que " . $b;
+elseif ($arrays_asociativos == $b): // Tenga en cuenta la combinación de las palabras.
+  echo $arrays_asociativos . " igual " . $b;
 else:
-  echo $a . " no es ni mayor que ni igual a " . $b;
+  echo $arrays_asociativos . " no es ni mayor que ni igual a " . $b;
 endif;
 ?>

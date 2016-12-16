@@ -7,8 +7,8 @@
 -->
 
 <?php
-$a = 2;
-$var = isset($a);
+$arrays_asociativos = 2;
+$var = isset($arrays_asociativos);
 if ($var) {
   echo 'si';
 } else {

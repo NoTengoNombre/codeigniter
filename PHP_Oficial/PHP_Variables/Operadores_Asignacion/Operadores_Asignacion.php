@@ -7,11 +7,11 @@
 -->
 
 <?php
-$a = 3;
-$a += 5;
+$arrays_asociativos = 3;
+$arrays_asociativos += 5;
 
-$a + 5;
-echo $a;
+$arrays_asociativos + 5;
+echo $arrays_asociativos;
 
 echo '<hr>';
 $a1 = 1;

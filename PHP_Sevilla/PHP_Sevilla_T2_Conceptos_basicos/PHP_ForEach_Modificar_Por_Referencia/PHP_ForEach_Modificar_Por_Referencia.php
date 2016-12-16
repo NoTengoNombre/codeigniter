@@ -22,13 +22,13 @@
   <body>
     <?php
     $array = array(1, 2, 3, 4);
-    foreach ($array as $value) {
-      $array = $value * 2;
+    foreach ($array as $valor) {
+      $array = $valor * 2;
       echo "<p> - " . $array . " </p>";
     }
 
-    unset($value);
-    print_r($value);
+    unset($valor);
+    print_r($valor);
     ?>
   </body>
 </html>

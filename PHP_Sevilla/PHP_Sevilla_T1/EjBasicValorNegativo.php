@@ -20,8 +20,8 @@ http://html.hazunaweb.com/118.php
       echo "$numero_2";
 
       echo "<br/>";
-      $a = -78;
-      $b = $a * -1;
+      $arrays_asociativos = -78;
+      $b = $arrays_asociativos * -1;
       echo $b;
       ?>
   </body>

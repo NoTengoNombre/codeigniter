@@ -1,7 +1,7 @@
 
 <?php
 
-class Simon {
+class Arq_3Capas_Simon {
 
   private $secuencia, $longSec;
 

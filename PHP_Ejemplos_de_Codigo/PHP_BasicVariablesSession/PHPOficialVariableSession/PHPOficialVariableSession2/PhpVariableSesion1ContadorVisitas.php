@@ -20,20 +20,18 @@ $_SESSION['animal'] = 'gato';
 $_SESSION['instante'] = time();
 
 // Funciona si la cookie de sesion fue aceptada
-echo '<br /><a href="PhpVariableSesion2.php">pagina 2</a>';
+echo '<br><a href="PhpVariableSesion2.php">pagina 2</a>';
 
 // Pasar por el ID de sesion , si fuera necesario
-//echo '<br /><a href="PhpVariableSesion2?' . SID . '">pagina 2</a>';
+echo '<br><a href="PhpVariableSesion2?' . SID . '">pagina 2</a>';
 ?>
-
 
 <p>
   Hola visitante, ha visto esta página <?php echo $_SESSION['count']; ?> veces.
 </p>
 
-<!--
-<p>
-  Para continuar, <a href="PhpVariableSesion2.php?<?php echo htmlspecialchars(SID); ?>">haga clic
-    aquí</a>.
-</p>
--->
+
+<!--<p>-->
+  <!--Para continuar, <a href="PhpVariableSesion2.php?<?php echo htmlspecialchars(SID); ?>">haga clic-->
+<!--aquí</a>.-->
+<!--</p>-->

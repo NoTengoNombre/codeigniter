@@ -26,9 +26,9 @@
       for ($v = 0; $v < 10000; $v++) {
        $random = rand(0, 5);
        $c = $arrayColores[$random];
-       $a = rand(1, 1000);
+       $arrays_asociativos = rand(1, 1000);
        $b = rand(1, 1500);
-       colores($a, $b, $c);
+       colores($arrays_asociativos, $b, $c);
       }
       ?>
   </body>

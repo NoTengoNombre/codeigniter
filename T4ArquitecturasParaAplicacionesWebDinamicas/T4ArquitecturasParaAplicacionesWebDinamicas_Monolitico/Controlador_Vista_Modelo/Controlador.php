@@ -1,5 +1,5 @@
 <!--
-    @Created on : 22-nov-2016, 22:01:27
+    @Created on : 15-dic-2016, 21:52:19
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
@@ -10,10 +10,12 @@
   <head>
     <meta charset="UTF-8">
     <title></title>
-  </head>
+  </head>   
   <body>
     <?php
-    
+    include './Modelo.php';
+    $usuarios = getUsuarios();
+    require './Vista.php';
     ?>
   </body>
 </html>

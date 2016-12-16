@@ -6,16 +6,16 @@
  * and open the template in the editor.
  */
 
-$a = 5;
+$arrays_asociativos = 5;
 $b = 5;
 
-$m = $a . " <br> igual  " . $b . "<br>";
-echo $m . " encadena a " . $a . " <br> ";
+$m = $arrays_asociativos . " <br> igual  " . $b . "<br>";
+echo $m . " encadena a " . $arrays_asociativos . " <br> ";
 
-if ($a == 5):
+if ($arrays_asociativos == 5):
   echo "a igual 5";
   echo "...";
-elseif ($a == 6):
+elseif ($arrays_asociativos == 6):
   echo "a igual 6";
   echo "!!!";
 else:

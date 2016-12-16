@@ -24,22 +24,20 @@ class Controlador {
    * y distintas clases
    */
   public static function control() {
-    session_start(); // comienza/recibe los datos de la session
+    session_start(); // Se ejecuta la sesion : comienza o recibe los datos de la session
 
-    if (!isset($_REQUEST["do"])) { // si no esta fijado la accion del "do"
+    if (!isset($_REQUEST["do"])) { // isset - esta definida la variable ? si no esta fijado la accion del "do"
       $accion = "mostrarFormularioLogin"; // fuerzo a mostrar el formulario de login para acceder a la aplicacion
     } else { //sino entra en el switch
       $accion = $_REQUEST["do"]; // name="do" viene del formulario  : lleva asignado una accion mediante el value="..."
     }
 
-//  $accion :
-//  - almacena el name="do" y lleva implicito el valor de la $accion dentro del value="" - ej: "mostrarFormulario"
+//  $accion : almacena el name="do" y lleva implicito el valor de la $accion dentro del value="" - ej: "mostrarFormulario"
     switch ($accion) {
       // ******************** LOGIN *************************
       case "mostrarFormularioLogin": // muestra el formulario
         Vista::show("login/formLogin");
         break;
-
       case "procesarFormularioLogin":
         $loginOk = Login::checkLogin();
         if ($loginOk) {

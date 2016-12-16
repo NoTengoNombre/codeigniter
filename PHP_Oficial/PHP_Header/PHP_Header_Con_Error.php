@@ -9,7 +9,7 @@
 <?php
 header('refresh: 15; url=http://localhost/');
 $para = 'siguelasreglas@gmail.com';
-$a = 'siguelasreglas@gmail.com';
+$arrays_asociativos = 'siguelasreglas@gmail.com';
 $tel = '666666666';
 $asunto = 'contacto desde';
 $correos = "siguelasreglas@gmail";
@@ -17,7 +17,7 @@ $header = 'From: ' . $correos . " \r\n";
 $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
 $header .= "Mime-Version: 1.0 \r\n";
 $header .= "Content-Type: text/plain";
-$mensaje = "Este mensaje fue enviado por " . $a . ", num " . $tel . " \r\n";
+$mensaje = "Este mensaje fue enviado por " . $arrays_asociativos . ", num " . $tel . " \r\n";
 $mensaje .= "el correol es: " . $correos . " \r\n";
 //$mensaje .= "Mensaje: " . $_POST['texto'] . " \r\n";
 $mensaje .= "Enviado el " . date('d/m/Y', time());

@@ -19,12 +19,12 @@
  * * Notes........: 
  * * Last changed.:
  */
-$a = 5;
-$b = & $a;
+$arrays_asociativos = 5;
+$b = & $arrays_asociativos;
 $b = 6;
 
 echo "a: ";
-var_dump($a);
+var_dump($arrays_asociativos);
 echo "b: ";
 var_dump($b);
 
@@ -32,7 +32,7 @@ var_dump($b);
 //unset($a);
 echo 'Se ejecutó unset($a)';
 echo "a: ";
-var_dump($a);
+var_dump($arrays_asociativos);
 echo "b:";
 var_dump($b);
 ?>

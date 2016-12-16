@@ -29,7 +29,7 @@ class Controlador {
 
   public function __construct() {
     $this->ui = new InterfazUsuario();
-    $this->simon = new Simon();
+    $this->simon = new Arq_3Capas_Simon();
   }
 
   // Funcion principal de control de la ejecucion del juego

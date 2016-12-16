@@ -7,8 +7,8 @@
 -->
 
 <?php
-$a = "";
-if (empty($a)) {
+$arrays_asociativos = "";
+if (empty($arrays_asociativos)) {
   echo "vacia";
 } else {
   echo "NO vacia";

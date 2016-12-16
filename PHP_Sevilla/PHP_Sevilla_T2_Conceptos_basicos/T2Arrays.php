@@ -33,12 +33,12 @@ $array2 = array(
 // variable vertedero
 var_dump($array2);
 
-$a[1] = "1";
-$a[2] = "11";
-$a[3] = "111";
-$a[4] = "1111";
-$a[5] = "11111";
-var_dump($a);
+$arrays_asociativos[1] = "1";
+$arrays_asociativos[2] = "11";
+$arrays_asociativos[3] = "111";
+$arrays_asociativos[4] = "1111";
+$arrays_asociativos[5] = "11111";
+var_dump($arrays_asociativos);
 
 echo "<br>";
 

@@ -19,7 +19,6 @@ if (!isset($_REQUEST["do"])) {
 } else {
   $accion = $_REQUEST["do"];
 }
-
 switch ($accion) {
   case "mostrarFormularioLogin":
     $login = new Login();
@@ -104,7 +103,7 @@ switch ($accion) {
   case "consultar_actuan":
     echo "<strong>Estoy en consultar Actuan</strong>";
     $actuan = new Actuan();
-    $actuan->crear_formulario_consultar_usuario();
+    $actuan->crear_formulario_actuan();
     $actuan->consultar_actuan();
     break;
   default :

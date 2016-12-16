@@ -55,7 +55,6 @@ class DBAbstract {
   // (INSERT, UPDATE o DELETE) y devuelve el número de filas afectadas
   public function manipulacion($sql) {
     $result = 0;
-
     if ($this->db) {
       $this->db->query($sql);
       $result = $this->db->affected_rows;

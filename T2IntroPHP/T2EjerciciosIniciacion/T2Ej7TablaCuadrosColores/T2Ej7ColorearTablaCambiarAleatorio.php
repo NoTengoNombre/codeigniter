@@ -30,9 +30,9 @@
     for ($n1 = 1; $n1 <= 12200; $n1++) {
       $random = rand(0, 4);
       $c = $arrayColores[$random];
-      $a = rand(1, 1000);
+      $arrays_asociativos = rand(1, 1000);
       $b = rand(1, 1500);
-      creaCuadrado($a, $b, $c);
+      creaCuadrado($arrays_asociativos, $b, $c);
     }
     ?>  
   </body>

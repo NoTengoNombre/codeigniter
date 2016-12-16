@@ -36,8 +36,8 @@
 
     }
 
-    $a = new A();
-    $a->foo();
+    $arrays_asociativos = new A();
+    $arrays_asociativos->foo();
 
     A::foo();
     $b = new B();

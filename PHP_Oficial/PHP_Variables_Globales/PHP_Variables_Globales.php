@@ -9,7 +9,7 @@
 <?php
 echo '<hr>';
 echo '1º Script ';
-$a = rand(1, 10);
+$arrays_asociativos = rand(1, 10);
 
 for ($i = 0; $i < 10; $i++) {
   echo rand(1, 10);
