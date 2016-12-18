@@ -4,6 +4,7 @@
     @Pag        :
     @version    :
     @TODO       : (controlador)
+                   Abulafia
 -->
 <!DOCTYPE html>
 <html>
@@ -13,8 +14,8 @@
   </head>
   <body>
     <?php
-    include("InterfazUsuario.php");
-    include("DBAccess.php");
+    include "./AccesoBD.php";
+    include "./InterfazUsuario.php";
     session_start();
 
 

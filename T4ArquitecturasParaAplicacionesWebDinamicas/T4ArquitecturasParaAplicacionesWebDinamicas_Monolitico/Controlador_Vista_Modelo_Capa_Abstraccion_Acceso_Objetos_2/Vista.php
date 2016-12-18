@@ -17,13 +17,23 @@
 
     class Vista {
 
+      /**
+       * Set Render
+       * 
+       * @param type $view
+       * @param type $data
+       */
       public function render($view, $data) {
         include "vistas/" . $view . ".php";
       }
 
+      /**
+       * 
+       * @param type $data 
+       */
       public function mostrarLista($data) {
         ?>
-        <h1>Lista de Usuarios</h1>
+        <!--<h1>Llamada a la Vista</h1>-->
         <table>
           <tr>
             <th>Id_Usuario</th>

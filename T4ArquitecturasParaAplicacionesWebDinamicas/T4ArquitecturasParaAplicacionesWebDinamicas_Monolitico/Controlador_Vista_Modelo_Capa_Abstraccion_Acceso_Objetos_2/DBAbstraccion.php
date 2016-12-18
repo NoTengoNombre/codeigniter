@@ -3,7 +3,7 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       : Modelo_Capa_Abstraccion_datos_Objetos
+    @TODO       : Modelo_Capa_Abstraccion_datos_Objetos - TODAS LAS CONEXIONES
 -->
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,7 @@
 
     class DBAbstract {
 
-      private $db;
+      private $db = null;
 
       /**
        * Creo la conexion bd

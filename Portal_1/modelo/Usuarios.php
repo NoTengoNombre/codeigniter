@@ -13,8 +13,8 @@ include_once '../dbAbstract.php';
 class Usuarios {
 
   public static function consultarUsuarios() {
-//    $nombre = $_REQUEST["nombre"];
-//    $pass = $_REQUEST["password"];
+    $nombre = $_REQUEST["nombre"];
+    $pass = $_REQUEST["password"];
 
     $consulta = "SELECT * FROM usuarios";
 

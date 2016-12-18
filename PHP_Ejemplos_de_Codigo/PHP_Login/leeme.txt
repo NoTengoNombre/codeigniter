@@ -1,0 +1,8 @@
+Aquí encontraréis diferentes implementaciones del sistema de login con PHP para un videoclub online que hemos utilizado en clase para explicar diferentes partes del temario.
+
+- login1: Login sin orientación a objetos y sin acceso a BD.
+- login2: Login con orientación a objetos y sin acceso a BD.
+- login3: Login con orientación a objetos, acceso a BD y controlador.
+- login4: Como el anterior, añadiendo la capa de Seguridad.
+- login5: Como el anterior, añadiendo arquitectura MVC (hemos separado los modelos de las vistas)
+- login6: Como el anterior, añadiendo una vista que muestra datos complejos obtenidos del modelo (vista listaPeliculas)

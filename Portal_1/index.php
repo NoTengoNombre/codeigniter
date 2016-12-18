@@ -3,11 +3,11 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       : No necesita nada : Formulario entrada a la aplicacion
-                  // Ejecuta la clase Controlador para ver si esta logueado el usuario
+    @TODO       :
 -->
 
 <?php
-include_once './Controlador.php';
-//Ejecuta esta clase static 
+include_once "Controlador.php";
+// Ejecuta la clase Controlador para ver si esta logueado el usuario
 Controlador::control();
+  

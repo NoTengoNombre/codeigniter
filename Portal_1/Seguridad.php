@@ -3,7 +3,7 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       :
+    @TODO       : Solo Variables de sesion
 -->
 
 <?php

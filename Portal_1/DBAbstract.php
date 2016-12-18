@@ -3,7 +3,7 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       :
+    @TODO       : Capa Abstraccion : Por ahora tiene todo
 -->
 
 <?php
@@ -12,7 +12,7 @@
 class DBAbstract {
 
   // Modificaré estas variables para cambiar de servidor de BD
-  public $dbName = "portal";
+  public $dbName = "portal2";
   public $dbHost = "localhost";
   public $dbUser = "root";
   public $dbPass = "";
@@ -36,15 +36,14 @@ class DBAbstract {
     }
   }
 
-  // Ejecuta una consulta (SELECT) y devuelve el Resultset
+  // Ejecuta una consulta (SELECT) y devuelve objeto -> Resultset : contiene todas las filas
   // convertido en un array PHP.
   public function consulta($sql) {
-    $resultArray = null;
-
-    if ($this->db) {
+    $resultArray = null; // Es un objeto
+    if ($this->db) { // no es null
       $result = $this->db->query($sql);
       if ($result) {
-        $resultArray = $result->fetch_all();
+        $resultArray = $result->fetch_all(); //Devuelve asociativo / array
       }
     }
 
@@ -55,9 +54,9 @@ class DBAbstract {
   // (INSERT, UPDATE o DELETE) y devuelve el número de filas afectadas
   public function manipulacion($sql) {
     $result = 0;
-    if ($this->db) {
+    if ($this->db) { // no es null
       $this->db->query($sql);
-      $result = $this->db->affected_rows;
+      $result = $this->db->affected_rows; //regresa int filas
     }
 
     return $result;

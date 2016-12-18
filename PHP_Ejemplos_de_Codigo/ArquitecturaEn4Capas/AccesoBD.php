@@ -3,7 +3,8 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        : 
     @version    :
-    @TODO       : (modelo - capa de abstracción de datos)
+    @TODO       : (modelo - capa de ACCESO A DATOS)
+                            TODAS LAS CONSULTAS
 -->
 <!DOCTYPE html>
 <html>
@@ -88,9 +89,9 @@
         $numPalabras = (int) $fila[0];
         // Seleccionamos aleatoriamente una de las palabras del tipo indicado
         $n = rand(1, $numPalabras);
-        $res = $this->abstraccionDB->ejecutaQuery("SELECT palabra FROM palabras WHERE tipo = '$tipo'");
+        $res1 = $this->abstraccionDB->ejecutaQuery("SELECT palabra FROM palabras WHERE tipo = '$tipo'");
         for ($i = 0; $i < $n; $i++) {
-          $fila = $this->abstraccionDB->fetchCursor($res);
+          $fila = $this->abstraccionDB->fetchCursor($res1);
         }
         return $fila[0];
       }

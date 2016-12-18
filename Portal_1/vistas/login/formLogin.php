@@ -3,7 +3,7 @@
     @Author     : RVS - N.F.N.D - Home
     @Pag        :
     @version    :
-    @TODO       : 
+    @TODO       : Enviado por la controlador
 -->
 <!DOCTYPE html>
 <html lang="es">
@@ -15,39 +15,38 @@
   </head>
   <body>
     <h3>Login</h3>
-    <form action="../../Login.php" method="get">
+    <form action="index.php" method="get">
       <fieldset>
         <legend>
           Usuario:
         </legend>
         <input type="text" name="usuario" />
         <br>
+        <br>
         <legend>
           Contraseña:
         </legend>
         <input type="text" name="passwd" />
         <br>
-        <input type="hidden" name="do" value="procesarFormularioLogin">
+        <input type="hidden" name="do" value="procesarFormularioLogin"/>
         <br>
-        <input type="submit" value="enviar">
+        <input type="submit"/>
       </fieldset>
     </form>
     <!-- Enviar al index 'do' con la accion 'mostrarFormularioAltaUsuario' -->
     <!--<a href="index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>-->
     <br>
     <fieldset>
-      <legend>Nuevo Usuario: </legend>
-      <div>
+      <div> 
         <br>
         <label>
-          <a href="../../index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
+          <a href="index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
         </label>
       </div>
     </fieldset>
   </body>
 </html>
 
-<!-- Anterior - Login Basico -->
 <!--<h3>Login</h3>
 <form action="../../index.php" method="get">
   <fieldset>
