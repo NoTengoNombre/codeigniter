@@ -9,7 +9,7 @@
 <?php
 // Modelo Películas / Videos
 
-include_once "../DBAbstract.php";
+include_once "DBAbstract.php";
 
 class Peliculas {
 

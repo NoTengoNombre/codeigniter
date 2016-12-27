@@ -13,9 +13,9 @@
 //Paginas en general : cambia las pagians en paginas : direccionador
 // controlador llama a las vistas
 
-include_once './Vista.php';
-include_once './Login.php';
-include_once './Seguridad.php';
+include_once 'Vista.php';
+include_once 'Login.php';
+include_once 'Seguridad.php';
 
 class Controlador {
 
@@ -25,7 +25,7 @@ class Controlador {
    * y distintas clases
    */
   public static function control() {
-    session_start(); // Se ejecuta la sesion : comienza o recibe los datos de la session
+    session_start(); // Se ejecuta la sesion : comienza o recibe los datos de los demas script
 
     if (!isset($_REQUEST["do"])) { // isset - esta definida la variable ? si no esta fijado la accion del "do"
       $accion = "mostrarFormularioLogin"; // fuerzo a mostrar el formulario de login para acceder a la aplicacion

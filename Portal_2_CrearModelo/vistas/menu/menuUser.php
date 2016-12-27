@@ -22,7 +22,7 @@ que seleccione desde aqui
   </head>
   <body>
     <!-- Tengo que mostrar los datos del usuario que se ha logueado -->
-    <h1>Bienvenido </h1> <?php echo $data; ?><br/>
+    <h1>Bienvenido </h1> <?php echo $_SESSION['nombre_usuario']; ?><br/>
     <form method="get" action="Controlador.php">
       <fieldset>
         <legend>Menu Usuario</legend>

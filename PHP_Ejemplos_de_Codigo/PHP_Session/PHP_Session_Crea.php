@@ -23,8 +23,8 @@
     session_start();
     $array = array();
 //    va = devuelve string
-    $va = $_SESSION['nickname'] = "Jhonnyf";
-    $va1 = $_SESSION['nickname'] = $array;
+    $va = $_SESSION["nickname"] = "Jhonnyf";
+    $va1 = $_SESSION["nickname"] = $array;
     echo '<hr>';
     echo gettype($va);
     echo '<hr>';

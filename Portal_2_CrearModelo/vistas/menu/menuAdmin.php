@@ -10,7 +10,7 @@
 que ha sido llamado desde el controlador -->
 
 
-Bienvenido, <?php echo $data; ?><br/>
+Bienvenido, <?php echo $_SESSION['nombre_usuario'] ?><br/>
 <form method="get" action="Controlador.php">
   <fieldset>
     <legend>Menu Administrador</legend>
@@ -26,7 +26,7 @@ Bienvenido, <?php echo $data; ?><br/>
       <br>
       <li>
         <a href='index.php?do=buscarPeliculas'>Buscar pelicula</a><br/>
-      </li>
+      </li  >
       <br>
       <li>
         <a href='index.php?do=modificarPeliculas'>Modificar pelicula</a><br/>

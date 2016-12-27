@@ -7,4 +7,24 @@
 -->
 
 <?php
+
+class Dirigir {
+
+  public static function consultar_dirigir() {
+    
+  }
+
+  public static function insertar_dirigir() {
+    
+  }
+
+  public static function actualizar_dirigir() {
+    
+  }
+
+  public static function borrar_dirigir() {
+    
+  }
+
+}
 ?>

@@ -7,4 +7,24 @@
 -->
 
 <?php
+
+class Contener {
+
+  public static function consultar_contener() {
+    
+  }
+
+  public static function consultar_insertar() {
+    
+  }
+
+  public static function consultar_actualizar() {
+    
+  }
+
+  public static function consultar_borrar() {
+    
+  }
+
+}
 ?>

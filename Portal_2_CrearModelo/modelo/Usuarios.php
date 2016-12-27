@@ -1,4 +1,4 @@
-+
++s
 <?php
 /**
  * Parte del modelo 
@@ -7,7 +7,7 @@
  *
  * @author admin
  */
-include_once '../dbAbstract.php';
+include_once 'dbAbstract.php';
 
 class Usuarios {
 
@@ -22,12 +22,11 @@ class Usuarios {
     if ($resultado->num_rows > 0) {
       echo "<p> Lista de Usuarios " . $resultado->num_rows . " </p>";
     }
-    
+
     $resultado = $resultado->fetch_assoc();
     while ($resultado) {
       printf("%s (%s)\n");
     }
-    
   }
 
   public static function insertarUsuario() {

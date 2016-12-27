@@ -7,4 +7,25 @@
 -->
 
 <?php
+
+class Actuar{
+  
+  public static function consultar_actuar() {
+    
+  }
+
+  public static function consultar_insertar() {
+    
+  }
+
+  public static function consultar_borrar() {
+    
+  }
+
+  public static function consultar_actualizar() {
+    
+  }
+
+}
+
 ?>

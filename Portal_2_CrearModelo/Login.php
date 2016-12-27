@@ -28,7 +28,6 @@ class Login {
     }
 //    Al ser un select usa fetch_array
     $sql = "SELECT id_usuario, tipo_usuario, imagen_usuario FROM usuarios WHERE nombre_usuario = '$usuario' AND password = '$password'";
-    echo $sql . "<br/>";
     $result = $conex->query($sql);
 
     echo "resultado";

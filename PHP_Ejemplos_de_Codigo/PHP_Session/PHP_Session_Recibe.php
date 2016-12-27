@@ -8,12 +8,12 @@
 <?php
 //    Luego de eso, en otro script debes volver a llamar a la funcion session_start(); y usar la variable previamente grabada
 //    Por ejemplo vamos a Grabar un Nickname en un Script y luego usarlo en otros 2 scripts
-session_start();
-if (isset($_POST['txtusuario'])) {
-  $_SESSION['nickname'] = $_POST['txtusuario']; // NickName Grabado
+//session_start();
+if (isset($_POST["txtusuario"])) {
+  $_SESSION["nickname"] = $_POST["txtusuario"]; // NickName Grabado
 }
-if ($_SESSION['nickname']) {
-  $grabado = "El valor Grabado Previamente es : <strong> " . $_SESSION['nickname'] . "</strong><br>";
+if ($_SESSION["nickname"]) {
+  $grabado = "El valor Grabado Previamente es : <strong> " . $_SESSION["nickname"] . "</strong><br>";
   "<a href='PHP_Session_Crea.php'>Pagina Crea Session</a>";
 }
 ?>
