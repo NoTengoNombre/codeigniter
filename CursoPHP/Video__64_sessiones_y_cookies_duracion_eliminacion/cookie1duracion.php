@@ -17,7 +17,7 @@
     <?php
 //                                                                                         hora del sistema Unix + 30 sg 
 //                                                                                                        ruta donde se encuentra el directorio de la cookie 2
-    setcookie("duracion_cookie", "Esta es la informacion de nuestra 2º cookie : Duracion", time() + 30, "/PHP_Home/CursoPHP/Video__64_sessiones_y_cookies_duracion/zona_contenidos_Aqui_Trabaja_La_Cookie/");
+    setcookie("duracion_cookie", "Esta es la informacion de nuestra 2º cookie : Duracion", time() + 30, "/PHP_Home/CursoPHP/Video__64_sessiones_y_cookies_duracion_eliminacion/zona_contenidos_Aqui_Trabaja_La_Cookie/");
     ?>
   </body>
 </html>

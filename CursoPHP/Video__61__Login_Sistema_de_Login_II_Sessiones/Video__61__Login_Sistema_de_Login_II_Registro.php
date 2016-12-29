@@ -81,7 +81,7 @@ si visitamos otra pagina diferente , como ya fue creada , reanuda la anterior se
     if (!isset($_SESSION["usuario"])) {
 //     Que hacer si no hay nada iniciado
 //      Redirijo a Login
-      header("Location: Video__60__Login_Sistema_de_Login_II.php");
+      header("Location: Video__61__Login_Sistema_de_Login_II.php");
     }
     ?>
     <table>

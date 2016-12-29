@@ -45,11 +45,11 @@ Login.php -> formulario : se valida con la bd
 //                             SUPERGLOBAL = Significa que vamos a almacenar hay una variable que se va a usar en cualquier 
 //                             Lo que llega del formulario
         $_SESSION["usuario"] = $_POST["login"];
-        header("Location: Video__60__Login_Sistema_de_Login_II_Registro.php");
+        header("Location: Video__61__Login_Sistema_de_Login_II_Registro.php");
       } else {
 //        Si no existe bucle dentro de la pagina de login
 //        REDIRIGIR a una PAGINA mediante metodo HEADER
-        header("Location: Video__60__Login_Sistema_de_Login_II.php");
+        header("Location: Video__61__Login_Sistema_de_Login_II.php");
       }
     } catch (Exception $ex) {
       die("Error :  " . $ex->getMessage());
