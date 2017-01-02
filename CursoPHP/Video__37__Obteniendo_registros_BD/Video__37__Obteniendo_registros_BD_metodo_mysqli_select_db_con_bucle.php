@@ -33,9 +33,9 @@
     mysqli_set_charset($conexion, "utf8");
 
 
-    $consulta = "SELECT * FROM datospersonales";
+    $insertar = "SELECT * FROM datospersonales";
 
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
 //    Solo muestra una linea 
 //    Hemos creado un ResultSet "tabla virtual" 

@@ -30,9 +30,9 @@
     mysqli_set_charset($conexion, "utf8");
 
 //    $consulta = "SELECT * FROM productos WHERE C = $busqueda";
-    $consulta = "SELECT * FROM productos WHERE G = 'USA';";
+    $insertar = "SELECT * FROM productos WHERE G = 'USA';";
 
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
       echo '<table><tr><td>';

@@ -46,9 +46,9 @@ Usar LIKE en el WHERE
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "SELECT * FROM productos WHERE G = 'España';";
+    $insertar = "SELECT * FROM productos WHERE G = 'España';";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 // array asociativo - Ahora los campos de la BD se seleccionan mediante sus campos que los referencian
     while ($fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
 

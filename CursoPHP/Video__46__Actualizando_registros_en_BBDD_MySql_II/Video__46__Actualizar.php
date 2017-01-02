@@ -44,9 +44,9 @@
     mysqli_set_charset($conexion, "utf8");
 
 //    $consulta = "INSERT INTO producto ('a','b','c','d','e','f','g') VALUES ('a','a','a','a','a','a','a');";
-    $consulta = "UPDATE productos SET A='$cod' , B='$sec', C='$nom' , D='$pre' , E='$fec' , F='$imp' , G='$por' WHERE cod='$cod';";
+    $insertar = "UPDATE productos SET A='$cod' , B='$sec', C='$nom' , D='$pre' , E='$fec' , F='$imp' , G='$por' WHERE cod='$cod';";
  
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
 //    Meter lo que hay en una tabla meterlo en un formulario
     if ($resultado == false) {

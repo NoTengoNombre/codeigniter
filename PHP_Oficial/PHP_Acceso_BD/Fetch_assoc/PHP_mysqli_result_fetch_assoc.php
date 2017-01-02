@@ -20,8 +20,8 @@
       exit("Abortada conexion");
     }
 
-    $consulta = "SELECT Name , CountryCode FROM city";
-    $resultado = $mysqli->query($consulta);
+    $insertar = "SELECT Name , CountryCode FROM city";
+    $resultado = $mysqli->query($insertar);
     if ($resultado) {
       while ($fila = $resultado->fetch_assoc()) { // • Devuelve un array de objetos 
         printf("%s (%s)\n", $fila["Name"], $fila["CountryCode"]);

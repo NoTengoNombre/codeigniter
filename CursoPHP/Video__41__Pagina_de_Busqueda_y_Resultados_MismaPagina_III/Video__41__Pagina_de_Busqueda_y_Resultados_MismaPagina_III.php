@@ -41,9 +41,9 @@
     mysqli_set_charset($conexion, "utf8");
 
 //    $consulta = "SELECT * FROM producto WHERE G LIKE \"%$busqueda\";";
-    $consulta = "SELECT * FROM productos WHERE G = \"$busqueda\"";
+    $insertar = "SELECT * FROM productos WHERE G = \"$busqueda\"";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
       echo '<table><tr><td>';

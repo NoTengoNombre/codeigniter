@@ -21,9 +21,9 @@
     }
 
 //    $consulta = "SELECT Name , CountryCode FROM City ORDER BY ID DESC LIMIT 50,5";
-    $consulta = "SELECT Name , CountryCode FROM City WHERE id < 10";
+    $insertar = "SELECT Name , CountryCode FROM City WHERE id < 10";
 
-    if ($resultado = $mysqli->query($consulta)) {
+    if ($resultado = $mysqli->query($insertar)) {
       while ($fila = $resultado->fetch_assoc()) {
         printf("<pre>%s (%s)\n", $fila["Name"], $fila["CountryCode"] . "</pre>");
       }

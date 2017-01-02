@@ -13,8 +13,8 @@
   </head>
   <body> 
 
-    <form method="post" action="procesar_fichero.php">
-      <input type="file" name="fichero" value="" width="300" enctype="multipart/form-data">
+    <form method="post" action="procesar_fichero.php"  enctype="multipart/form-data">
+      <input type="file" name="fichero">
       <br>
       <br>
       <input type="submit" name="enviar">

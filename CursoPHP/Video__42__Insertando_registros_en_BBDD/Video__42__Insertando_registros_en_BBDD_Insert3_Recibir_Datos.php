@@ -37,9 +37,9 @@
     mysqli_set_charset($conexion, "utf8");
 
 //    Inserta datos 
-    $consulta = "INSERT INTO PRODUCTOS (A,B,C) VALUES ('AR_x1','DEPORTES','RAQUETA BADMINTON')";
+    $insertar = "INSERT INTO PRODUCTOS (A,B,C) VALUES ('AR_x1','DEPORTES','RAQUETA BADMINTON')";
 
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
     mysqli_close($conexion);
     ?>

@@ -42,11 +42,11 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "DELETE FROM USUARIOS WHERE USUARIO = '$usuario' AND CONTRA= '$contra'";
+    $insertar = "DELETE FROM USUARIOS WHERE USUARIO = '$usuario' AND CONTRA= '$contra'";
 
-    echo "<span style='color: #f00'> " . $consulta . " '</span>";
+    echo "<span style='color: #f00'> " . $insertar . " '</span>";
 
-    mysqli_query($conexion, $consulta);
+    mysqli_query($conexion, $insertar);
 //    3º Mejora
 //    Usar Funcion : mysqli_num_rows() -> Devuelve si hay Registros o no
 //     "DELETE" NO DEVUELVE ResultSet - SON CONSULTAS DE ACCION
@@ -54,10 +54,10 @@
 //    Tanto de una consulta de accion o seleccion
     if (mysqli_affected_rows($conexion) > 0) {
       echo "<h1>Baja Procesada</h1>";
-      echo "<br><span style='color: #00f'> " . $consulta . " '</span>";
+      echo "<br><span style='color: #00f'> " . $insertar . " '</span>";
     } else {
       echo "<br>No se ha encontrado que borrar<br>";
-      echo "<br><span style='color: #00f'> " . $consulta . " '</span>";
+      echo "<br><span style='color: #00f'> " . $insertar . " '</span>";
     }
     mysqli_close($conexion);
     ?>

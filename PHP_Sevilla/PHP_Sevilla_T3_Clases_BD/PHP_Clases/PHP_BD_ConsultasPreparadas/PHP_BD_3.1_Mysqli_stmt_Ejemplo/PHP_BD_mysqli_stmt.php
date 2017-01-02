@@ -28,16 +28,16 @@
 //          Preparamos la consulta
         $tienda = $_POST['tienda'];
         $unidades = $_POST['unidades'];
-        $consulta = $dwes->stmt_init();
+        $insertar = $dwes->stmt_init();
         $sql = "UPDATE stock SET unidades=? WHERE tienda=? AND producto='$producto'";
-        $consulta->prepare($sql);
+        $insertar->prepare($sql);
 //      La ejecutamos dentro de un bucle , tantas veces como tiendas haya
         for ($i = 0; $i < count($tienda); $i++) {
-          $consulta->bind_param('ii', $unidades[$i], $tienda[$i]);
-          $consulta->execute();
+          $insertar->bind_param('ii', $unidades[$i], $tienda[$i]);
+          $insertar->execute();
         }
         $mensaje = "Se han actualizado los datos.";
-        $consulta->close();
+        $insertar->close();
       }
     } else {
 //      Si no se ha podido establecer la conexion , generamos un mensaje de error

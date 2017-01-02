@@ -16,15 +16,15 @@
     $dwes = new mysqli('localhost', 'root', '', 'dwes');
     if ($dwes) {
       echo "<br>Conexion establecida : ";
-      $consulta = $dwes->stmt_init();
-      $consulta->prepare('SELECT producto , unidades FROM stock WHERE unidades < 2');
-      $consulta->execute();
-      $consulta->bind_result($producto, $unidades);
-      while ($consulta->fetch()) {
+      $insertar = $dwes->stmt_init();
+      $insertar->prepare('SELECT producto , unidades FROM stock WHERE unidades < 2');
+      $insertar->execute();
+      $insertar->bind_result($producto, $unidades);
+      while ($insertar->fetch()) {
         print "<p>• Producto " . $producto . " - Unidades - " . $unidades . "</p>";
       }
-      $consulta->execute();
-      $consulta->close();
+      $insertar->execute();
+      $insertar->close();
     }
     ?>
   </body>

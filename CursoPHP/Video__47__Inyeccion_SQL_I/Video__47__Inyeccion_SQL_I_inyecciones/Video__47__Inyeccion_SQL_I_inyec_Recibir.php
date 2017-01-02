@@ -36,9 +36,9 @@
 //    Funcion original - Muestra todos los valores - Como buscador
 //    $consulta = "SELECT * FROM productos WHERE C LIKE '%$busqueda%';";
 //    Consulta necesita introducir todos los datos - No Funciona como buscador
-    $consulta = "SELECT * FROM productos WHERE C = '$busqueda'";
+    $insertar = "SELECT * FROM productos WHERE C = '$busqueda'";
 
-    echo "$consulta<br><br>";
+    echo "$insertar<br><br>";
 
 //    • SQL BASICA 
 //    Instruccion : SELECT USUARIO , PASSWORD , DIRECCION , TELEFONO FROM DATOSPERSONALES WHERE USUARIO='$BUSQUEDA';
@@ -48,7 +48,7 @@
 //    OR 'Z'='Z -> Le estamos diciendo que nos muestre todos los datos usuarios , toda la informacion en la tabla usuarios
 //    OR 'Z'='Z -> condicion inventada - devuelve TRUE
 //    INYECCION de prueba -> 'cenicero' or '1'='1 <-- INYECCION de prueba
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
       echo "<table>";

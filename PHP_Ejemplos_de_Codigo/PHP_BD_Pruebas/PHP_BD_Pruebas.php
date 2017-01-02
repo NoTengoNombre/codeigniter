@@ -30,9 +30,9 @@
 
       $sql = "SELECT tipo FROM usuarios WHERE user='$usuario';"; // saca 1 valor
 
-      $consulta = $objeto_mysql->query($sql);
+      $insertar = $objeto_mysql->query($sql);
 
-      while ($fila = mysqli_fetch_array($consulta)) { //sacar todos los resultados
+      while ($fila = mysqli_fetch_array($insertar)) { //sacar todos los resultados
         if (isset($fila)) {
           echo '<br>';
           echo 'Tipo de usuario : ' . $fila['tipo'];

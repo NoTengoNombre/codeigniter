@@ -37,9 +37,9 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "SELECT * FROM PRODUCTOS WHERE G = 'ESPAÑA';";
+    $insertar = "SELECT * FROM PRODUCTOS WHERE G = 'ESPAÑA';";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_row($resultados)) {
 //      crear una tabla

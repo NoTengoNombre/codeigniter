@@ -16,15 +16,15 @@
     $dwes = new mysqli('localhost', 'root', '', 'dwes');
     if ($dwes) {
       echo "<br>Conexion establecida : ";
-      $consulta = $dwes->stmt_init();
+      $insertar = $dwes->stmt_init();
 //      $consulta->prepare('INSERT INTO familia (cod,nombre) VALUES ("TABLET","Tablet PC")');
-      $consulta->prepare('INSERT INTO familia (cod,nombre) VALUES (?,?)');
+      $insertar->prepare('INSERT INTO familia (cod,nombre) VALUES (?,?)');
       $cod_producto = "TABLET";
       $nombre_producto = "Tablet PC";
 //      No permite literales : producte error
 //      $consulta->bind_param('ss', $cod_producto, $nombre_producto);
-      $consulta->execute();
-      $consulta->close();
+      $insertar->execute();
+      $insertar->close();
     }
     ?>
   </body>

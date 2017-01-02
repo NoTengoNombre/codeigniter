@@ -34,11 +34,11 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "SELECT * FROM productos WHERE C LIKE '%$busqueda%';";
+    $insertar = "SELECT * FROM productos WHERE C LIKE '%$busqueda%';";
 
-    var_dump($consulta);
+    var_dump($insertar);
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 
     var_dump($resultados);
 

@@ -35,9 +35,9 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "INSERT INTO PRODUCTOS (A,B,C,D,E,F,G) VALUES (\"$cod\",\"$sec\",\"$n_art\",\"$precio\",\"$fec\",\"$imp\",\"$por\");";
+    $insertar = "INSERT INTO PRODUCTOS (A,B,C,D,E,F,G) VALUES (\"$cod\",\"$sec\",\"$n_art\",\"$precio\",\"$fec\",\"$imp\",\"$por\");";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 
     if ($resultados == false) {
       echo "Error" . mysqli_error($resultados);

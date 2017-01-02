@@ -22,7 +22,7 @@
     $conexion = mysqli_connect($db_host, $db_usuario, $db_contra, $db_nombre);
 
 //    variable almacena consulta
-    $consulta = "SELECT * FROM datospersonales";
+    $insertar = "SELECT * FROM datospersonales";
 //    ResultSet o RecordSet 
 //    - TABLA VIRTUAL : Crear una tabla en la memoria 
 //    donde carga toda la informacion 
@@ -30,7 +30,7 @@
 //    4 campos y todos los registros
 //  Esta tabla virtual la hemos 
 //    almacenado en una variable  
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 //  Para ver toda informacion de la base de datos usamos
 //  la funcion :
 //  mysqli_fetch_row -> Ve Linea a Linea la informacion 

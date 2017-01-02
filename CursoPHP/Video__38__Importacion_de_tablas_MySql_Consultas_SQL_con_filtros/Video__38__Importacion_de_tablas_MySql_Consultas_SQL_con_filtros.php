@@ -33,9 +33,9 @@
 
     mysqli_set_charset($conexion, "uft8");
 
-    $consulta = "SELECT * FROM PRODUCTOS";
+    $insertar = "SELECT * FROM PRODUCTOS";
 
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_row($resultado)) {
 //      crear una tabla

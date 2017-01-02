@@ -39,9 +39,9 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "SELECT * FROM productos WHERE G = 'España';";
+    $insertar = "SELECT * FROM productos WHERE G = 'España';";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 // arrays indexado 
     while ($fila = mysqli_fetch_row($resultados)) {
 

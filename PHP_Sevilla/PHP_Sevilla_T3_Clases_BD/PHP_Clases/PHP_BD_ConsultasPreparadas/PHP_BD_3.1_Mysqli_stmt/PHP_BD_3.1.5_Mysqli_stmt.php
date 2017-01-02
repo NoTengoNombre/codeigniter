@@ -14,7 +14,7 @@
   <body>
     <?php
     $dwes = new mysqli('localhost', 'root', '', 'dwes');
-    /* objeto */ $consulta = $dwes->stmt_init(); // objeto
+    /* objeto */ $insertar = $dwes->stmt_init(); // objeto
     if ($dwes) {
       echo "<br>" . "conexion realizada";
     }

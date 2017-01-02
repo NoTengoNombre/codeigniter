@@ -32,12 +32,12 @@
 
     mysqli_set_charset($conexion, "utf8");
 
-    $consulta = "SELECT * FROM productos where G = \"$busqueda\";";
+    $insertar = "SELECT * FROM productos where G = \"$busqueda\";";
 //    $consulta = "SELECT * FROM productos where G LIKE \"%$busqueda\";";
 //    $consulta = "SELECT * FROM productos where G LIKE \"%$busqueda\";";
 //    $consulta = "SELECT * FROM productos where G = $busqueda ";
 
-    $resultados = mysqli_query($conexion, $consulta);
+    $resultados = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_array($resultados, MYSQLI_ASSOC)) {
       echo '<table><tr><td>';

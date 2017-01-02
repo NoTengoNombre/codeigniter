@@ -39,11 +39,11 @@
 //    $consulta = "SELECT * FROM usuarios";
 //    Para sacar todos los password de la BBDD : 
 //    'or '1'='1 <-- INYECCION BASICA
-    $consulta = "SELECT * FROM usuarios WHERE usuario='$usuario' AND contra='$contra' ";
+    $insertar = "SELECT * FROM usuarios WHERE usuario='$usuario' AND contra='$contra' ";
 
-    echo "$consulta<br><br>";
+    echo "$insertar<br><br>";
 
-    $resultado = mysqli_query($conexion, $consulta);
+    $resultado = mysqli_query($conexion, $insertar);
 
     while ($fila = mysqli_fetch_array($resultado, MYSQLI_ASSOC)) {
       echo "<table>";

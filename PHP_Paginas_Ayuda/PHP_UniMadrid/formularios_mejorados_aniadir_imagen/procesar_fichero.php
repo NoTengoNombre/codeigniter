@@ -8,7 +8,7 @@
 
 <?php
 if (isset($_FILES['campoFile']['name'])) {
-  $var = $_FILE['campoFile']['name'];
+  $var = $_FILES['campoFile']['name'];
   echo 'Recibir fichero : ' . $var;
   print_r($var);
 }
