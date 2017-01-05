@@ -71,7 +71,7 @@
         </tr>
         <tr>
           <td colspan="2" align="center">
-            <a href="Mostrar Blog.php">Página de visualización del blog</a>
+            <a href="Mostrar_Blog.php">Página de visualización del blog</a>
           </td>
         </tr>
       </table>

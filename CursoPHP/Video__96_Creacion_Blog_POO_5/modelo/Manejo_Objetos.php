@@ -15,7 +15,7 @@
     <?php
 //    tenemos que incluir todo los objetos de la clase Objeto_blog
 //    OBTENER Y ESTABLECER LAS PROPIEDADES CORRESPODIENTES A ESOS OBJETOS
-    include_once './Objeto_Blog.php'; ;
+    include_once ('Objeto_Blog.php');
 
     class Manejo_Objetos {
 
@@ -84,7 +84,7 @@
           $blog->setId($registro["Id"]);
           $blog->setTitulo($registro["Titulo"]);
           $blog->setFecha($registro["Fecha"]);
-          $blog->setComentario($registro["Comentarios"]);
+          $blog->setComentario($registro["Comentario"]);
           $blog->setImagen($registro["Imagen"]);
 //6º          almacenar dentro del array 1º objeto creado
 //6º         quiero almacenar este objeto en la 1º posicion del array

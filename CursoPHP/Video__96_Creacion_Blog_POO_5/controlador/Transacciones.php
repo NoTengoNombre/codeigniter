@@ -21,12 +21,12 @@ sql se encarga de ingresarla en la bd
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Transaccione</title>
   </head>
   <body>
     <?php
-    include_once ('../modelo/Objeto_Blog.php');
-    include_once ('../modelo/Manejo_Objetos.php');
+    include_once ("../modelo/Objeto_Blog.php");
+    include_once ("../modelo/Manejo_Objetos.php");
 
     try {
 
@@ -84,5 +84,7 @@ sql se encarga de ingresarla en la bd
       die();
     }
     ?>
+    <br>
+    <a href="../vista/Formulario.php">Volver al formulario</a>
   </body>
 </html>
