@@ -29,7 +29,7 @@
       public function getUsuarios() {
 //      Este objeto dbAbstract crea la conexion
         $this->dbAbstract->crearConexion('localhost', 'root', '', 'portal2');  // llama a la clase Abstracta
-        $resultado = $this->dbAbstract->consulta("SELECT id_usuario , nombre_usuario FROM usuarios", 'db');
+        $resultado = $this->dbAbstract->consulta("SELECT id_usuario , nombre_usuario FROM usuarios");
 //      Creamos un array para almacenar los resultados
         $usuarios = array();
 //      Sacamos los resultados y lo guardamos dentro de una array  

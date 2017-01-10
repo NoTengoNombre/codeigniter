@@ -14,9 +14,9 @@ Login.php -> formulario : se valida con la bd
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+    </style>
   </head>
-  <style>
-  </style>
   <body>
     <?php
     try {

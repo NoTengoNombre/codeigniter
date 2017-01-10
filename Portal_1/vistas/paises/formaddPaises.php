@@ -12,9 +12,9 @@
     <title></title>
   </head>
   <body>
-    <fieldset>
-      <legend>Formulario Paises</legend>
-      <form method="get" action="Controlador.php">
+    <form method="get" action="Controlador.php">
+      <fieldset>
+        <legend>Formulario Paises</legend>
         <br>
         <label>Id Paises</label>
         <input type="text" name="id_paises" value="">
@@ -27,9 +27,9 @@
         <br><br>
         <input type="hidden" name="do" value="formulario_peliculas">
         <button name="enviar">Enviar</button>
-    </fieldset>
-  </form> 
-  <?php
-  ?>
-</body>
+      </fieldset>
+    </form> 
+    <?php
+    ?>
+  </body>
 </html>

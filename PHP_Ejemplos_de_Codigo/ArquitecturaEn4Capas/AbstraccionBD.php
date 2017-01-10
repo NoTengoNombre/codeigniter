@@ -17,21 +17,21 @@
     class DBAbstraccion {
 
       public function conectarDB($host, $usr, $pass, $dbname) {
-        mysql_connect($host, $usr, $pass);
-        mysql_select_db($dbname);
+        mysqli_connect($host, $usr, $pass);
+        mysqli_select_db($dbname);
       }
 
       public function desconectarDB() {
-        mysql_close();
+        mysqli_close();
       }
 
       public function ejecutaQuery($sql) {
-        $res = mysql_query($sql);
+        $res = mysqli_query($sql);
         return $res;
       }
 
       public function fetchCursor($cursor) {
-        $tupla = mysql_fetch_array($cursor);
+        $tupla = mysqli_fetch_array($cursor);
         return $tupla;
       }
 

@@ -12,41 +12,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="">
+    <style>
+
+      h6{
+        text-align: center;
+        background-color: #99ff99;
+        width: 210px;
+        height: 50px;
+      }
+
+      body{
+        background-color: #ccffcc;
+      }
+
+      p#p1{
+        text-align: center;
+        width: 210px;
+        height: 50px;
+        background-color: #65ff84;
+      }
+
+      html{
+        height: 100%;
+      }
+      body{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+      footer{
+        /* Like the header, the footer will have a static height - it shouldn't grow or shrink.  */
+        /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+        flex: 0 0 auto;
+      }
+    </style>
   </head>
-  <style>
-
-    h6{
-      text-align: center;
-      background-color: #99ff99;
-      width: 210px;
-      height: 50px;
-    }
-
-    body{
-      background-color: #ccffcc;
-    }
-
-    p#p1{
-      text-align: center;
-      width: 210px;
-      height: 50px;
-      background-color: #65ff84;
-    }
-
-    html{
-      height: 100%;
-    }
-    body{
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    footer{
-      /* Like the header, the footer will have a static height - it shouldn't grow or shrink.  */
-      /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
-      flex: 0 0 auto;
-    }
-  </style>
   <body>
     <div>
       <p id="p1">&copy; Black Metal </p>

@@ -8,8 +8,8 @@
 
 <?php
 
-class Actuar{
-  
+class Actuar {
+
   public static function consultar_actuar() {
     
   }
@@ -27,5 +27,4 @@ class Actuar{
   }
 
 }
-
 ?>

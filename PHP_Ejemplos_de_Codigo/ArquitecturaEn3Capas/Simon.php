@@ -17,19 +17,18 @@
     class Simon {
 
 //      Almacenar 2 variables
-      private $secuencia;
-      private $longitudSecuencia;
+      private $secuencia, $longSec;
 
       public function resetSecuencia() {
-        $this->longitudSecuencia = 0;
+        $this->longSec = 0;
         $this->secuencia = "";
         srand(time()); // semilla que genera un numero aleatorio
       }
 
       public function incrementaSecuencia() {
         $n = rand(1, 4);
-        $this->secuencia[$this->longitudSecuencia] = $n;
-        $this->longitudSecuencia++;
+        $this->secuencia[$this->longSec] = $n;
+        $this->longSec ++;
       }
 
       public function getSecuencia() {
@@ -41,6 +40,7 @@
         $diff = 0;
         $i = 0;
         foreach ($this->secuencia as $valor) {
+          var_dump($valor); 
           if ($secUser[$i] != $valor) {
             $diff++;
             break;

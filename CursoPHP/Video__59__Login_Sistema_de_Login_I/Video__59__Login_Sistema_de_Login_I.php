@@ -14,31 +14,31 @@ Login.php -> formulario : se valida con la bd
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      table{
+        width: 25%;
+        background: #FFC;
+        border: 2px dotted #F00;
+        margin: auto;
+      }
+
+      .izq{
+        text-align: right;
+      }
+
+      .titulo{
+        text-align: left;
+      }
+
+      td{
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
   </head>
-  <style>
-    h1{
-      text-align: center;
-    }
-    table{
-      width: 25%;
-      background: #FFC;
-      border: 2px dotted #F00;
-      margin: auto;
-    }
-
-    .izq{
-      text-align: right;
-    }
-
-    .titulo{
-      text-align: left;
-    }
-
-    td{
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
   <body>
     <h1>Introduce tus datos</h1>
     <form action="Video__59__Login_Sistema_de_Login_I_Comprueba_Datos.php" method="post"> 
@@ -56,5 +56,6 @@ Login.php -> formulario : se valida con la bd
             <input type="text" name="password">
           </td></tr>
         <tr><td colspan="2"><input type="submit" name="enviar" value="LOGIN"></td></tr></table>
+    </form>
   </body>
 </html>

@@ -10,24 +10,23 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Formulario</title>
+    <title>Error en Formulario</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="">
   </head>
   <body>
     <fieldset>
+      <legend>Error en el Formulario</legend>
       <div>
-        <legend>
-          <h3>Usuario o contraseña incorrectos</h3>
-          <a href="index.php">Volver</a>   
-        </legend>
+        <label></label>
+        <h3>Usuario o contraseña incorrectos</h3>
+        <a href="index.php">Volver</a>   
       </div>
       <hr>
       <div>
-        <legend>
-          <a href="index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
-        </legend>
+        <label></label>
+        <a href="index.php?do=mostrarFormularioAltaUsuario">Registrarse</a>
       </div>
     </fieldset>
   </body>

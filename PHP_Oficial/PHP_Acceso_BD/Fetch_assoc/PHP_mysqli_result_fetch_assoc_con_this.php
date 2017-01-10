@@ -34,6 +34,25 @@
         $mysqli->close();
       }
 
+      public function consultar2() {
+        $mysqli = new mysqli("localhost", "root", "", "world");
+        if ($mysqli->connect_errno) {
+          printf("Conexion Fallida: %s\n", $mysqli->connect_error);
+          exit("Abortada conexion");
+        }
+        $consulta = "SELECT Name , CountryCode FROM city";
+        $resultado = $mysqli->query($consulta);
+        if ($resultado) {
+          while ($fila = $resultado->fetch_all()) { // • Obtener todas las filas en un array asociativo, numérico, o en ambos
+//          while ($fila = $resultado->fetchAll()) { // • Devuelve un array de objetos PDO
+            printf("%s (%s)\n", $fila[0], $fila[1]);
+            echo '<br>';
+          }
+          $resultado->free();
+        }
+        $mysqli->close();
+      }
+
       public static function consultar_static() {
         $mysqli = new mysqli("localhost", "root", "", "world");
         if ($mysqli->connect_errno) {
@@ -43,6 +62,7 @@
         $consulta = "SELECT Name , CountryCode FROM city";
         $resultado = $mysqli->query($consulta);
         if ($resultado) {
+//         fetch_assoc : usa el nombre de las columnas de la bd
           while ($fila = $resultado->fetch_assoc()) {
             printf("%s (%s)\n", $fila["Name"], $fila["CountryCode"]);
             echo '<br>';
@@ -54,8 +74,9 @@
 
     }
 
-//    $conexion = new Consultar();
+    $conexion = new Consultar();
 //    $conexion->consultar();
+    $conexion->consultar2();
 //    Consultar::consultar_static();
     ?>
   </body>

@@ -14,18 +14,15 @@
     <link rel="shortcut icon" href="">
   </head>
   <body>
-    <h3>Login</h3>
+    <h3>Formulario</h3>
     <form action="index.php" method="get">
       <fieldset>
-        <legend>
-          Usuario:
-        </legend>
+        <legend>Login</legend>
+        <label>Usuario</label>
         <input type="text" name="usuario" />
         <br>
         <br>
-        <legend>
-          Contraseña:
-        </legend>
+        <label>Contraseña</label>
         <input type="text" name="passwd" />
         <br>
         <input type="hidden" name="do" value="procesarFormularioLogin"/>

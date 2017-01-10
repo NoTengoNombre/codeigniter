@@ -20,7 +20,7 @@
 
     while ($fila = $result->fetch_array()) {
       $usuarios[] = $fila;
-      include './Vista.php';
+      include ('Vista.php');
     }
 
     $result->free();

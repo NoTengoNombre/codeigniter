@@ -18,11 +18,12 @@ que seleccione desde aqui
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Formulario Usuario</title>
   </head>
   <body>
     <!-- Tengo que mostrar los datos del usuario que se ha logueado -->
-    <h1>Bienvenido </h1> <?php echo $data; ?><br/>
+    <h1>Bienvenido </h1>
+    <?php echo $data; ?><br/>
     <form method="get" action="Controlador.php">
       <fieldset>
         <legend>Menu Usuario</legend>
@@ -30,7 +31,6 @@ que seleccione desde aqui
           <li>
             <a href='index.php?do=buscarpelicula'>Buscar pelicula</a><br/>
           </li>
-          <br>
           <li>
             <a href='index.php?do=cerrarsesion'>Cerrar sesion</a>
           </li>

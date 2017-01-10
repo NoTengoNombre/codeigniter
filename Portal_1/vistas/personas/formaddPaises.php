@@ -12,9 +12,9 @@
     <title></title>
   </head>
   <body>
-    <fieldset>
-      <legend>Formulario Personas</legend>
-      <form method="get" action="Controlador.php">
+    <form method="get" action="Controlador.php">
+      <fieldset>
+        <legend>Formulario Personas</legend>
         <br>
         <label>Id Personas</label>
         <input type="text" name="id_personas" value="">
@@ -33,9 +33,9 @@
         <br>
         <input type="hidden" name="do" value="formulario_personas">
         <button name="enviar">Enviar</button>
-    </fieldset>
-  </form> 
-  <?php
-  ?>
-</body>
+      </fieldset>
+    </form> 
+    <?php
+    ?>
+  </body>
 </html>

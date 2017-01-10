@@ -47,35 +47,35 @@ si visitamos otra pagina diferente , como ya fue creada , reanuda la anterior se
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      table{
+        width: 25%;
+        background: #FFC;
+        border: 2px dotted #F00;
+        margin: auto;
+      }
+
+      .izq{
+        text-align: center;
+      }
+
+      .titulo{
+        text-align: center;
+      }
+
+      td{
+        text-align: center;
+        padding: 10px;
+      }
+      body{
+        background: #000;
+        color: #f00;
+      }
+    </style>
   </head>
-  <style>
-    h1{
-      text-align: center;
-    }
-    table{
-      width: 25%;
-      background: #FFC;
-      border: 2px dotted #F00;
-      margin: auto;
-    }
-
-    .izq{
-      text-align: center;
-    }
-
-    .titulo{
-      text-align: center;
-    }
-
-    td{
-      text-align: center;
-      padding: 10px;
-    }
-    body{
-      background: #000;
-      color: #f00;
-    }
-  </style>
   <body>
     <table>
       <h1 class="titulo">Bienvenido</h1>

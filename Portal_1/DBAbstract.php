@@ -46,7 +46,6 @@ class DBAbstract {
         $resultArray = $result->fetch_all(); //Devuelve asociativo / array
       }
     }
-
     return $resultArray;
   }
 

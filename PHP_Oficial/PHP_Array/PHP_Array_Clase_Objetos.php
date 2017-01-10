@@ -37,8 +37,3 @@ class BB extends AA {
 }
 
 var_dump((array) new BB());
-?>
-
-
-
-

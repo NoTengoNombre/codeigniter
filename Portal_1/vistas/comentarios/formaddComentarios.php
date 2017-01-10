@@ -12,21 +12,21 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Añadir Comentarios</title>
   </head>
   <body>
-    <fieldset>
-      <legend>Añadir Comentarios</legend>
-      <form method="get" action="Controlador.php">
+    <form method="get" action="Controlador.php">
+      <fieldset>
+        <legend>Añadir Comentarios</legend>
         <input type="text" name="Texto" value="">
         <br>
         <input type="hidden" name="do" value="formulario_comentarios">
         <button name="enviar">Enviar</button>
-    </fieldset>
-  </form> 
-  <?php
-  ?>
-</body>
+      </fieldset>
+    </form> 
+    <?php
+    ?>
+  </body>
 </html>
 
 

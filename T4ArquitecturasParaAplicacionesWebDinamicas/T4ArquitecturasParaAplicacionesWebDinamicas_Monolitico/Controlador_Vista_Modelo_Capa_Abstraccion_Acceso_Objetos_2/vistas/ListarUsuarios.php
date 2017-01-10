@@ -12,7 +12,7 @@
     <title></title>
   </head>
   <body>
-    <h1>Listado de Usuarios</h1>
+    <h1>Listado de Usuarios Desde La  vista</h1>
     <table>
       <?php
       foreach ($data as $fila) {

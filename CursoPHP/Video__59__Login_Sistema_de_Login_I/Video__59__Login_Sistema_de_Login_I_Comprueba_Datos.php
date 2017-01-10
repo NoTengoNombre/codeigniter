@@ -13,10 +13,10 @@ Login.php -> formulario : se valida con la bd
 <html>
   <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Procesa Login</title>
+    <style>
+    </style>
   </head>
-  <style>
-  </style>
   <body>
     <?php
     try {
@@ -47,8 +47,8 @@ Login.php -> formulario : se valida con la bd
         header("Location: Video__59__Login_Sistema_de_Login_I.php");
       }
     } catch (Exception $ex) {
+      echo "Error conexion : <br>";
       die("Error :  " . $ex->getMessage());
-      echo "";
     }
     ?>
   </body>

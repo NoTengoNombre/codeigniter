@@ -33,8 +33,6 @@
 
     }
 
-    $controlador = new Controlador();
-    $controlador->listarUsuarios();
     ?>
   </body>
 </html>

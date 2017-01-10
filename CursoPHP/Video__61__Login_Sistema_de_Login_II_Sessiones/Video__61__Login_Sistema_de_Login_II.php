@@ -14,31 +14,31 @@ Login.php -> formulario : se valida con la bd
   <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+      h1{
+        text-align: center;
+      }
+      table{
+        width: 25%;
+        background: #FFC;
+        border: 2px dotted #F00;
+        margin: auto;
+      }
+
+      .izq{
+        text-align: right;
+      }
+
+      .titulo{
+        text-align: left;
+      }
+
+      td{
+        text-align: center;
+        padding: 10px;
+      }
+    </style>
   </head>
-  <style>
-    h1{
-      text-align: center;
-    }
-    table{
-      width: 25%;
-      background: #FFC;
-      border: 2px dotted #F00;
-      margin: auto;
-    }
-
-    .izq{
-      text-align: right;
-    }
-
-    .titulo{
-      text-align: left;
-    }
-
-    td{
-      text-align: center;
-      padding: 10px;
-    }
-  </style>
   <body>
     <h1>Introduce tus datos</h1>
     <form action="Video__61__Login_Sistema_de_Login_II_Comprueba_Datos.php" method="post"> 

@@ -83,7 +83,6 @@ class B extends A {
 }
 
 var_dump((array) new B());
-?>
 
 
 

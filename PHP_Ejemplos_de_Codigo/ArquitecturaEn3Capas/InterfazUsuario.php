@@ -27,8 +27,9 @@
       public function mostrarSecuencia($sec, $tiempo) {
         echo "<meta http-equiv='refresh' content='$tiempo;index.php?accion=mostrarForm'>";
         echo "<h1>";
-        foreach ($sec as $valor)
+        foreach ($sec as $valor) {
           echo $valor;
+        }
         echo "</h1>";
       }
 

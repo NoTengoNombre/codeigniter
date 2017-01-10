@@ -13,8 +13,8 @@
   </head>
   <body>
     <?php
-    include "./InterfazUsuario.php";
-    include "./Simon.php";
+    include ("InterfazUsuario.php");
+    include ("Simon.php");
     session_start();
 
     // ---- Creamos y levantamos el objeto controlador, o lo recuperamos de $_SESSION si ya fue creado -----
@@ -51,11 +51,12 @@
         if (!isset($_REQUEST["accion"])) {
           // Muestra la pantalla inicial de la aplicación
           $this->ui->mostrarPantallaInicial();
-        } else
+        } else {
           switch ($_REQUEST["accion"]) {
             case "iniciar":
               // Reinicia la secuencia a longitud 0 y vuelve a cargar la página para jugar
               $this->simon->resetSecuencia();
+//              invoca a un metodo javascript
               echo "<script>location.href='index.php?accion=incrementarSecuencia'</script>";
               break;
             case "incrementarSecuencia":
@@ -75,9 +76,10 @@
               $this->ui->mostrarResultado($res);
               break;
           }
+        }
       }
 
-// main()
+//      main();
     }
 
     // Class Controlador

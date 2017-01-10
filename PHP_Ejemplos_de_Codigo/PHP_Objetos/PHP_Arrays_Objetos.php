@@ -44,7 +44,6 @@
 
 //    var_dump($sql); No lo permite
 
-
     echo '<br>' . gettype($sql);
     echo '<br>' . is_object($sql);
     if (is_object($sql)) {
@@ -71,6 +70,7 @@
       echo '<br>No';
     }
 
+    echo '<hr>';
     print_r($array_objeto);
 
     foreach ($array_objeto as $value) {

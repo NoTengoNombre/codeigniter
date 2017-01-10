@@ -12,7 +12,7 @@
     <title></title>
   </head>
   <body>
-    <h1>Listado de Usuarios</h1>
+    <h1>Vista</h1>
     <?php
 
     class Vista {
@@ -28,28 +28,26 @@
       }
 
       /**
+       *  Llamada a la Vista
        * 
        * @param type $data 
        */
       public function mostrarLista($data) {
-        ?>
-        <!--<h1>Llamada a la Vista</h1>-->
-        <table>
-          <tr>
-            <th>Id_Usuario</th>
-            <th>Titulo</th>
-          </tr>
-          <?php
-          foreach ($data as $fila) {
-            echo '<tr>';
-            echo '<td>' . $fila['id_usuario'] . '</td>';
-            echo '<td>' . $fila['nombre_usuario'] . '</td>';
-            echo '</tr>';
-          }
-          echo '</table>';
+        echo "<table>";
+        echo "<tr>";
+        echo "<th>Id_Usuario</th>";
+        echo "<th>Titulo</th>";
+        echo "</tr>";
+        foreach ($data as $fila) {
+          echo '<tr>';
+          echo '<td>' . $fila['id_usuario'] . '</td>';
+          echo '<td>' . $fila['nombre_usuario'] . '</td>';
+          echo '</tr>';
         }
-
+        echo '</table>';
       }
-      ?>
+
+    }
+    ?>
   </body>
 </html>
