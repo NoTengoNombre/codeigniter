@@ -10,10 +10,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       ::selection { background-color: #E13300; color: white; }
       ::-moz-selection { background-color: #E13300; color: white; }
-
+      
       img{
-        margin: 0px 0px 0px 400px;
-        width: 10%;
+        padding: 30px 400px 0px;
       }
 
       body {
@@ -73,24 +72,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <body>
 
     <div id="container">
-      <h1>Bienvenido a CodeIgniter</h1>
-
+      <h1>hola_mundo_view</h1>
       <div id="body">
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51FONP8m2EL._AC_UL320_SR288,320_.jpg" alt="img" width="300">
-        <p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-        <p>If you would like to edit this page you'll find it located at:</p>
-        <code>application/views/welcome_message.php</code>
-
-        <p>The corresponding controller for this page is found at:</p>
-        <code>application/controllers/Welcome.php</code>
-
-        <p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+        <img src="https://geo-media.beatport.com/image/13876291.jpg" alt="img" width="300">
       </div>
-
       <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
     </div>
 
   </body>
-
 </html>

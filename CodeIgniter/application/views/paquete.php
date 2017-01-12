@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <body>
 
     <div id="container">
-      <h1>Bienvenido a CodeIgniter</h1>
+      <h1>Soy un paquete Array</h1>
 
       <div id="body">
         <img src="https://images-na.ssl-images-amazon.com/images/I/51FONP8m2EL._AC_UL320_SR288,320_.jpg" alt="img" width="300">

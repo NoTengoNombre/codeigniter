@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Enviar_array extends CI_Controller {
 
   /**
    * Index Page for this controller.
@@ -20,8 +20,16 @@ class Welcome extends CI_Controller {
    * map to /index.php/welcome/<method_name>
    * @see https://codeigniter.com/user_guide/general/urls.html
    */
-  public function index_() {
-    $this->load->view('welcome_message');
+  public function enviar_dato() {
+    $datos["titulo"] = "Recibe Datos desde Controlador";
+    $datos["var1"] = "Valor de la variable 1";
+    $this->load->view("titulo", $datos);
+  }
+
+  public function enviar_dato2() {
+    $datos1["titulo1"] = "Recibe Datos desde Controlador";
+    $datos1["var1"] = 29;
+    $this->load->view("titulo_1", $datos1);
   }
 
 }
