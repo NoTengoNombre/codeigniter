@@ -34,13 +34,12 @@ class Mi_modelo extends CI_Model {
       return $data;
     }
   }
-  
+
   public function get_all_AR2() {
     $this->db->select('*');
     $this->db->from('city');
-    $this->db->join('country' , 'city.ID = country.CODE');
+    $this->db->join('country', 'city.ID = country.CODE');
     $query = $this->db->get();
-    
   }
 
 }

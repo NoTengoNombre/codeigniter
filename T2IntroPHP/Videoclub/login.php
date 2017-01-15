@@ -33,7 +33,7 @@ class Login {
         <form action="index.php" method="get">
           Usuario:
           <input type="text" name="usuario" />
-          <br/>
+          <br/> 
           Contraseña:
           <input type="password" name="passwd" />
           <br/>

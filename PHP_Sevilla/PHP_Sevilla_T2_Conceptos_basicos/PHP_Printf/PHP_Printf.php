@@ -20,5 +20,4 @@ print "<br>";
 
 $modulo2 = "DWES 2";
 print "<p>Modulo : ${modulo2}</p>";
-?>
 

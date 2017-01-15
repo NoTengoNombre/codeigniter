@@ -18,7 +18,10 @@
     </style>
   </head>
   <body>
-    <p>Dentro del Archivo <span>php.ini</span> <br><br>Poner los siguientes parametros</p>
+    <p>
+      Dentro del Archivo 
+      <span>php.ini</span> <br><br>
+      Poner los siguientes parametros</p>
     <pre>
 [XDebug]
 zend_extension = C:\xampp\php\ext\php_xdebug-2.4.1-7.0-vc14.dll
