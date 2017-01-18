@@ -12,13 +12,21 @@ include_once ('DBAbstract.php');
 class Usuarios {
 
   public static function consultarUsuarios() {
-    $consulta = "SELECT nombre_usuario , password FROM usuarios;";
+    $conexion = new DBAbstract();
+    if ($conexion->conectar() == 0) {
+      echo "Error en la conexion consultarUsuario";
+      exit();
+    }
+    $consulta = "SELECT * FROM usuarios;";
+    $resultado = $conexion->consulta($consulta);
+    return $resultado;
+  }
 
+  public static function consultarUsuarios_() {
+    $consulta = "SELECT nombre_usuario , password FROM usuarios;";
     $conexion = new DBAbstract();
     $conexion->conectar();
-
     $resultado = $conexion->consulta($consulta);
-
     if ($conexion->conectar()) {
       foreach ($resultado as $filas) {
         echo "Nombre usuario: " . $filas[0] . " - Password: " . $filas[1] . "<br>";
@@ -29,7 +37,7 @@ class Usuarios {
     }
   }
 
-  public static function consultarUsuarios_() {
+  public static function consultarUsuarios__() {
     $nombre = $_REQUEST["nombre"]; // recibe los datos desde el formulario
     $pass = $_REQUEST["password"]; // recibe los datos desde el formulario
 

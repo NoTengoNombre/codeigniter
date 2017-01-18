@@ -14,11 +14,6 @@ class Actuar {
   public function consultar_actuar() {
     $db = new DBAbstract();
     $db->conectar();
-    
-    
-    
-    
-    
   }
 
   public function insertar_actuar() {

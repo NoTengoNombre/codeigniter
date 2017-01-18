@@ -18,6 +18,7 @@ include_once ("modelo/Login.php");
 include_once ("Seguridad.php");
 include_once ("modelo/Usuarios.php");
 include_once ("modelo/Peliculas.php");
+include_once ("modelo/Paises.php");
 
 class Controlador {
 
@@ -62,16 +63,16 @@ class Controlador {
       case "procesarFormularioAltaUsuario":
         $result = Usuarios::insertarUsuario();
         if ($result == 1) {
-          Vista::show("usuarios/insercionOk,menu/menuUser"); //mostrar 2 vistas 
+          Vista::show("usuarios/insercionOk,menu/menuUser"); //mostrar 2 vistas para recorrerlo mediante un array de vistas
         } else {
-          Vista::show("usuarios/insercionError,usuarios/formularioAltaUsuarios"); //mostrar 2 vistas 
+          Vista::show("usuarios/insercionError,usuarios/formularioAltaUsuarios"); //mostrar 2 vistas para recorrerlo mediante un array de vistas
         }
         break;
       //*************** CONSULTAR USUARIO ***********************
       case "consultarUsuario":
         $resultado = Usuarios::consultarUsuarios();
         if ($resultado == null) { // No hay resultados
-          Vista::show("algubn-mensjae-error");
+          Vista::show("usuarios/mostrarMensajeError");
         } else {        // Sí hay resultados
           $data["resultado"] = $resultado;
           Vista::show("usuarios/mostrarListaUsuarios", $data); // mostrar en vista una lista de usuarios / volver al controlador
@@ -83,6 +84,28 @@ class Controlador {
         echo "La sesion se ha cerrado correctamente<br/>";
         echo "<a href='index.php'>Volver al inicio</a>"; // volver al indice 
         break;
+//      ********************** PAISES ***************************************
+      case "mostrar_todos_paises";
+        if (Seguridad::getTipoUsuario() == "admin") {
+          $array = Paises::mostrar_todos_paises();
+          $data["resultado"] = $array;
+          Vista::show("paises/mostrarPaises", $data);
+        }
+        break;
+
+      case "mostrar_paises_id";
+        if (Seguridad::getTipoUsuario() == "admin") {
+//          1º ver el formulario
+//          header("Location: paises/formbuscarPaisesId");
+          var_dump(Vista::show("paises/formbuscarPaisesId"));
+          $array = Paises::mostrar_paises_id();
+          $data["resultado"] = $array;
+          Vista::show("paises/mostrarPaises", $data);
+        }
+        break;
+
+
+
       // ******************** PELICULAS *************************
       case "formAnadirPelicula":
         if (Seguridad::getTipoUsuario() == "admin") {
@@ -94,7 +117,7 @@ class Controlador {
 
       case "addPelicula": // INSERT
         if (Seguridad::getTipoUsuario() == "admin") {
-          $result = Peliculas::insertarVideos();
+          $result = Peliculas::insertarPeliculas();
           if ($result == 1) { // La inserción ha tenido éxito
             $data["mensaje"] = "Inserción realizada con éxito";
             Vista::show("peliculas/formAddPelicula", $data);
@@ -106,6 +129,15 @@ class Controlador {
           Vista::show("login/formLogin");
         }
         break;
+
+      case "consultarPelicula":
+        if (Seguridad::getTipoUsuario() == "admin") {
+          $data = Peliculas::getAllPeliculas(); // $data - array con los valoress
+          Vista::show("peliculas/mostrarPeliculas", $data);
+        }
+        break;
+
+
 
 //          
 //          
