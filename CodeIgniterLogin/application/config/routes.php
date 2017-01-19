@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
-| URI ROUTING
+| URI ROUTING - es una cadena de caracteres que identifica los recursos de una red de forma unívocas
 | -------------------------------------------------------------------------
 | This file lets you re-map URI requests to specific controller functions.
 |
