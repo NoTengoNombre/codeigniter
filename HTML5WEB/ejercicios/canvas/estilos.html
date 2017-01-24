@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Canvas API</title>
+		<script>
+		function iniciar(){
+			var elemento=document.getElementById('lienzo');
+			lienzo=elemento.getContext('2d');
+			
+			//contorno
+			lienzo.beginPath();
+			lienzo.lineWidth=5;
+			lienzo.arc(200,150,50,0,Math.PI*2, false);
+			lienzo.stroke();
+			
+			//ojos
+			lienzo.beginPath();
+			lienzo.lineWidth=5;
+			lienzo.arc(220,120,10,0,Math.PI, false);
+			lienzo.fill();
+			
+			lienzo.beginPath();
+			lienzo.arc(180,120,10,0,Math.PI, false);
+			lienzo.fill();
+			
+			//boca
+			lienzo.beginPath();
+			lienzo.lineWidth=5;
+			lienzo.lineCap="round";
+			lienzo.beginPath();
+			lienzo.moveTo(230,150);
+			lienzo.arc(200,150,30,0,Math.PI, false);
+			lienzo.stroke();
+			
+			//nariz
+			lienzo.lineWidth=5;
+			lienzo.lineJoin="round";
+			lienzo.beginPath();
+			lienzo.moveTo(195,135);
+			lienzo.lineTo(215,155);
+			lienzo.lineTo(195,155);
+			lienzo.stroke();
+
+		}
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		window.addEventListener("load", iniciar, false);
+		</script>
+	</head>
+	<body>
+		<section id="cajalienzo">
+			<canvas id="lienzo" width="400" height="400" style="border:1px solid black;">
+			Su navegador no soporta el elemento canvas
+			</canvas>
+		</section>
+	</body>
+</html>

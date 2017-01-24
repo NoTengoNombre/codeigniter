@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Este texto es el título del documento</title>
+	<script>
+	function hacerclic(){
+		var lista=document.querySelectorAll("#principal p");
+		for(var f=0; f<lista.length; f++){
+		lista[f].onclick=mostraralerta;
+		}
+	}
+
+
+    function mostraralerta(){
+		alert('hizo clic!');
+    }
+    
+    window.onload=hacerclic;
+</script>
+</head>
+<body>
+	<div id="principal">
+		<p>Primer Parrafo</p>
+		<p>Segundo Parrafo</p>
+		<p>Tercer Parrafo</p>
+	</div>
+</body>
+</html>
