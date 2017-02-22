@@ -25,8 +25,8 @@ class Login_seguro extends CI_Controller {
    */
   public function check_login() {
     $this->load->library("form_validation");
-    $this->form_validation->set_rules('usr', 'Usuario', 'required|min_length[1]');
-    $this->form_validation->set_rules('pass', 'Password', 'required|min_length[1]');
+    $this->form_validation->set_rules('usr', 'Usuario', 'required|min_length[2]');
+    $this->form_validation->set_rules('pass', 'Password', 'required|min_length[2]');
     $this->form_validation->set_message("required", "El campo %s es obligatorio");
     //  Comprueba si la validacion es correcta
     if ($this->form_validation->run() == FALSE) {
