@@ -1,0 +1,46 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+h1{
+  text-align: center;
+  margin: auto;
+  background-color: lightgrey;
+  width: 300px; 
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+
+h4{
+  text-align: center;
+  margin: auto;
+  background-color: lightgrey;
+  width: 300px; 
+  padding: 25px;
+  border: 1px solid black;
+  border-radius: 15px;
+}
+boton{
+  color: #f00;
+  margin-left: 45%;
+  margin-top: 22%;
+}
+
+div.panel{
+  text-align: center;
+  position: relative;
+  top: 0;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 8px 28px;
+  text-decoration: none;
+  border: 0px solid;
+  cursor: pointer;
+  border-bottom-width: 3px;
+  /*outline: none;*/
+  -webkit-transition: 0.3s background;
+  -moz-transition: 0.3s background;
+  /*transition: 0.3s background;*/
+}
+
+

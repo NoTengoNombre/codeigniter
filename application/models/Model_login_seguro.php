@@ -11,48 +11,95 @@ class Model_login_seguro extends CI_Model {
   }
 
   /**
-   * Consulta la BD con AR 
-   * para sacar los datos
+   * Consulta BD con AR 
+   * Obtiene los datos
+   * Para usarlos en el 
+   * Controlador 
    * 
-   * @param type $usr
-   * @param type $pass
+   * @param type $usr String
+   * @param type $pass String
    * @return type ARRAY 
    */
   public function check_login_modelo($usr, $pass) {
-// selecciono columna nombre , nombre usuario del form
+// selecciono columna "nombre" , nombre usuario del form
     $this->db->where("nombre", $usr); // dato enviado al metodo check_login - Controlador
-// selecciono columna password , password del form
+// selecciono columna "password" , password del form
     $this->db->where("password", $pass); // dato enviado al metodo check_login - Controlador
 // selecciona tabla usuarios para hacer la consulta
-    $r = $this->db->get("usuarios"); // SELECT (*) FROM 'usuarios'
+    $resultado = $this->db->get("usuarios"); // SELECT (*) FROM 'usuarios' 
     if ($this->db->affected_rows() > 0) { // si hay +1 fila
-      foreach ($r->result() as $row) { // Columnas BD se sacan mediante objetos
-        $datos_usuario['idusr'] = $row->usuario_id; // almaceno en array 'id' usuario
-        $datos_usuario['tipousr'] = $row->tipo; // almaceno el 'tipo' usuario
+// $resultado - Objeto
+      foreach ($resultado->result() as $fila) { // Columnas BD se sacan como objetos
+        $datos_usuario['idusr'] = $fila->usuario_id; // almaceno en array 'usuario_id' que es un String
+        $datos_usuario['tipousr'] = $fila->tipo; // almaceno en array 'tipo' que es un String
       }
     } else {
-//    var_dump($datos_usuario = null);
-      $datos_usuario = null;
+      $datos_usuario = null; // es correcto esa linea
     }
-//    var_dump($datos_usuario);
-    //$datos_usuario['idusr'] 
-    //$datos_usuario['tipousr']
-    return $datos_usuario; //devuelve array objetos
+    return $datos_usuario; //devuelve array de String 
   }
 
   /**
    * 
-   * @return type todos los usuarios
+   * @return type Array "Objetos"
    */
   public function get_all_users() {
     $query = $this->db->get("usuarios");
     if ($query->num_rows() > 0) {
-      foreach ($query->result() as $row) {
-        $data[] = $row;
+      foreach ($query->result() as $fila) {
+        $data[] = $fila;
       }
-//      var_dump($data);
       return $data;
     }
+  }
+
+  /**
+   * Añade usuario tabla usuarios
+   * Usa AR
+   * 
+   * @param type $usuario_id
+   * @param type $nombre
+   * @param type $apellidos
+   * @param type $password
+   * @param type $fotografia
+   * @param type $telefono
+   * @param type $email
+   * @param type $tipo
+   * @return string
+   */
+  public function add_user($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
+    $datos = array(
+        'usuario_id' => $usuario_id,
+        'nombre' => $nombre,
+        'apellidos' => $apellidos,
+        'password' => $password,
+        'fotografia' => $fotografia,
+        'telefono' => $telefono,
+        'email' => $email,
+        'tipo' => $tipo
+    );
+    $this->db->insert('usuarios', $datos);
+    if ($this->db->affected_rows() == 1) {
+      $r = "ok";
+    } else {
+      $r = "error";
+    }
+    return $r;
+  }
+
+  /**
+   * 
+   * @param type $usuario_id
+   */
+  public function delete_user($usuario_id) {
+    $this->db->where("usuario_id", $usuario_id);
+    $this->db->delete("usuario");
+    if ($this->db->affected_rows() > 0) {
+      $r = "ok";
+    } else {
+      $r = "error";
+    }
+    return $r;
   }
 
 }

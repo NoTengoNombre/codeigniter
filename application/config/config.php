@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   | a PHP script and you can easily do that on your own.
   |
  */
+// Crea una ruta por defecto para encadenar a los enlaces
 $config['base_url'] = '';
 
 /*
