@@ -16,7 +16,7 @@ if (isset($error)) {
 $this->load->helper("form");
 
 echo "<div class='error'>" . validation_errors() . "</div>";
-//echo form_open_multipart("users/add_user");
+echo form_open_multipart("login_seguro/add_user");
 
 echo "<table align='center'>";
 echo "<tr>";
@@ -28,7 +28,7 @@ echo "<tr>";
 echo "<td>" . form_label("Fecha de Subida", "fecha_subida") . "</td>";
 $valor = strftime("%G-%m-%d", date("u"));
 echo "<td>" . form_input("fecha_subida", $valor) . "</td>";
-echo "</tr>";
+echo "</tr>"; 
 
 //echo "<tr>";
 //echo "<td>" . form_label("Fecha de Impresión", "fecha_impresion") . "</td>";

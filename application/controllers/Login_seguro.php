@@ -8,7 +8,7 @@ class Login_seguro extends CI_Controller {
   public function index() {
     $data['texto'] = "Bienvenido a nuestra web app 1";
     $this->load->view('view_login_seguro', $data); // carga la vista login_seguro
-    $this->load->view('css_js_view');
+//    $this->load->view('css_js_view');
   }
 
   /**
@@ -22,7 +22,6 @@ class Login_seguro extends CI_Controller {
     $this->form_validation->set_rules('usr', 'Usuario', 'required|min_length[1]');
     $this->form_validation->set_rules('pass', 'Password', 'required|min_length[1]');
     $this->form_validation->set_message("required", "El campo %s es obligatorio");
-    $this->form_validation->set_message('matches', 'El campo %s debe coincidir con el campo %s');
 
     if ($this->form_validation->run() == FALSE) { //Si validacion no es correcta
       $this->index(); // regresa index
@@ -55,6 +54,30 @@ class Login_seguro extends CI_Controller {
         $this->load->view('view_login_seguro', $data);
       }
     }
+  }
+
+  public function add_user() {
+
+    
+    
+    $this->load->library('form_validation');
+$data['title'] = 'Crear un ítem de noticias';
+$this->form_validation->set_rules('title', 'Título', 'required');
+$this->form_validation->set_rules('text', 'Texto', 'required');
+if ($this->form_validation->run() === FALSE)
+{
+$this->load->view('templates/header', $data);
+$this->load->view('news/create');
+$this->load->view('templates/footer');
+
+
+
+    $nombre = $this->input->get_post('nombre');
+    $archivo = $this->input->get_post('fecha_subida');
+    $notas = $this->input->get_post('notas');
+}
+    
+    
   }
 
 }

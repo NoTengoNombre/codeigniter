@@ -40,7 +40,7 @@ class Model_login_seguro extends CI_Model {
   }
 
   /**
-   * 
+   * Mostrar todos los usuarios
    * @return type Array "Objetos"
    */
   public function get_all_users() {
