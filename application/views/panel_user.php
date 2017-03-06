@@ -28,13 +28,7 @@ echo "<tr>";
 echo "<td>" . form_label("Fecha de Subida", "fecha_subida") . "</td>";
 $valor = strftime("%G-%m-%d", date("u"));
 echo "<td>" . form_input("fecha_subida", $valor) . "</td>";
-echo "</tr>"; 
-
-//echo "<tr>";
-//echo "<td>" . form_label("Fecha de Impresión", "fecha_impresion") . "</td>";
-//echo "<td>" . form_input("fecha_impresion") . "</td>";
-//echo "</tr>";
-
+echo "</tr>";
 
 $data = array(
     'name' => 'notas',

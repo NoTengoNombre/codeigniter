@@ -1,4 +1,6 @@
 <!-- Vista : FORMULARIO -->
+<!--COSAS QUE TENGO QUE HACER : 
+1º COMPROBAR -->
 
 <!-- Carga el css desde el directorio indicado -->
 <link rel="stylesheet" type="text/css" href ="<?php echo base_url(); ?>css/style.css">
@@ -15,10 +17,13 @@ if (isset($error)) {
   echo "<h2>$error</h2>";
 }
 
-// Carga el formulario "es una funcion" no necesita objeto
+// Carga la "funcion" formulario no necesita objeto
 $this->load->helper("form");
 
-$atributos = array('class' => 'checklogin', 'id' => 'michecklogin');
+$atributos = array(
+    'class' => 'checklogin',
+    'id' => 'michecklogin'); // uso un identificador
+
 echo form_open("login_seguro/check_login", $atributos); // Abre la funcion 'check_login' del Controlador
 echo form_label("Nombre de Usuario : ", "usr"); //crea Titulo Formulario
 // parametros para el input
@@ -30,8 +35,17 @@ $data = array(
 
 echo form_input($data); // crea etiqueta elemento relacionado 
 echo form_error("usr"); // recoge mensaje requerido
+echo '<br>';
 echo form_label("Password : ", "pass"); // crea etiqueta elemento relacionado 'pass'
 echo form_password('pass'); // crea etiqueta elemento relacionado
 echo form_error("pass"); // recoge mensaje requerido
+echo '<br>';
+
+echo form_label("Repita su constraseña : ", "password2") . "</td>";
+echo form_password("password2");
+echo form_error("password2"); // recoge mensaje requerido
+echo '<br>';
+
 echo form_submit("enviar", "Entrar"); // crea elemento enviar
 echo form_close();
+
