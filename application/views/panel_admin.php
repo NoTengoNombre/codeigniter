@@ -38,8 +38,8 @@ if (isset($result)) {
       . "<td>" . $fila->telefono . "</td>"
       . "<td>" . $fila->email . "</td>"
       . "<td><img src='" . base_url("uploads") . "/" . $fila->fotografia . "'/>FOTO</td>";
-      echo "<td><a href='users/update_user/" . $fila->usuario_id . "'>Modificar</a></td>";
-      echo "<td><a href='users/delete_user/" . $fila->usuario_id . "'>Eliminar</a></td>";
+      echo "<td><a href='model_login_seguro/update_user/" . $fila->usuario_id . "'>Modificar</a></td>";
+      echo "<td><a href='model_login_seguro/delete_user/" . $fila->usuario_id . "'>Eliminar</a></td>";
       echo "</tr>";
     }
     ?>
@@ -47,6 +47,8 @@ if (isset($result)) {
 </table>
 
 <?php
-echo "<p align='center'><a href='" . base_url() . "'>Nuevo</a></p>";
+echo "<p align='center'><a href='" . base_url() . "'/views/view_add_user>Nuevo</a></p>";
+//echo var_dump(current_url());
+//echo var_dump(base_url());
 ?>
 

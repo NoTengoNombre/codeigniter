@@ -48,7 +48,7 @@ echo "</tr>";
 echo "<tr>";
 
 echo "<td><br>" . form_submit('submit', 'Aceptar', "class='boton'") . "</td>";
-echo "<td><br>" . form_button('back', 'Volver') . "</td>";
+echo "<td><br>" . form_button('regresar', 'Volver') . "</td>";
 echo "</tr>";
 
 echo "</table>";
