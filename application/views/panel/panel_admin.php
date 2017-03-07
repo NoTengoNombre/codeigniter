@@ -19,6 +19,11 @@ if (isset($result)) {
    . "</table>";
 }
 ?>
+<?php
+//echo "<p align='center'><a href='" . base_url() . "'/views/view_add_user>Nuevo</a></p>";
+$this->load->view('');
+?>
+
 <hr>
 <table border="1" align="center"> 
   <tr>
@@ -32,12 +37,12 @@ if (isset($result)) {
   <tr>
       <?php
       foreach ($resultado as $fila) {
-         echo "<tr>";
-         echo "<td>" . $fila->nombre . "</td>"
+         echo "<tr>"
+         . "<td>" . $fila->nombre . "</td>"
          . "<td>" . $fila->apellidos . "</td>"
          . "<td>" . $fila->telefono . "</td>"
          . "<td>" . $fila->email . "</td>"
-         . "<td><img src='" . base_url("uploads") . "/" . $fila->fotografia . "'/></td>";
+         . "<td><img src='" . base_url("uploads") . "/" . $fila->fotografia . "'></td>";
          echo "<td><a href='model_login/update_user/" . $fila->usuario_id . "'>Modificar</a></td>";
          echo "<td><a href='model_login/delete_user/" . $fila->usuario_id . "'>Eliminar</a></td>";
          echo "</tr>";
@@ -46,8 +51,4 @@ if (isset($result)) {
   </tr>
 </table>
 
-<?php
-//$this->load->view('view_add_user');
-echo "<p align='center'><a href='" . base_url() . "'/views/view_add_user>Nuevo</a></p>";
-?>
 
