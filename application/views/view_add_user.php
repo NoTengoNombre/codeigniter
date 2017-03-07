@@ -1,3 +1,4 @@
+<!-- view_add_user -->
 <style>
   .msg { color: green; text-align: center; }
   .error { color: red; text-align: center; }
@@ -9,12 +10,12 @@
 <?php
 // Si el controlador nos envía algún mensaje, lo mostramos
 if (isset($error))
-  echo "<div class='error'>$error</div>";
+   echo "<div class='error'>$error</div>";
 
 $this->load->helper("form");
 
 echo "<div class='error'>" . validation_errors() . "</div>";
-echo form_open_multipart("model_login_seguro/add_user");
+echo form_open_multipart("model_adm/add_user");
 
 echo "<table align='center'>";
 echo "<tr>";
@@ -44,8 +45,7 @@ echo "</tr>";
 
 echo "<tr>";
 echo "<td>" . form_label("Foto de perfil", "fotografia") . "</td>";
-echo "<td><input type='file' name='fotografia' size='20' /></td>";
-//echo "<td>".form_input("img")."</td>";
+echo "<td><input type='file' name='fotografia'></td>";
 echo "</tr>";
 
 echo "<tr>";
