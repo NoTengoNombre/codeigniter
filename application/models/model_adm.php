@@ -34,7 +34,7 @@ class Model_adm extends CI_Model {
     * @param type $tipo
     * @return string
     */
-   public function add_user($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo = 0) {
+   public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email) {
       $datos = array(
           'usuario_id' => $usuario_id,
           'nombre' => $nombre,
@@ -43,9 +43,11 @@ class Model_adm extends CI_Model {
           'fotografia' => $fotografia,
           'telefono' => $telefono,
           'email' => $email,
-          'tipo' => $tipo
+          'tipo' => 0
       );
+      
       $this->db->insert('usuarios', $datos);
+      
       if ($this->db->affected_rows() > 0) { // si realizo la asignacion 
          $r = "ok";
       } else {

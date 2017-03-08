@@ -4,23 +4,29 @@
   .error { color: red; text-align: center; }
 </style>
 
-<h4 align="center">Práctica de introducción a CodeIgniter</h4>
-<h1 align="center">Agregar nuevo usuario</h1>
+<h1 align="center">Panel de Registros</h1>
+<h4 align="center">Agregar nuevo usuario</h4>
 
 <?php
 // Si el controlador nos envía algún mensaje, lo mostramos
-if (isset($error))
+if (isset($error)) {
    echo "<div class='error'>$error</div>";
+}
 
-$this->load->helper("form");
+$this->load->helper("form"); // Crea un formulario
 
 echo "<div class='error'>" . validation_errors() . "</div>";
-echo form_open_multipart("model_adm/add_user");
+echo form_open_multipart("adm_registros/add_user");
 
 echo "<table align='center'>";
 echo "<tr>";
 echo "<td>" . form_label("Nombre de usuario", "nombre") . "</td>";
 echo "<td>" . form_input("nombre") . "</td>";
+echo "</tr>";
+
+echo "<tr>";
+echo "<td>" . form_label("Apellidos de usuario", "apellidos") . "</td>";
+echo "<td>" . form_input("apellidos") . "</td>";
 echo "</tr>";
 
 echo "<tr>";
@@ -34,23 +40,28 @@ echo "<td>" . form_password("password2") . "</td>";
 echo "</tr>";
 
 echo "<tr>";
-echo "<td>" . form_label("Email", "email") . "</td>";
-echo "<td>" . form_input("email") . "</td>";
-echo "</tr>";
-
-echo "<tr>";
 echo "<td>" . form_label("Teléfono", "telefono") . "</td>";
 echo "<td>" . form_input("telefono") . "</td>";
 echo "</tr>";
 
 echo "<tr>";
+echo "<td>" . form_label("Email", "email") . "</td>";
+echo "<td>" . form_input("email") . "</td>";
+echo "</tr>";
+
+echo "<tr>";
 echo "<td>" . form_label("Foto de perfil", "fotografia") . "</td>";
-echo "<td><input type='file' name='fotografia'></td>";
+
+$data = array('type' => 'file', 'name' => 'fotografia', 'id' => 'fotografia');
+
+echo "<td>" . form_input($data) . '</td>';
 echo "</tr>";
 
 echo "<tr>";
 echo "<td align='right'><br>" . form_submit('submit', 'Aceptar') . "</td>";
-echo "<td align='left'><br>" . form_button('volver', 'Volver') . "</td>";
-echo "</tr>";
 
+$js = 'onClick="window.location=\'http://[::1]/ciproyecto/index.php/login/check_login\'"';
+echo "<td align='left'><br>" . form_button('volver', 'Volver', $js) . "</td>";
+echo "</tr>";
 echo "</table>";
+form_close();

@@ -19,10 +19,8 @@ if (isset($result)) {
    . "</table>";
 }
 ?>
-<?php
-//echo "<p align='center'><a href='" . base_url() . "'/views/view_add_user>Nuevo</a></p>";
-$this->load->view('');
-?>
+
+<?php echo anchor('adm_registros/show_add_user', 'Nuevo', 'class="enlace"') ?>
 
 <hr>
 <table border="1" align="center"> 

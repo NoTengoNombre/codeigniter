@@ -6,6 +6,10 @@ class Adm_registros extends CI_Controller {
       parent::__construct();
    }
 
+   function show_add_user() {
+      $this->load->view('formularios/view_add_user');
+   }
+
    public function add_user() {
       $this->load->model('model_login');
       $this->load->library('form_validation');
@@ -16,6 +20,13 @@ class Adm_registros extends CI_Controller {
 
       $this->form_validation->set_message('required', 'El campo %s es obligatorio');
       $this->form_validation->set_message('matches', 'El campo %s debe coincidir con el campo %s');
+
+      $this->form_validation->set_rules('apellidos', 'Apellidos', 'required');
+      $this->form_validation->set_rules('telefono', 'Telefono', 'required|matches[password2]');
+      $this->form_validation->set_rules('email', 'Email', 'required');
+      $this->form_validation->set_rules('fotografia', 'Fotografia', 'required');
+      
+      
    }
 
    public function add_message_user() {

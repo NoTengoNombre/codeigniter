@@ -37,10 +37,9 @@ class Login extends CI_Controller {
          $this->index(); // regresa index
       } else { // validacion correcta
 //crea objeto modelo para invocar metodo check_login_modelo
-         $this->load->model('model_login'); 
-         $datos_usuario = $this->model_login->check_login_modelo( //datos del formulario
-                 $this->input->get_post("usr"), 
-                 $this->input->get_post("pass"));
+         $this->load->model('model_login');
+         $datos_usuario = $this->model_login->check_login_modelo(//datos del formulario
+                 $this->input->get_post("usr"), $this->input->get_post("pass"));
 
          if ($datos_usuario != null) { // Usuario/contraseña correctos - Entra Array String
             $idusr = $datos_usuario["idusr"];
@@ -60,6 +59,7 @@ class Login extends CI_Controller {
                $this->load->view("panel/panel_user");
             } else if ($tipousr == 0) {
                // Usuario administrador
+               $data["otro"] = "Hola";
                $data["resultado"] = $this->model_adm->get_all_users();
                $data["texto"] = "Todos los usuarios";
                $this->load->view("panel/panel_admin", $data); // carga todos los usuarios y texto
