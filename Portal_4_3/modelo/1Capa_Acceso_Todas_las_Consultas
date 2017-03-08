@@ -1,1 +1,0 @@
-UPDATE peliculas SET titulo ='" . $titulo . "' , duracion ='" . $duracion . "' , estreno ='" . $estreno . "' , sinopsis ='" . $sinopsis . "' , genero ='" . $genero . " , tipo ='" . $tipo . "' , formato = '" . $formato . "' , enlace ='" . $enlace . "' , imagen ='" . $imagen . "' WHERE cod_pelicula='" . $_REQUEST['cod_pelicula'] . "';";

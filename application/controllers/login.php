@@ -40,7 +40,7 @@ class Login extends CI_Controller {
          $this->load->model('model_login');
          $datos_usuario = $this->model_login->check_login_modelo(//datos del formulario
                  $this->input->get_post("usr"), $this->input->get_post("pass"));
-
+         
          if ($datos_usuario != null) { // Usuario/contraseña correctos - Entra Array String
             $idusr = $datos_usuario["idusr"];
             $tipousr = $datos_usuario["tipousr"];

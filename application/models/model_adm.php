@@ -34,20 +34,21 @@ class Model_adm extends CI_Model {
     * @param type $tipo
     * @return string
     */
-   public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email) {
+   public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
+      $query = $this->db->get('usuarios');
+      $i = $query->num_rows();
       $datos = array(
-          'usuario_id' => $usuario_id,
+          'usuario_id' => ++$i,
           'nombre' => $nombre,
           'apellidos' => $apellidos,
           'password' => $password,
           'fotografia' => $fotografia,
           'telefono' => $telefono,
           'email' => $email,
-          'tipo' => 0
-      );
-      
-      $this->db->insert('usuarios', $datos);
-      
+          'tipo' => $tipo);
+
+      echo $this->db->insert('usuarios', $datos);
+
       if ($this->db->affected_rows() > 0) { // si realizo la asignacion 
          $r = "ok";
       } else {
@@ -58,13 +59,23 @@ class Model_adm extends CI_Model {
 
    public function update_user($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
       $datos = array(
-          'usuario_id' => $usuario_id,
           'nombre' => $nombre,
           'apellidos' => $apellidos,
           'password' => $password,
           'fotografia' => $fotografia,
           'telefono' => $telefono,
-          'email' => $email);
+          'email' => $email,
+          'tipo' => $tipo);
+
+      $this->db->where('usuario_id', $usuario_id);
+      $this->update('usuarios', $datos);
+
+      if ($this->db->affected_rows() > 0) {
+         $r = "ok";
+      } else {
+         $r = "error";
+      }
+      return $r;
    }
 
    /**

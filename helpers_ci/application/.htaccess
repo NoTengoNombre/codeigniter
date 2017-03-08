@@ -1,5 +1,0 @@
-   RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.*)$ /helpers_ci/index.php/$1 [L]
-    ErrorDocument 404 /helpers_ci/index.php
