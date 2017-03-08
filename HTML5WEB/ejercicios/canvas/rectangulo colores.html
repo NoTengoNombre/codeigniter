@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+            <html lang="es">
+            <head>
+            <title>Canvas API</title>
+            <script>
+                function iniciar(){
+                    var canvas=document.querySelector('#lienzo');
+                    var context = canvas.getContext("2d");
+                    context.fillRect(5, 5, 145, 145);
+                    context.fillStyle = "rgb(0, 162, 232)";
+                    context.fillRect(40, 55, 145, 145);
+                    context.fillStyle = "rgba(255, 0, 0, 0.2)";
+                    context.fillRect(75, 105, 145, 145);
+
+
+                }
+
+            window.addEventListener("load", iniciar, false);
+
+            </script>
+            </head>
+            <body>
+               <section id="cajalienzo">
+               	 <canvas id="lienzo" width="400" height="400" style="border:1px solid black;">
+                	Su navegador no soporta el elemento canvas
+                 </canvas>
+               </section>
+            </body>
+            </html>

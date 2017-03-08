@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Nuevos atributos</title>
+	<style>
+	form{
+		width:400px;
+	}
+	input{
+		float:right;
+		width:200px;
+	}
+	p{
+		width:400px;
+	}
+	</style>
+</head>
+<body>
+	<p>Input fuera del formulario<input type="text" form="miformulario" required></input></p>
+	<br><br>
+	
+	<form name="miformulario" id="miformulario" method="get">
+	
+		<p>Placeholder: <input type="text" placeholder="Soy placeholder"></p>
+		
+		<p>Campo requerido: <input type="text" required></p>
+		
+		<p>Campo multiple: <input type="text" multiple></p>
+		
+		<p>Autofocus: <input type="text" autofocus></p>
+		
+		<p>Pattern: <input pattern="[0-9]{5}"></p>
+		
+		<input type="submit" value="Enviar">
+		
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Geolocation</title>
+	<script>
+	function obtener(){
+		navigator.geolocation.getCurrentPosition(mostrar);
+	}
+	
+	function mostrar(position){
+		var ubicacion=document.getElementById('ubicacion');
+		var datos='';
+		datos+='Latitud: '+position.coords.latitude+'<br>';
+		datos+='Longitud: '+position.coords.longitude+'<br>';
+		datos+='Exactitud: '+position.coords.accuracy+' mts.<br>';
+		datos+='Altitud: '+position.coords.altitude+' mts.<br>';
+		var d = new Date(position.timestamp);
+		datos+='Hora: '+d;
+		ubicacion.innerHTML=datos;
+
+	}
+	
+	
+	</script>
+</head>
+<body>
+	<section id="ubicacion">
+		<button id="obtener" onclick="obtener()">Obtener mi Ubicaci&oacute;n</button>
+	</section>
+</body>
+</html>
+

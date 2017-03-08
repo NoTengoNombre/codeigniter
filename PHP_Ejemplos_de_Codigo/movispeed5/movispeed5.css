@@ -1,0 +1,65 @@
+body, html, form {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+table.full-height {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+@media (min-width: 675px) {
+  table.esfera {
+    width: 672px;
+  }
+}
+@media (max-width: 675px) {
+  table.esfera {
+    width: 100%;
+  }
+}
+
+span.titulo { 
+  background-color: white; 
+  color: #4F81BD; 
+  font-family: Cambria,serif; 
+  font-size:37pt; 
+}
+th 	{ 
+  background-color: #005c84; 
+  color: white; 
+  font-family: Arial,Helvetica; 
+  font-size: 10pt; 
+  font-weight: bold;
+}
+th.cabecera 	{ 
+  background-color: white; 
+  color: #505050; 
+  font-family: Arial,Helvetica; 
+  font-size: 12pt; 
+  font-weight: bold;
+}
+td 	{ 
+  font-family: Arial,Helvetica; 
+  font-size: 12pt; 
+}
+span.pie { 
+  font-family: Arial,Helvetica; 
+  font-size: 10pt;
+}
+.botonMovispeed { 
+  background-color: #106c90; 
+  color: white; 
+  font-family: Arial,Helvetica; 
+  width: 120px;
+  padding: 4px 4px; 
+  text-align: center; 
+  font-size: 16px; 
+  font-weight: bold; 
+  border-radius: 7px; 
+}
+.botonMovispeed:disabled { 
+  background-color: #a0a0a0; 
+}

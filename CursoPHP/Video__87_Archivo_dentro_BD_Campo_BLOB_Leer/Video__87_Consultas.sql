@@ -1,0 +1,11 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ * Author:  Portatil_Bot
+ * Created: 30-dic-2016
+ */
+
+UPDATE `archivos` SET `Id` = '4' WHERE `archivos`.`Id` = 10;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Nuevos elementos</title>
+	<style>
+	#miformulario{
+		width:400px;
+	}
+	#miformulario input{
+		float:right;
+		width:200px;
+	}
+	progress{
+		float:right;
+		width:200px;
+	}
+	meter{
+		float:right;
+		width:200px;
+	}
+	form{
+		clear:both;
+		float:left;
+	}
+	</style>
+</head>
+<body>
+
+	<form name="miformulario" id="miformulario" method="get">
+	
+		<datalist id="informacion">
+			<option value="123123123" label="Teléfono 1">
+			<option value="456456456" label="Teléfono 2">
+		</datalist>
+
+		<p>Telefono: <input type="tel" list="informacion"></p>
+		
+		<p>Progress:<progress value="60" max="100"></progress></p>
+		
+		<p>Meter: <meter min="0" max="120" value="10" low="20" high="100" optimum="50"></meter></p>
+				
+		<input type="submit" value="Enviar">
+		
+	</form>
+
+	<form name="division" onsubmit="return false" oninput="cociente.value = parseInt(dividendo.value) / parseInt(divisor.value)">
+		<p>Ejemplo output <input id="dividendo" type="number" step="any"/> :
+		<input id="divisor" type="number" step="any"/> = 
+		<output name="cociente" ></p>
+	</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
