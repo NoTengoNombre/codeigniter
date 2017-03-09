@@ -26,22 +26,24 @@ class Control_adm_registros extends CI_Controller {
       $this->form_validation->set_rules('telefono', 'Telefono', 'required');
       $this->form_validation->set_rules('email', 'Email', 'required');
       $this->form_validation->set_rules('tipo', 'Tipo', 'required');
-      $this->form_validation->set_rules('userfile', 'Fotografia', 'required');
+      $this->form_validation->set_rules('userfile', 'Fotografia');
       
       $this->form_validation->set_message('required', 'El campo %s es obligatorio');
       $this->form_validation->set_message('matches', 'El campo %s debe coincidir con el campo %s');
       
 
       if ($this->form_validation->run() == FALSE) {
+        
          $this->load->view('formularios/view_add_user');
+         
       } else {
 
 //         Array con la configuracion de la foto
          $config['upload_path'] = './uploads/';
          $config['allowed_types'] = 'gif|jpg|png';
-         $config['max_size'] = '20';
-         $config['max_width'] = '80';
-         $config['max_height'] = '80';
+         $config['max_size'] = '120';
+         $config['max_width'] = '180';
+         $config['max_height'] = '180';
 
 //         Carga la libreria con la configuracion
          $this->load->library('upload', $config);
@@ -55,8 +57,8 @@ class Control_adm_registros extends CI_Controller {
             
             // Obtenemos el filename de la imagen subida
             $upload_img_data = $this->upload->data(); //Array para obtener datos
-            var_dump($upload_img_data);
-            $upload_img_name = $upload_img_data['file_name'];
+            
+            $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 
 //            Funcion add_user() se encarga de obtener los datos del formulario y enviarlos
             $r = $this->model_adm->add_user(
@@ -72,7 +74,8 @@ class Control_adm_registros extends CI_Controller {
                $data['mensaje'] = "Correcto";
 //               $this->load->view('templates/success', $data);
                $this->load->view('formularios/view_add_user', $data);
-            } else if ($r == 'error') {
+            } 
+            else if ($r == 'error') {
                $data['mensaje'] = "Error";
 //               $this->load->view('templates/errores', $data);
                $this->load->view('formularios/view_add_user', $data);

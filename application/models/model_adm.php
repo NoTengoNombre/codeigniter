@@ -39,11 +39,7 @@ class Model_adm extends CI_Model {
    public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
 
       $filas = $this->db->get('usuarios'); // Produce: SELECT * FROM usuarios
-      var_dump($filas);
       $usuario_id = $filas->num_rows();
-
-      var_dump($usuario_id);
-      var_dump($tipo);
 
       $datos = array(
           'usuario_id' => ++$usuario_id,
