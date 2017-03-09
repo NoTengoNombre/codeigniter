@@ -20,7 +20,10 @@ if (isset($result)) {
 }
 ?>
 
-<?php echo anchor('adm_registros/show_add_user', 'Nuevo', 'class="enlace"') ?>
+<?php
+$js = 'onclick="window.location=\'http://[::1]/ciproyecto/index.php/control_adm_registros/show_add_user\'"';
+echo "<td align='left'><br>" . form_button('add_usuario', 'Añadir Usuario', $js) . "</td>";
+?>
 
 <hr>
 <table border="1" align="center"> 
@@ -41,7 +44,7 @@ if (isset($result)) {
          . "<td>" . $fila->telefono . "</td>"
          . "<td>" . $fila->email . "</td>"
          . "<td><img src='" . base_url("uploads") . "/" . $fila->fotografia . "'></td>";
-         echo "<td><a href='model_login/update_user/" . $fila->usuario_id . "'>Modificar</a></td>";
+         echo "<td><a href='model_adm/update_user/" . $fila->usuario_id . "'>Modificar</a></td>";
          echo "<td><a href='model_login/delete_user/" . $fila->usuario_id . "'>Eliminar</a></td>";
          echo "</tr>";
       }

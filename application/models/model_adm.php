@@ -7,6 +7,7 @@ class Model_adm extends CI_Model {
    }
 
    /**
+    * Ok!
     * Mostrar todos los usuarios
     * @return type Array "Objetos"
     */
@@ -21,6 +22,7 @@ class Model_adm extends CI_Model {
    }
 
    /**
+    * 
     * Añade usuario tabla usuarios
     * Usa AR
     * 
@@ -35,10 +37,16 @@ class Model_adm extends CI_Model {
     * @return string
     */
    public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
-      $query = $this->db->get('usuarios');
-      $i = $query->num_rows();
+
+      $filas = $this->db->get('usuarios'); // Produce: SELECT * FROM usuarios
+      var_dump($filas);
+      $usuario_id = $filas->num_rows();
+
+      var_dump($usuario_id);
+      var_dump($tipo);
+
       $datos = array(
-          'usuario_id' => ++$i,
+          'usuario_id' => ++$usuario_id,
           'nombre' => $nombre,
           'apellidos' => $apellidos,
           'password' => $password,
@@ -47,9 +55,31 @@ class Model_adm extends CI_Model {
           'email' => $email,
           'tipo' => $tipo);
 
+//      Ejecuta la accion de insertar
       echo $this->db->insert('usuarios', $datos);
+//      El objeto 'db' dice si tiene fila o no
+      if ($this->db->affected_rows() == 1) {
+         $r = "ok";
+      } else {
+         $r = "error";
+      }
+      return $r; // devuelve string
+   }
 
-      if ($this->db->affected_rows() > 0) { // si realizo la asignacion 
+   public function update_user($usuario_id) {
+      $datos = array(
+          'nombre' => $nombre,
+          'apellidos' => $apellidos,
+          'password' => $password,
+          'fotografia' => $fotografia,
+          'telefono' => $telefono,
+          'email' => $email,
+          'tipo' => $tipo);
+
+      $this->db->where('usuario_id', $usuario_id);
+      $this->update('usuarios', $datos);
+
+      if ($this->db->affected_rows() > 0) {
          $r = "ok";
       } else {
          $r = "error";
@@ -57,7 +87,7 @@ class Model_adm extends CI_Model {
       return $r;
    }
 
-   public function update_user($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
+   public function update_user2($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
       $datos = array(
           'nombre' => $nombre,
           'apellidos' => $apellidos,

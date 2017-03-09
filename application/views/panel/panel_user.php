@@ -17,7 +17,7 @@ if (isset($error)) {
 }
 
 $this->load->helper("form");
-
+   
 echo "<div class='error'>" . validation_errors() . "</div>";
 echo form_open_multipart("login_seguro/add_user");
 
@@ -43,15 +43,16 @@ $data = array(
 );
 
 echo "<tr>";
+
 echo "<td>" . form_label("Notas de Interes", "notas") . "</td>";
 echo "<td>" . form_textarea($data) . "</td>";
 echo "</tr>";
-
 
 echo "<tr>";
 
 echo "<td><br>" . form_submit('submit', 'Aceptar', "class='boton'") . "</td>";
 echo "<td><br>" . form_button('regresar', 'Volver') . "</td>";
+   
 echo "</tr>";
 
 echo "</table>";
