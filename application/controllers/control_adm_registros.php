@@ -12,7 +12,7 @@ class Control_adm_registros extends CI_Controller {
    }
 
    public function add_user() {
-      
+
       $this->load->model('model_adm'); // invoca metodo del modelo
       $this->load->library('form_validation');
 
@@ -27,15 +27,14 @@ class Control_adm_registros extends CI_Controller {
       $this->form_validation->set_rules('email', 'Email', 'required');
       $this->form_validation->set_rules('tipo', 'Tipo', 'required');
       $this->form_validation->set_rules('userfile', 'Fotografia');
-      
+
       $this->form_validation->set_message('required', 'El campo %s es obligatorio');
       $this->form_validation->set_message('matches', 'El campo %s debe coincidir con el campo %s');
-      
+
 
       if ($this->form_validation->run() == FALSE) {
-        
+
          $this->load->view('formularios/view_add_user');
-         
       } else {
 
 //         Array con la configuracion de la foto
@@ -52,30 +51,21 @@ class Control_adm_registros extends CI_Controller {
             // Ha fallado la subida de la imagen
             $data['error'] = $this->upload->display_errors();
             $this->load->view("formularios/view_add_user", $data);
-            
          } else {
-            
+
             // Obtenemos el filename de la imagen subida
             $upload_img_data = $this->upload->data(); //Array para obtener datos
-            
-            $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 
+            $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 //            Funcion add_user() se encarga de obtener los datos del formulario y enviarlos
             $r = $this->model_adm->add_user(
-                    $this->input->get_post('nombre'), 
-                    $this->input->get_post('apellidos'), 
-                    $this->input->get_post('password'), 
-                    $this->input->get_post('telefono'), 
-                    $this->input->get_post('email'), 
-                    $this->input->get_post('tipo'),
-                    $upload_img_name);
+                    $this->input->get_post('nombre'), $this->input->get_post('apellidos'), $this->input->get_post('password'), $this->input->get_post('telefono'), $this->input->get_post('email'), $this->input->get_post('tipo'), $upload_img_name);
 
             if ($r == 'ok') {
                $data['mensaje'] = "Correcto";
 //               $this->load->view('templates/success', $data);
                $this->load->view('formularios/view_add_user', $data);
-            } 
-            else if ($r == 'error') {
+            } else if ($r == 'error') {
                $data['mensaje'] = "Error";
 //               $this->load->view('templates/errores', $data);
                $this->load->view('formularios/view_add_user', $data);
@@ -84,28 +74,25 @@ class Control_adm_registros extends CI_Controller {
       }
    }
 
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+   function show_usuarios_id() {
+      $id = $this->uri->segment(3);
+      $data['usuario_id'] = $this->update_model->show_students();
+      $data['single_student'] = $this->update_model->show_student_id($id);
+      $this->load->view('update_view', $data);
+   }
+
+   function update_usuarios_id() {
+      $id = $this->input->post('did');
+      $data = array(
+          'Student_Name' => $this->input->post('dname'),
+          'Student_Email' => $this->input->post('demail'),
+          'Student_Mobile' => $this->input->post('dmobile'),
+          'Student_Address' => $this->input->post('daddress')
+      );
+      $this->update_model->update_student_id1($id, $data);
+      $this->show_student_id();
+   }
+
    public function add_message_user() {
       $this->load->library('form_validation');
       $data['title'] = 'Crear una peticion';

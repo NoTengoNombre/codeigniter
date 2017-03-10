@@ -4,7 +4,7 @@
   .error { color: red; text-align: justify; }
 </style>
 
-<h1 align="center">Panel de Registros</h1>
+<h1 align="center">Panel de Administración</h1>
 <h3 align="center">Agregar nuevo usuario</h3>
 
 <?php

@@ -62,6 +62,11 @@ class Model_adm extends CI_Model {
       return $r; // devuelve string
    }
 
+   /**
+    * 
+    * @param type $usuario_id
+    * @return string
+    */
    public function update_user($usuario_id) {
       $datos = array(
           'nombre' => $nombre,
@@ -83,6 +88,42 @@ class Model_adm extends CI_Model {
       return $r;
    }
 
+   /**
+    * 
+    * @param type $data
+    * @return type objetos
+    */
+   function show_usuarios_id($data) {
+      $this->db->select('*');
+      $this->db->from('usuarios');
+      $this->db->where('usuario_id', $data);
+      $query = $this->db->get();
+      $result = $query->result();
+      return $result;
+   }
+
+   /**
+    * 
+    * @param type $id
+    * @param type $data
+    */
+   function update_usuarios_id($id, $data) {
+      $this->db->where('usuario_id', $id);
+      $this->db->update('usuarios', $data);
+   }
+
+   /**
+    * 
+    * @param type $usuario_id
+    * @param type $nombre
+    * @param type $apellidos
+    * @param type $password
+    * @param type $fotografia
+    * @param type $telefono
+    * @param type $email
+    * @param type $tipo
+    * @return string
+    */
    public function update_user2($usuario_id, $nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
       $datos = array(
           'nombre' => $nombre,

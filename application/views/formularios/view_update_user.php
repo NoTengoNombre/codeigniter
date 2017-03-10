@@ -4,8 +4,8 @@
   .error { color: red; text-align: center; }
 </style>
 
-<h1 align="center">Panel de Registros</h1>
-<h3 align="center">Agregar nuevo usuario</h3>
+<h1 align="center">Panel de Administración</h1>
+<h3 align="center">Actualizar Usuario</h3>
 
 <?php
 // Si el controlador nos envía algún mensaje, lo mostramos
@@ -16,7 +16,7 @@ if (isset($error)) {
 $this->load->helper("form"); // Crea un formulario
 
 echo "<div class='error'>" . validation_errors() . "</div>";
-echo form_open_multipart("model_adm/model_adm");
+echo form_open_multipart("control_adm_registros/model_adm");
 
 echo "<table align='center'>";
 echo "<tr>";
