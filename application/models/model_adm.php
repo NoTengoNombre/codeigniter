@@ -36,7 +36,7 @@ class Model_adm extends CI_Model {
     * @param type $tipo
     * @return string
     */
-   public function add_user($nombre, $apellidos, $password, $fotografia, $telefono, $email, $tipo) {
+   public function add_user($nombre, $apellidos, $password, $telefono, $email, $tipo, $fotografia) {
 
       $filas = $this->db->get('usuarios'); // Produce: SELECT * FROM usuarios
       $usuario_id = $filas->num_rows();
@@ -46,10 +46,11 @@ class Model_adm extends CI_Model {
           'nombre' => $nombre,
           'apellidos' => $apellidos,
           'password' => $password,
+          'email' => $email,
+          'tipo' => $tipo,
           'fotografia' => $fotografia,
           'telefono' => $telefono,
-          'email' => $email,
-          'tipo' => $tipo);
+      );
 
 //      Ejecuta la accion de insertar
       echo $this->db->insert('usuarios', $datos);
@@ -72,20 +73,27 @@ class Model_adm extends CI_Model {
           'nombre' => $nombre,
           'apellidos' => $apellidos,
           'password' => $password,
+          'email' => $email,
+          'tipo' => $tipo,
           'fotografia' => $fotografia,
           'telefono' => $telefono,
-          'email' => $email,
-          'tipo' => $tipo);
+      );
 
       $this->db->where('usuario_id', $usuario_id);
       $this->update('usuarios', $datos);
 
-      if ($this->db->affected_rows() > 0) {
+      if ($this->db->affected_rows() == 1) {
          $r = "ok";
       } else {
          $r = "error";
       }
       return $r;
+   }
+
+   function show_usuarios() {
+      $query = $this->db->get('usuarios');
+      $query_result = $query->result();
+      return $query_result;
    }
 
    /**

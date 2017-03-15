@@ -5,28 +5,27 @@ class Control_adm_registros extends CI_Controller {
 
    public function __construct() {
       parent::__construct();
+      $this->load->model('model_adm'); // invoca funcion del modelo
    }
 
    function show_add_user() {
-      $this->load->view('formularios/view_add_user');
+      $this->load->view('formularios/view_add_user'); // carga la vista
    }
 
    public function add_user() {
-
-      $this->load->model('model_adm'); // invoca metodo del modelo
       $this->load->library('form_validation');
 
 //      Cambia delimitadores de error en los formularios 
-      $this->form_validation->set_error_delimiters('<div class="error">', '</div>');
+      $this->form_validation->set_error_delimiters('<span class="error">', '</span>');
 
       $this->form_validation->set_rules('nombre', 'Nombre de usuario', 'required');
       $this->form_validation->set_rules('apellidos', 'Apellidos', 'required');
       $this->form_validation->set_rules('password', 'Contraseña', 'required|matches[password2]');
-      $this->form_validation->set_rules('password2', 'confirmación de contraseña', 'required');
+      $this->form_validation->set_rules('password2', 'Confirmación de contraseña', 'required');
       $this->form_validation->set_rules('telefono', 'Telefono', 'required');
       $this->form_validation->set_rules('email', 'Email', 'required');
       $this->form_validation->set_rules('tipo', 'Tipo', 'required');
-      $this->form_validation->set_rules('userfile', 'Fotografia');
+      $this->form_validation->set_rules('userfile', 'Fotografia'); // por defecto 'userfile'
 
       $this->form_validation->set_message('required', 'El campo %s es obligatorio');
       $this->form_validation->set_message('matches', 'El campo %s debe coincidir con el campo %s');
@@ -35,6 +34,7 @@ class Control_adm_registros extends CI_Controller {
       if ($this->form_validation->run() == FALSE) {
 
          $this->load->view('formularios/view_add_user');
+         
       } else {
 
 //         Array con la configuracion de la foto
@@ -48,65 +48,64 @@ class Control_adm_registros extends CI_Controller {
          $this->load->library('upload', $config);
 
          if (!$this->upload->do_upload()) { //do_upload devuelve false si produce error en el archivo
-            // Ha fallado la subida de la imagen
+// Ha fallado la subida de la imagen
             $data['error'] = $this->upload->display_errors();
-            $this->load->view("formularios/view_add_user", $data);
-         } else {
 
-            // Obtenemos el filename de la imagen subida
+            $this->load->view("formularios/view_add_user", $data);
+            
+         } else {
+// Obtenemos todos los datos del 'filename' de la imagen subida
             $upload_img_data = $this->upload->data(); //Array para obtener datos
 
             $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 //            Funcion add_user() se encarga de obtener los datos del formulario y enviarlos
             $r = $this->model_adm->add_user(
-                    $this->input->get_post('nombre'), $this->input->get_post('apellidos'), $this->input->get_post('password'), $this->input->get_post('telefono'), $this->input->get_post('email'), $this->input->get_post('tipo'), $upload_img_name);
+                    $this->input->get_post('nombre'), 
+                    $this->input->get_post('apellidos'), 
+                    $this->input->get_post('password'), 
+                    $this->input->get_post('telefono'), 
+                    $this->input->get_post('email'), 
+                    $this->input->get_post('tipo'),$upload_img_name);
 
             if ($r == 'ok') {
+
                $data['mensaje'] = "Correcto";
-//               $this->load->view('templates/success', $data);
                $this->load->view('formularios/view_add_user', $data);
+               
             } else if ($r == 'error') {
+
                $data['mensaje'] = "Error";
-//               $this->load->view('templates/errores', $data);
                $this->load->view('formularios/view_add_user', $data);
+               
             }
          }
       }
    }
 
    function show_usuarios_id() {
-      $id = $this->uri->segment(3);
-      $data['usuario_id'] = $this->update_model->show_students();
-      $data['single_student'] = $this->update_model->show_student_id($id);
-      $this->load->view('update_view', $data);
+      $usuario_id = $this->uri->segment(3); // Obtiene 3 segmento de la direccion
+      $data['usuarios'] = $this->model_adm->show_usuarios(); // Almacena los objetos en el array 
+      $data['usuario_id'] = $this->model_adm->show_usuarios_id($usuario_id); // 
+      $this->load->view('pages/view_update_user', $data);
    }
 
    function update_usuarios_id() {
-      $id = $this->input->post('did');
+      $usuario_id = $this->input->get_post('usuario_id');
+
+      $upload_img_data = $this->upload->data(); //Array para obtener datos
+      $upload_img_name = $upload_img_data['file_name'];
+
       $data = array(
-          'Student_Name' => $this->input->post('dname'),
-          'Student_Email' => $this->input->post('demail'),
-          'Student_Mobile' => $this->input->post('dmobile'),
-          'Student_Address' => $this->input->post('daddress')
-      );
-      $this->update_model->update_student_id1($id, $data);
-      $this->show_student_id();
-   }
+          $this->input->get_post('nombre'),
+          $this->input->get_post('apellidos'),
+          $this->input->get_post('password'),
+          $this->input->get_post('telefono'),
+          $this->input->get_post('email'),
+          $this->input->get_post('tipo'),
+          $upload_img_name);
 
-   public function add_message_user() {
-      $this->load->library('form_validation');
-      $data['title'] = 'Crear una peticion';
-      $this->form_validation->set_rules('title', 'Título', 'required');
-      $this->form_validation->set_rules('text', 'Texto', 'required');
-      if ($this->form_validation->run() === FALSE) {
-         $this->load->view('templates/header', $data);
-         $this->load->view('news/create');
-         $this->load->view('templates/footer');
-
-         $nombre = $this->input->get_post('nombre');
-         $archivo = $this->input->get_post('fecha_subida');
-         $notas = $this->input->get_post('notas');
-      }
+      $this->update_model->update_usuarios_id($usuario_id, $data);
+      $this->show_usuarios_id();
    }
 
 }

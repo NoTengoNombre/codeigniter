@@ -1,48 +1,110 @@
-<!-- Vista : FORMULARIO -->
+<link href="<?php echo base_url('public/css/bootstrap.css') ?>" rel="stylesheet">
+<link href="<?php echo base_url('public/css/bootstrap.css') ?>" rel="stylesheet">
+<script src="<?php echo base_url('public/js/jquery.min.js') ?>"></script>
+<script src="<?php echo base_url('public/js/bootstrap.js') ?>"></script>
 
-<!-- Carga el css desde el directorio indicado -->
-<link rel="stylesheet" type="text/css" href ="<?php echo base_url(); ?>css/style.css">
-<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 
-<?php
+<div role="tabpanel" class="tab-pane" id="profile">
+  <div class="row"> 
+    <div class="col-md-2">
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <?php
 //Mensaje de texto enviado desde metodo index() del Controlador
-if (isset($texto)) {
-   echo "<h2>$texto</h2>"; // Muestra el mensaje "Bienvenido a nuestra web app 1"
-}
+            if (isset($texto)) {
+               echo "<h2>$texto</h2>"; // Muestra el mensaje "Bienvenido a nuestra web app 1"
+            }
 
 //Mensaje de texto enviado desde metodo check_login() del Controlador
-if (isset($error)) {
-   echo "<h2>$error</h2>";
-}
+            if (isset($error)) {
+               echo "<h2>$error</h2>";
+            }
 
 // Carga la "funcion global" del formulario : no necesita objeto
-$this->load->helper("form");
+            $this->load->helper("form");
+            ?>
 
-// Envia formulario a la funcion 'check_login' del Controlador
-echo form_open("login/check_login");
+            <?php
+            echo form_open("login/check_login");
+            ?>   
 
-echo form_label("Nombre de Usuario : ", "usr"); //crea Titulo Formulario
-// parametros para el INPUT
-$data = array(
-    'name' => 'usr',
-    'value' => '',
-    'maxlength' => '20',
-    'size' => '10');
+            <?php
+            $attributes = array(
+                'class' => 'form-control',
+                'id' => 'exampleInputEmail1',
+                'placeholder' => 'Usuario');
+            echo form_label("Nombre de Usuario", "usr", $attributes); //crea Titulo Formulario
+            ?>   
 
-// FORMULARIO
-echo form_input($data); // crea etiqueta elemento relacionado 
-echo form_error("usr"); // recoge mensaje requerido
-echo '<br>';
-echo form_label("Password : ", "pass"); // crea etiqueta elemento relacionado 'pass'
-echo form_password('pass'); // crea etiqueta elemento relacionado
-echo form_error("pass"); // recoge mensaje requerido  
-echo '<br>';
+            <?php
+            $data = array(
+                'class' => 'form-control',
+                'type' => 'text',
+                'id' => 'exampleInputEmail1',
+                'placeholder' => "Usuario",
+                'name' => 'usr',
+                'value' => '');
+            echo form_input($data); // crea etiqueta elemento relacionado 
+            echo form_error("usr"); // recoge mensaje requerido
+            echo '<br>';
+            ?>   
 
-echo form_label("Repita su constraseña : ", "password2") . "</td>";
-echo form_password("password2");
-echo form_error("password2"); // recoge mensaje requerido
-echo '<br>';
+            <?php
+            $attributes1 = array(
+                'class' => 'form-control',
+                'id' => 'exampleInputEmail1',
+                'placeholder' => "Password");
+            echo form_label("Password", "pass", $attributes1); // crea etiqueta elemento relacionado 'pass'
+            ?>   
 
-echo form_submit("enviar", "Entrar"); // crea elemento enviar
-echo form_close();
+            <?php
+            $data1 = array(
+                'class' => 'form-control',
+                'id' => 'exampleInputPassword1',
+                'placeholder' => "Password",
+                'name' => 'pass',
+                'value' => '');
+            echo form_password($data1); // crea etiqueta elemento relacionado
+            echo form_error("pass"); // recoge mensaje requerido  
+            ?>   
 
+            <?php
+            echo '<br>';
+            $attributes3 = array(
+                'class' => 'form-control',
+                'id' => 'exampleInputEmail1',
+                'placeholder' => 'Usuario');
+            echo form_label("Repita su constraseña", "password2", $attributes3) . "</td>";
+            ?>   
+
+            <?php
+            $data2 = array(
+                'class' => 'form-control',
+                'id' => 'exampleInputPassword1',
+                'placeholder' => "Repita la contraseña",
+                'name' => 'password2',
+                'value' => '');
+            echo form_password($data2);
+            echo form_error("password2"); // recoge mensaje requerido
+            ?>   
+
+            <?php
+            echo '<br>';
+
+            $data3 = array(
+                'class' => 'btn btn-success',
+                'id' => 'form-control',
+                'name' => 'enviar',
+                'value' => 'Entrar');
+
+            echo form_submit($data3); // crea elemento enviar
+            echo form_close();
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

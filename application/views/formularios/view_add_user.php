@@ -23,6 +23,7 @@ $this->load->helper("form"); // Crea un formulario
 echo form_open_multipart("control_adm_registros/add_user");
 
 echo "<table align='center'>";
+
 echo "<tr>";
 echo "<td>" . form_label("Nombre de usuario", "nombre") . "</td>";
 echo "<td>" . form_error('nombre') . "</td>";
@@ -68,16 +69,17 @@ echo "</tr>";
 echo "<tr>";
 echo "<td>" . form_label("Foto de perfil", "userfile") . "</td>";
 echo "<td>" . form_error('userfile') . "</td>";
-echo "<td><input type='file' name='userfile' size='20'></td>";
+
+echo "<td><input type='file' name='userfile'></td>";
 echo "</tr>";
 
 echo "<tr>";
 echo "<td align='right'><br>" . form_submit('submit', 'Aceptar') . "</td>";
 
 $js = 'onclick="window.location=\'http://[::1]/ciproyecto/index.php/login/check_login\'"';
+
 echo "<td align='center'><br>" . form_button('volver', 'Volver', $js) . "</td>";
 echo "</tr>";
-
 
 echo "</table>";
 form_close();

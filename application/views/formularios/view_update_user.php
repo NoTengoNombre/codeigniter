@@ -19,6 +19,7 @@ echo "<div class='error'>" . validation_errors() . "</div>";
 echo form_open_multipart("control_adm_registros/model_adm");
 
 echo "<table align='center'>";
+
 echo "<tr>";
 echo "<td>" . form_label("Nombre de usuario", "nombre") . "</td>";
 echo "<td>" . form_input("nombre") . "</td>";
