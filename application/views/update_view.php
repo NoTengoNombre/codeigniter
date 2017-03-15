@@ -6,7 +6,7 @@
 
 <html>
   <head>
-    <title>Update Data In Database Using CodeIgniter</title>
+    <title>Actualizar la tabla </title>
     <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() . "css/update.css" ?>">
   </head>
@@ -29,7 +29,7 @@
         <div id="detail">
           <!-- Fetching All Details of Selected Student From Database And Showing In a Form -->
           <?php foreach ($usuarios as $fila): ?>
-             <p>Editar Detalles & Click Boton para actualizar</p>
+             <p>Actualizar la tabla</p>
              <form method="post" action="<?php echo base_url() . "index.php/model_adm/update_usuarios_id" ?>">
                <label>Usuarios_id :</label>
                <input type="text" name="usuarios_id" value="<?php $fila->usuario_id ?>">

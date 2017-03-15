@@ -12,6 +12,14 @@ class Control_adm_registros extends CI_Controller {
       $this->load->view('formularios/view_add_user'); // carga la vista
    }
 
+   function show_delete_user($id = null) {
+      if ($id != null) {
+         $this->model_adm->delete_user($id);
+         redirect('');
+      }
+      $this->load->view('formularios/view_add_user'); // carga la vista
+   }
+
    public function add_user() {
       $this->load->library('form_validation');
 
@@ -34,7 +42,6 @@ class Control_adm_registros extends CI_Controller {
       if ($this->form_validation->run() == FALSE) {
 
          $this->load->view('formularios/view_add_user');
-         
       } else {
 
 //         Array con la configuracion de la foto
@@ -52,7 +59,6 @@ class Control_adm_registros extends CI_Controller {
             $data['error'] = $this->upload->display_errors();
 
             $this->load->view("formularios/view_add_user", $data);
-            
          } else {
 // Obtenemos todos los datos del 'filename' de la imagen subida
             $upload_img_data = $this->upload->data(); //Array para obtener datos
@@ -60,23 +66,16 @@ class Control_adm_registros extends CI_Controller {
             $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 //            Funcion add_user() se encarga de obtener los datos del formulario y enviarlos
             $r = $this->model_adm->add_user(
-                    $this->input->get_post('nombre'), 
-                    $this->input->get_post('apellidos'), 
-                    $this->input->get_post('password'), 
-                    $this->input->get_post('telefono'), 
-                    $this->input->get_post('email'), 
-                    $this->input->get_post('tipo'),$upload_img_name);
+                    $this->input->get_post('nombre'), $this->input->get_post('apellidos'), $this->input->get_post('password'), $this->input->get_post('telefono'), $this->input->get_post('email'), $this->input->get_post('tipo'), $upload_img_name);
 
             if ($r == 'ok') {
 
                $data['mensaje'] = "Correcto";
                $this->load->view('formularios/view_add_user', $data);
-               
             } else if ($r == 'error') {
 
                $data['mensaje'] = "Error";
                $this->load->view('formularios/view_add_user', $data);
-               
             }
          }
       }

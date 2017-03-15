@@ -70,7 +70,7 @@ if (isset($result)) {
                    . "<td><img src='" . base_url("uploads") . "/" . $fila->fotografia . "'></td>"; // mostrar la fotografia
 
                    echo "<td><a href='http://[::1]/ciproyecto/index.php/control_adm_registros/show_usuarios_id/'>Modificar</a></td>";
-                   echo "<td><a href='http://[::1]/ciproyecto/index.php/control_adm_registros/show_usuarios_id/'>Eliminar</a></td>";
+                   echo "<td><a href='http://[::1]/ciproyecto/index.php/control_adm_registros/show_delete_user/'>Eliminar</a></td>";
 
                    echo "</tr>";
                 }
