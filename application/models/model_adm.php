@@ -24,6 +24,7 @@ class Model_adm extends CI_Model {
    /**
     * 
     * Añade usuario tabla usuarios
+    * 
     * Usa AR
     * 
     * @param type $usuario_id
