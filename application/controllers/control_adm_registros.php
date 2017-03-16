@@ -59,6 +59,7 @@ class Control_adm_registros extends CI_Controller {
             $data['error'] = $this->upload->display_errors();
 
             $this->load->view("formularios/view_add_user", $data);
+            
          } else {
 // Obtenemos todos los datos del 'filename' de la imagen subida
             $upload_img_data = $this->upload->data(); //Array para obtener datos
@@ -66,7 +67,13 @@ class Control_adm_registros extends CI_Controller {
             $upload_img_name = $upload_img_data['file_name']; //devuelve el nombre y extension de la imagen
 //            Funcion add_user() se encarga de obtener los datos del formulario y enviarlos
             $r = $this->model_adm->add_user(
-                    $this->input->get_post('nombre'), $this->input->get_post('apellidos'), $this->input->get_post('password'), $this->input->get_post('telefono'), $this->input->get_post('email'), $this->input->get_post('tipo'), $upload_img_name);
+                    $this->input->get_post('nombre'), 
+                    $this->input->get_post('apellidos'), 
+                    $this->input->get_post('password'), 
+                    $this->input->get_post('telefono'), 
+                    $this->input->get_post('email'), 
+                    $this->input->get_post('tipo'), 
+                    $upload_img_name);
 
             if ($r == 'ok') {
 
@@ -105,6 +112,20 @@ class Control_adm_registros extends CI_Controller {
 
       $this->update_model->update_usuarios_id($usuario_id, $data);
       $this->show_usuarios_id();
+   }
+
+   /**
+    * Formulario con Ajax y JQuery
+    */
+   public function book_add() {
+      $data = array(
+          'book_isbn' => $this->input->post('book_isbn'),
+          'book_title' => $this->input->post('book_title'),
+          'book_author' => $this->input->post('book_author'),
+          'book_category' => $this->input->post('book_category'),
+      );
+      $insert = $this->book_model->book_add($data);
+      echo json_encode(array("status" => TRUE));
    }
 
 }

@@ -27,7 +27,7 @@ class Model_login extends CI_Model {
       $this->db->where("password", $pass); // dato enviado al metodo check_login - Controlador
 // selecciona tabla usuarios para hacer la consulta
       $resultado = $this->db->get("usuarios"); // SELECT (*) FROM 'usuarios' 
-      
+//      
 //Objeto db contiene total de filas
       if ($this->db->affected_rows() > 0) { // si hay +1 fila
 // $resultado - Objeto con todos los campos en forma de String

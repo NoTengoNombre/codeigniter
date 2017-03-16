@@ -169,4 +169,15 @@ class Model_adm extends CI_Model {
       return $r;
    }
 
+   /**
+    * Formulario Ajax y JQUERY
+    * @param type $data
+    * @return type
+    */
+   public function book_add($data) {
+      $this->db->insert($this->table, $data);
+      return $this->db->insert_id();
+   }  
+
 }
+   
