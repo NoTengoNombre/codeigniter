@@ -132,7 +132,6 @@ if (isset($result)) {
                save_method = 'add';
                $('#form')[0].reset(); // reset form on modals
                $('#modal_form').modal('show'); // show bootstrap modal
-               //$('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
            }
 
 
@@ -141,9 +140,9 @@ if (isset($result)) {
                var url;
                if (save_method == 'add')
                {
-                   url = "<?php echo base_url('control_adm_registros/book_add') ?>"; // controlador
+                   url = "<?php echo site_url('index.php/control_users_registros/user_add') ?>"; // controlador
                } else
-               {
+               {  
                    url = "<?php echo base_url('control_adm_registros/book_update') ?>"; // controlador
                }
 
@@ -165,6 +164,7 @@ if (isset($result)) {
                    }
                });
            }
+           
         </script>
 
         <!---------------------------------------------------------------------------------->
@@ -176,16 +176,12 @@ if (isset($result)) {
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-
                 <h3 style="text-align: center"class="modal-title">Formulario para Añadir Usuario</h3>
-
               </div>
 
               <div class="modal-body form">
-
-                <!-- Formulario -->
+                <!-- Formulario Recoge los datos en el mismo script -->
                 <form action="#" id="form" class="form-horizontal">
                   <!-- Formulario -->
 
@@ -204,7 +200,7 @@ if (isset($result)) {
                         <input name="apellidos" placeholder="Introduce los Apellidos" class="form-control" type="text">
                       </div>
                     </div>
-                    
+
                     <div class="form-group">
                       <label class="control-label col-md-2">Password</label>
                       <div class="col-md-9">
@@ -213,9 +209,9 @@ if (isset($result)) {
                     </div>
 
                     <div class="form-group">
-                      <label class="control-label col-md-2">Fotografia</label>
+                      <label class="control-label col-md-2">Confirma Password</label>
                       <div class="col-md-9">
-                        <input name="fotografia" class="form-control" type="file">
+                        <input name="password2" placeholder="Introduce la Confirmacion" class="form-control" type="password">
                       </div>
                     </div>
 
@@ -227,16 +223,30 @@ if (isset($result)) {
                     </div>
 
                     <div class="form-group">
+                      <label class="control-label col-md-2">Telefono</label>
+                      <div class="col-md-9">
+                        <input name="telefono" placeholder="Telefono" class="form-control" type="text">
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
                       <label class="control-label col-md-2">Tipo</label>
                       <div class="col-md-9">
                         <input name="tipo" placeholder="Introduce el Tipo" class="form-control" type="text">
                       </div>
                     </div>
-                    
-                  </div>
-                </form>
 
+<!--                    <div class="form-group">
+                      <label class="control-label col-md-2">Fotografia</label>
+                      <div class="col-md-9">
+                        <input name="userfile" class="form-control" type="file">
+                      </div>
+                    </div>
+                  </div>-->
+                  
+                </form>
                 <!-- Fin Formulario -->
+
               </div>
 
               <div class="modal-footer">
